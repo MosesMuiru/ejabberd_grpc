@@ -1,0 +1,1964 @@
+2024-08-26 15:44:13.338479+03:00 [info] <0.13456.0>@ejabberd_config:load/1:82 Loading configuration from conf/ejabberd.yml
+2024-08-26 15:44:13.355167+03:00 [critical] <0.13456.0>@ejabberd_app:start/2:72 Failed to start ejabberd application: Failed to read YAML file '/home/sparks/Desktop/grpc/ejabberd_rcp/conf/ejabberd.yml': no such file or directory
+2024-08-26 15:45:57.824219+03:00 [info] <0.400.0>@ejabberd_config:load/1:82 Loading configuration from config/ejabberd.yml
+2024-08-26 15:45:57.854874+03:00 [critical] <0.400.0>@ejabberd_app:start/2:72 Failed to start ejabberd application: Invalid value of option ca_file: Failed to read PEM file '/home/sparks/Desktop/grpc/ejabberd_rcp/config/cacert.pem': no such file or directory
+2024-08-26 15:46:56.130573+03:00 [info] <0.400.0>@ejabberd_config:load/1:82 Loading configuration from config/ejabberd.yml
+2024-08-26 15:46:56.310925+03:00 [info] <0.400.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-26 15:46:56.587109+03:00 [info] <0.488.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-26 15:46:56.596420+03:00 [info] <0.491.0>@translate:load/2:127 Building language translation cache
+2024-08-26 15:46:56.716712+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'ejabberd_commands'
+2024-08-26 15:46:56.794826+03:00 [warning] <0.576.0>@ejabberd_pkix:wildcard/1:358 Path ./config/certfile.pm is empty, please make sure ejabberd has sufficient rights to read it
+2024-08-26 15:46:56.813352+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'route'
+2024-08-26 15:46:56.937412+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'route_multicast'
+2024-08-26 15:46:56.992895+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'session'
+2024-08-26 15:46:57.024614+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'session_counter'
+2024-08-26 15:46:57.078164+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 's2s'
+2024-08-26 15:46:57.115757+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'temporarily_blocked'
+2024-08-26 15:46:57.165574+03:00 [info] <0.487.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-26 15:46:57.170836+03:00 [warning] <0.487.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-26 15:46:57.171355+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'archive_msg'
+2024-08-26 15:46:57.207934+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'archive_prefs'
+2024-08-26 15:46:57.264874+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'motd'
+2024-08-26 15:46:57.299399+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'motd_users'
+2024-08-26 15:46:57.356701+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'offline_msg'
+2024-08-26 15:46:57.427785+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'caps_features'
+2024-08-26 15:46:57.459417+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'pubsub_last_item'
+2024-08-26 15:46:57.506269+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc table 'pubsub_index'
+2024-08-26 15:46:57.553138+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc table 'pubsub_node'
+2024-08-26 15:46:57.595792+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc table 'pubsub_state'
+2024-08-26 15:46:57.641105+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'pubsub_item'
+2024-08-26 15:46:57.699601+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc table 'pubsub_orphan'
+2024-08-26 15:46:57.734034+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'mod_register_ip'
+2024-08-26 15:46:57.782709+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'roster'
+2024-08-26 15:46:57.827916+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'roster_version'
+2024-08-26 15:46:57.923170+03:00 [info] <0.738.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-26 15:46:57.939697+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc table 'sr_group'
+2024-08-26 15:46:57.972225+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc table 'sr_user'
+2024-08-26 15:46:58.059583+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc table 'muc_room'
+2024-08-26 15:46:58.109169+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc table 'muc_registered'
+2024-08-26 15:46:58.156379+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'muc_online_room'
+2024-08-26 15:46:58.202473+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'private_storage'
+2024-08-26 15:46:58.260035+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'privacy'
+2024-08-26 15:46:58.325743+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'vcard'
+2024-08-26 15:46:58.361258+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc table 'vcard_search'
+2024-08-26 15:46:58.529828+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'bosh'
+2024-08-26 15:46:58.564090+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'push_session'
+2024-08-26 15:46:58.627087+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'last_activity'
+2024-08-26 15:46:58.675520+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'mqtt_pub'
+2024-08-26 15:46:58.719194+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'mqtt_session'
+2024-08-26 15:46:58.753460+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'mqtt_sub'
+2024-08-26 15:46:58.794237+03:00 [info] <0.837.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-26 15:46:58.809040+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'bytestream'
+2024-08-26 15:46:58.845454+03:00 [warning] <0.863.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-26 15:46:58.852823+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'passwd'
+2024-08-26 15:46:58.889772+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia ram table 'reg_users_counter'
+2024-08-26 15:46:58.957555+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc_only table 'oauth_token'
+2024-08-26 15:46:59.003918+03:00 [info] <0.440.0>@ejabberd_mnesia:create/2:270 Creating Mnesia disc table 'oauth_client'
+2024-08-26 15:46:59.096005+03:00 [info] <0.400.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-26 15:46:59.155216+03:00 [warning] <0.576.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching localhost
+2024-08-26 15:46:59.155390+03:00 [warning] <0.576.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-26 15:46:59.155475+03:00 [warning] <0.576.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-26 15:46:59.155558+03:00 [warning] <0.576.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-26 15:46:59.155628+03:00 [warning] <0.576.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-26 15:46:59.157999+03:00 [info] <0.400.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 3.06s
+2024-08-26 15:46:59.196382+03:00 [info] <0.855.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-26 15:46:59.196375+03:00 [info] <0.571.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-26 15:46:59.196564+03:00 [info] <0.574.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-26 15:46:59.196587+03:00 [info] <0.569.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-26 15:46:59.196573+03:00 [info] <0.570.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-26 15:46:59.196602+03:00 [info] <0.572.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-26 15:46:59.196596+03:00 [info] <0.573.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-26 15:46:59.196587+03:00 [info] <0.575.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-26 15:46:59.197965+03:00 [warning] <0.574.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-26 15:46:59.394468+03:00 [info] <0.959.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-26 15:47:18.679647+03:00 [info] <0.411.0>@ejabberd_config:load/1:82 Loading configuration from config/ejabberd.yml
+2024-08-26 15:47:18.862279+03:00 [info] <0.411.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-26 15:47:19.135265+03:00 [info] <0.648.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-26 15:47:19.283655+03:00 [warning] <0.681.0>@ejabberd_pkix:wildcard/1:358 Path ./config/certfile.pm is empty, please make sure ejabberd has sufficient rights to read it
+2024-08-26 15:47:19.462057+03:00 [info] <0.647.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-26 15:47:19.468691+03:00 [warning] <0.647.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-26 15:47:19.562770+03:00 [info] <0.742.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-26 15:47:19.649921+03:00 [info] <0.773.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-26 15:47:19.658520+03:00 [warning] <0.781.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-26 15:47:19.691751+03:00 [info] <0.411.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-26 15:47:19.735404+03:00 [warning] <0.681.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching localhost
+2024-08-26 15:47:19.735574+03:00 [warning] <0.681.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-26 15:47:19.735661+03:00 [warning] <0.681.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-26 15:47:19.735749+03:00 [warning] <0.681.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-26 15:47:19.735845+03:00 [warning] <0.681.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-26 15:47:19.737897+03:00 [info] <0.411.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.09s
+2024-08-26 15:47:19.766919+03:00 [info] <0.679.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-26 15:47:19.766919+03:00 [info] <0.777.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-26 15:47:19.766960+03:00 [info] <0.678.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-26 15:47:19.766921+03:00 [info] <0.680.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-26 15:47:19.767142+03:00 [info] <0.676.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-26 15:47:19.767210+03:00 [info] <0.675.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-26 15:47:19.767226+03:00 [info] <0.674.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-26 15:47:19.767128+03:00 [info] <0.677.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-26 15:47:19.767671+03:00 [warning] <0.679.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-26 15:47:19.960330+03:00 [info] <0.856.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-26 15:48:51.563946+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.884.0>) Accepted connection [::ffff:127.0.0.1]:48176 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:48:51.568243+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.885.0>) Accepted connection [::ffff:127.0.0.1]:48188 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:48:51.594267+03:00 [warning] <0.884.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.884.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:48:51.594985+03:00 [warning] <0.885.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.885.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:49:16.040510+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.888.0>) Accepted connection [::ffff:127.0.0.1]:35680 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:49:16.042667+03:00 [warning] <0.888.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.888.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:49:49.594146+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.890.0>) Accepted connection [::ffff:127.0.0.1]:38764 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:49:49.596265+03:00 [warning] <0.890.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.890.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:50:02.021168+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.891.0>) Accepted connection [::ffff:127.0.0.1]:43092 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:50:02.022515+03:00 [warning] <0.891.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.891.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:50:02.801635+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.892.0>) Accepted connection [::ffff:127.0.0.1]:43096 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:50:02.804507+03:00 [warning] <0.892.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.892.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:50:03.629359+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.893.0>) Accepted connection [::ffff:127.0.0.1]:43106 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:50:03.633153+03:00 [warning] <0.893.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.893.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:50:04.385724+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.894.0>) Accepted connection [::ffff:127.0.0.1]:43110 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:50:04.390567+03:00 [warning] <0.894.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.894.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:50:49.582529+03:00 [info] <0.411.0>@ejabberd_config:load/1:82 Loading configuration from config/ejabberd.yml
+2024-08-26 15:50:49.762497+03:00 [info] <0.411.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-26 15:50:50.101794+03:00 [info] <0.602.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-26 15:50:50.253347+03:00 [warning] <0.635.0>@ejabberd_pkix:wildcard/1:358 Path ./certfile.pm is empty, please make sure ejabberd has sufficient rights to read it
+2024-08-26 15:50:50.429041+03:00 [info] <0.601.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-26 15:50:50.435397+03:00 [warning] <0.601.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-26 15:50:50.520877+03:00 [info] <0.696.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-26 15:50:50.605824+03:00 [info] <0.727.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-26 15:50:50.615786+03:00 [warning] <0.735.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-26 15:50:50.646549+03:00 [info] <0.411.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-26 15:50:50.687875+03:00 [warning] <0.635.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching localhost
+2024-08-26 15:50:50.688048+03:00 [warning] <0.635.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-26 15:50:50.688152+03:00 [warning] <0.635.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-26 15:50:50.688248+03:00 [warning] <0.635.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-26 15:50:50.688329+03:00 [warning] <0.635.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-26 15:50:50.690539+03:00 [info] <0.411.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.14s
+2024-08-26 15:50:50.720095+03:00 [info] <0.634.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-26 15:50:50.720122+03:00 [info] <0.731.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-26 15:50:50.720091+03:00 [info] <0.633.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-26 15:50:50.720281+03:00 [info] <0.632.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-26 15:50:50.720389+03:00 [info] <0.631.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-26 15:50:50.720424+03:00 [info] <0.630.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-26 15:50:50.720443+03:00 [info] <0.629.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-26 15:50:50.720455+03:00 [info] <0.628.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-26 15:50:50.720841+03:00 [warning] <0.633.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-26 15:50:50.917679+03:00 [info] <0.810.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-26 15:50:54.455204+03:00 [info] <0.628.0>@ejabberd_listener:accept/7:346 (<0.836.0>) Accepted connection [::ffff:127.0.0.1]:58514 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:50:54.480195+03:00 [warning] <0.836.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.836.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:50:55.095460+03:00 [info] <0.628.0>@ejabberd_listener:accept/7:346 (<0.839.0>) Accepted connection [::ffff:127.0.0.1]:58528 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:50:55.098977+03:00 [warning] <0.839.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.839.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:50:55.588919+03:00 [info] <0.628.0>@ejabberd_listener:accept/7:346 (<0.840.0>) Accepted connection [::ffff:127.0.0.1]:58538 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:50:55.593409+03:00 [warning] <0.840.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.840.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:50:55.962217+03:00 [info] <0.628.0>@ejabberd_listener:accept/7:346 (<0.841.0>) Accepted connection [::ffff:127.0.0.1]:58540 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:50:55.964617+03:00 [warning] <0.841.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.841.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:52:38.418872+03:00 [info] <0.411.0>@ejabberd_config:load/1:82 Loading configuration from config/ejabberd.yml
+2024-08-26 15:52:38.603272+03:00 [info] <0.411.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-26 15:52:38.836165+03:00 [info] <0.596.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-26 15:52:39.005783+03:00 [warning] <0.629.0>@ejabberd_pkix:wildcard/1:358 Path ./config/certfile.pm is empty, please make sure ejabberd has sufficient rights to read it
+2024-08-26 15:52:39.213452+03:00 [info] <0.595.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-26 15:52:39.220792+03:00 [warning] <0.595.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-26 15:52:39.321733+03:00 [info] <0.690.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-26 15:52:39.409354+03:00 [info] <0.721.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-26 15:52:39.418932+03:00 [warning] <0.729.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-26 15:52:39.452146+03:00 [info] <0.411.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-26 15:52:39.496321+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching localhost
+2024-08-26 15:52:39.496496+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-26 15:52:39.496623+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-26 15:52:39.496724+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-26 15:52:39.496800+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-26 15:52:39.499088+03:00 [info] <0.411.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.11s
+2024-08-26 15:52:39.530361+03:00 [info] <0.725.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-26 15:52:39.530359+03:00 [info] <0.627.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-26 15:52:39.530359+03:00 [info] <0.622.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-26 15:52:39.530552+03:00 [info] <0.628.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-26 15:52:39.530574+03:00 [info] <0.623.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-26 15:52:39.530569+03:00 [info] <0.624.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-26 15:52:39.530554+03:00 [info] <0.626.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-26 15:52:39.530566+03:00 [info] <0.625.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-26 15:52:39.531383+03:00 [warning] <0.627.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-26 15:52:39.711469+03:00 [info] <0.804.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-26 15:52:47.752108+03:00 [info] <0.622.0>@ejabberd_listener:accept/7:346 (<0.830.0>) Accepted connection [::ffff:127.0.0.1]:60476 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:52:47.777442+03:00 [warning] <0.830.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.830.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:52:48.520126+03:00 [info] <0.622.0>@ejabberd_listener:accept/7:346 (<0.833.0>) Accepted connection [::ffff:127.0.0.1]:60492 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:52:48.521971+03:00 [warning] <0.833.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.833.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:52:49.108625+03:00 [info] <0.622.0>@ejabberd_listener:accept/7:346 (<0.834.0>) Accepted connection [::ffff:127.0.0.1]:60504 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:52:49.111324+03:00 [warning] <0.834.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.834.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:52:49.238369+03:00 [info] <0.622.0>@ejabberd_listener:accept/7:346 (<0.835.0>) Accepted connection [::ffff:127.0.0.1]:60510 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:52:49.241724+03:00 [warning] <0.835.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.835.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:52:49.538710+03:00 [info] <0.622.0>@ejabberd_listener:accept/7:346 (<0.836.0>) Accepted connection [::ffff:127.0.0.1]:60512 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:52:49.543416+03:00 [warning] <0.836.0>@ejabberd_c2s:process_terminated/2:337 (tcp|<0.836.0>) Failed to secure c2s connection: TLS failed: no_certfile
+2024-08-26 15:53:12.709810+03:00 [info] <0.411.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-26 15:53:12.894179+03:00 [info] <0.411.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-26 15:53:13.108828+03:00 [info] <0.596.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-26 15:53:13.445873+03:00 [info] <0.595.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-26 15:53:13.451025+03:00 [warning] <0.595.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-26 15:53:13.517121+03:00 [info] <0.690.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-26 15:53:13.565924+03:00 [info] <0.595.0> Starting ejabberd module Presence Demo
+2024-08-26 15:53:13.608238+03:00 [info] <0.721.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-26 15:53:13.618647+03:00 [warning] <0.729.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-26 15:53:13.651084+03:00 [info] <0.411.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-26 15:53:13.674710+03:00 [warning] <0.629.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-26 15:53:13.703499+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-26 15:53:13.703670+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-26 15:53:13.703758+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-26 15:53:13.703897+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-26 15:53:13.705098+03:00 [info] <0.411.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.02s
+2024-08-26 15:53:13.730080+03:00 [info] <0.725.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-26 15:53:13.730277+03:00 [info] <0.627.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-26 15:53:13.730389+03:00 [info] <0.628.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-26 15:53:13.730402+03:00 [info] <0.626.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-26 15:53:13.730410+03:00 [info] <0.625.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-26 15:53:13.730417+03:00 [info] <0.624.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-26 15:53:13.730425+03:00 [info] <0.623.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-26 15:53:13.730434+03:00 [info] <0.622.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-26 15:53:13.732014+03:00 [warning] <0.627.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-26 15:53:13.939449+03:00 [info] <0.804.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-26 15:53:20.550293+03:00 [info] <0.622.0>@ejabberd_listener:accept/7:346 (<0.830.0>) Accepted connection [::ffff:127.0.0.1]:58126 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:53:24.447591+03:00 [info] <0.830.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.830.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-26 15:53:24.461022+03:00 [info] <0.830.0>@ejabberd_c2s:bind/2:481 (tls|<0.830.0>) Opened c2s session for kim@localhost/4348914753109032668450
+2024-08-26 15:53:24.489006+03:00 [info] <0.830.0> Receive presence for kim
+2024-08-26 15:53:26.730544+03:00 [info] <0.622.0>@ejabberd_listener:accept/7:346 (<0.833.0>) Accepted connection [::ffff:127.0.0.1]:53090 -> [::ffff:127.0.0.1]:5222
+2024-08-26 15:53:28.848418+03:00 [info] <0.833.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.833.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-26 15:53:28.850993+03:00 [info] <0.833.0>@ejabberd_c2s:bind/2:481 (tls|<0.833.0>) Opened c2s session for moses@localhost/9662119971202193559514
+2024-08-26 15:53:28.859995+03:00 [info] <0.833.0> Receive presence for moses
+2024-08-26 15:53:32.777872+03:00 [info] <0.830.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.830.0>) Closing c2s session for kim@localhost/4348914753109032668450: Stream reset by peer
+2024-08-26 15:53:32.784708+03:00 [info] <0.833.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.833.0>) Closing c2s session for moses@localhost/9662119971202193559514: Stream reset by peer
+2024-08-26 16:16:27.442754+03:00 [info] <0.447.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-26 16:16:27.634704+03:00 [info] <0.447.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-26 16:16:27.940972+03:00 [info] <0.644.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-26 16:16:28.349664+03:00 [info] <0.643.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-26 16:16:28.359182+03:00 [warning] <0.643.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-26 16:16:28.444825+03:00 [info] <0.738.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-26 16:16:28.494212+03:00 [info] <0.643.0> Starting ejabberd module Presence Demo
+2024-08-26 16:16:28.536643+03:00 [info] <0.769.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-26 16:16:28.545673+03:00 [warning] <0.777.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-26 16:16:28.580559+03:00 [info] <0.447.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-26 16:16:28.601740+03:00 [warning] <0.677.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-26 16:16:28.631304+03:00 [warning] <0.677.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-26 16:16:28.631424+03:00 [warning] <0.677.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-26 16:16:28.631521+03:00 [warning] <0.677.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-26 16:16:28.631651+03:00 [warning] <0.677.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-26 16:16:28.632892+03:00 [info] <0.447.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.22s
+2024-08-26 16:16:28.635554+03:00 [info] <0.675.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-26 16:16:28.635562+03:00 [info] <0.672.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-26 16:16:28.635562+03:00 [info] <0.676.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-26 16:16:28.635743+03:00 [info] <0.773.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-26 16:16:28.635756+03:00 [info] <0.673.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-26 16:16:28.635767+03:00 [info] <0.671.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-26 16:16:28.635786+03:00 [info] <0.674.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-26 16:16:28.635765+03:00 [info] <0.670.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-26 16:16:28.636766+03:00 [warning] <0.675.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-26 16:16:28.808549+03:00 [info] <0.852.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-26 16:20:38.175732+03:00 [info] <0.897.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-26 16:20:38.175849+03:00 [info] <0.897.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 1µs
+2024-08-26 16:36:06.938428+03:00 [info] <0.463.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-26 16:36:07.129552+03:00 [info] <0.463.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-26 16:36:07.389672+03:00 [info] <0.648.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-26 16:36:07.776471+03:00 [info] <0.647.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-26 16:36:07.783716+03:00 [warning] <0.647.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-26 16:36:07.873889+03:00 [info] <0.742.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-26 16:36:07.929320+03:00 [info] <0.647.0> Starting ejabberd module Presence Demo
+2024-08-26 16:36:07.975333+03:00 [info] <0.773.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-26 16:36:07.985249+03:00 [warning] <0.781.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-26 16:36:08.020835+03:00 [info] <0.463.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-26 16:36:08.045666+03:00 [warning] <0.681.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-26 16:36:08.075028+03:00 [warning] <0.681.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-26 16:36:08.075201+03:00 [warning] <0.681.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-26 16:36:08.075311+03:00 [warning] <0.681.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-26 16:36:08.075404+03:00 [warning] <0.681.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-26 16:36:08.076829+03:00 [info] <0.463.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.17s
+2024-08-26 16:36:08.079124+03:00 [info] <0.679.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-26 16:36:08.079186+03:00 [info] <0.777.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-26 16:36:08.079192+03:00 [info] <0.680.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-26 16:36:08.079336+03:00 [info] <0.674.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-26 16:36:08.079300+03:00 [info] <0.678.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-26 16:36:08.079310+03:00 [info] <0.677.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-26 16:36:08.079317+03:00 [info] <0.676.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-26 16:36:08.079325+03:00 [info] <0.675.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-26 16:36:08.080105+03:00 [warning] <0.679.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-26 16:36:08.220274+03:00 [info] <0.856.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-26 16:37:22.150221+03:00 [info] <0.889.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-26 16:37:22.150485+03:00 [info] <0.889.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 137µs
+2024-08-26 16:49:14.464843+03:00 [info] <0.907.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-26 16:49:14.464987+03:00 [info] <0.907.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 2µs
+2024-08-26 16:49:39.518558+03:00 [info] <0.910.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-26 16:49:39.518944+03:00 [info] <0.910.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 5µs
+2024-08-26 16:51:02.015893+03:00 [info] <0.918.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-26 16:51:02.090596+03:00 [info] <0.918.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 74ms
+2024-08-26 16:51:16.988635+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.924.0>) Accepted connection [::ffff:127.0.0.1]:46982 -> [::ffff:127.0.0.1]:5222
+2024-08-26 16:51:16.990290+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.925.0>) Accepted connection [::ffff:127.0.0.1]:46988 -> [::ffff:127.0.0.1]:5222
+2024-08-26 16:51:22.310576+03:00 [info] <0.925.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.925.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-26 16:51:22.337695+03:00 [info] <0.925.0>@ejabberd_c2s:bind/2:481 (tls|<0.925.0>) Opened c2s session for kim@localhost/44406730904628962011923
+2024-08-26 16:51:22.375968+03:00 [info] <0.925.0> Receive presence for kim
+2024-08-26 16:51:26.104716+03:00 [info] <0.924.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.924.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-26 16:51:26.106632+03:00 [info] <0.924.0>@ejabberd_c2s:bind/2:481 (tls|<0.924.0>) Opened c2s session for moses@localhost/102032538352264432011955
+2024-08-26 16:51:26.114971+03:00 [info] <0.924.0> Receive presence for moses
+2024-08-26 16:53:21.088701+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.929.0>) Accepted connection [::ffff:127.0.0.1]:46556 -> [::ffff:127.0.0.1]:5222
+2024-08-26 16:53:21.198315+03:00 [info] <0.929.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.929.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-26 16:53:21.200710+03:00 [info] <0.929.0>@ejabberd_c2s:bind/2:481 (tls|<0.929.0>) Opened c2s session for user1@localhost/6643228522395960792019
+2024-08-26 16:53:21.210223+03:00 [info] <0.929.0> Receive presence for user1
+2024-08-26 17:05:38.122320+03:00 [info] <0.924.0> Receive presence for moses
+2024-08-26 17:05:38.129916+03:00 [info] <0.925.0> Receive presence for kim
+2024-08-26 17:05:38.133179+03:00 [info] <0.929.0> Receive presence for user1
+2024-08-26 17:46:16.861750+03:00 [info] <0.989.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-26 17:46:16.862122+03:00 [info] <0.989.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 49µs
+2024-08-26 17:46:53.125581+03:00 [info] <0.992.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-26 17:46:53.191985+03:00 [info] <0.992.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 66ms
+2024-08-26 17:59:56.258356+03:00 [info] <0.924.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.924.0>) Closing c2s session for moses@localhost/102032538352264432011955: Stream reset by peer
+2024-08-26 17:59:56.269116+03:00 [info] <0.925.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.925.0>) Closing c2s session for kim@localhost/44406730904628962011923: Stream reset by peer
+2024-08-26 17:59:56.277700+03:00 [info] <0.929.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.929.0>) Closing c2s session for user1@localhost/6643228522395960792019: Stream reset by peer
+2024-08-26 18:11:03.567224+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.1007.0>) Accepted connection [::ffff:127.0.0.1]:53880 -> [::ffff:127.0.0.1]:5222
+2024-08-26 18:11:03.568262+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.1008.0>) Accepted connection [::ffff:127.0.0.1]:53886 -> [::ffff:127.0.0.1]:5222
+2024-08-26 18:11:03.571558+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.1009.0>) Accepted connection [::ffff:127.0.0.1]:53902 -> [::ffff:127.0.0.1]:5222
+2024-08-26 18:11:03.835777+03:00 [info] <0.1008.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.1008.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-26 18:11:03.860700+03:00 [info] <0.1007.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.1007.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-26 18:11:03.885998+03:00 [info] <0.1009.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.1009.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-26 18:11:03.886824+03:00 [info] <0.1008.0>@ejabberd_c2s:bind/2:481 (tls|<0.1008.0>) Opened c2s session for kim@localhost/165814785473011370912051
+2024-08-26 18:11:03.888552+03:00 [info] <0.1007.0>@ejabberd_c2s:bind/2:481 (tls|<0.1007.0>) Opened c2s session for moses@localhost/5483043740971472354962
+2024-08-26 18:11:03.894414+03:00 [info] <0.1009.0>@ejabberd_c2s:bind/2:481 (tls|<0.1009.0>) Opened c2s session for user1@localhost/7668110201442497166994
+2024-08-26 18:11:03.903527+03:00 [info] <0.1007.0> Receive presence for moses
+2024-08-26 18:11:03.916154+03:00 [info] <0.1008.0> Receive presence for kim
+2024-08-26 18:11:03.933774+03:00 [info] <0.1009.0> Receive presence for user1
+2024-08-26 18:20:41.582241+03:00 [info] <0.1007.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.1007.0>) Closing c2s session for moses@localhost/5483043740971472354962: Stream reset by peer
+2024-08-26 18:20:41.599352+03:00 [info] <0.1008.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.1008.0>) Closing c2s session for kim@localhost/165814785473011370912051: Stream reset by peer
+2024-08-26 18:20:41.603602+03:00 [info] <0.1009.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.1009.0>) Closing c2s session for user1@localhost/7668110201442497166994: Stream reset by peer
+2024-08-27 10:07:41.014518+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.1025.0>) Accepted connection [::ffff:127.0.0.1]:35948 -> [::ffff:127.0.0.1]:5222
+2024-08-27 10:07:41.016231+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.1026.0>) Accepted connection [::ffff:127.0.0.1]:35960 -> [::ffff:127.0.0.1]:5222
+2024-08-27 10:07:41.016904+03:00 [info] <0.674.0>@ejabberd_listener:accept/7:346 (<0.1027.0>) Accepted connection [::ffff:127.0.0.1]:35962 -> [::ffff:127.0.0.1]:5222
+2024-08-27 10:07:41.585926+03:00 [info] <0.1026.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.1026.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 10:07:41.625799+03:00 [info] <0.1025.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.1025.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 10:07:41.650290+03:00 [info] <0.1027.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.1027.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 10:07:41.656339+03:00 [info] <0.1026.0>@ejabberd_c2s:bind/2:481 (tls|<0.1026.0>) Opened c2s session for kim@localhost/51884854316674875722115
+2024-08-27 10:07:41.656902+03:00 [info] <0.1027.0>@ejabberd_c2s:bind/2:481 (tls|<0.1027.0>) Opened c2s session for user1@localhost/25756458011370707772147
+2024-08-27 10:07:41.656902+03:00 [info] <0.1025.0>@ejabberd_c2s:bind/2:481 (tls|<0.1025.0>) Opened c2s session for moses@localhost/26401092173425477701090
+2024-08-27 10:07:41.687886+03:00 [info] <0.1025.0> Receive presence for moses
+2024-08-27 10:07:41.702894+03:00 [info] <0.1026.0> Receive presence for kim
+2024-08-27 10:07:41.723755+03:00 [info] <0.1027.0> Receive presence for user1
+2024-08-27 13:25:59.006786+03:00 [info] <0.411.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 13:25:59.041825+03:00 [critical] <0.411.0>@ejabberd_app:start/2:72 Failed to start ejabberd application: Invalid value of option host_config->'localhost'->sql_type: Unexpected value: psql. Did you mean pgsql? Possible values are: mssql, mysql, odbc, pgsql, sqlite
+2024-08-27 13:26:14.878326+03:00 [info] <0.411.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 13:26:15.070518+03:00 [info] <0.411.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 13:26:15.348016+03:00 [info] <0.608.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 13:26:15.529898+03:00 [error] <0.634.0>@ejabberd_listener:report_socket_error/3:554 Failed to open socket at [::]:5222 for ejabberd_c2s: address already in use
+2024-08-27 13:26:15.530402+03:00 [error] <0.633.0>@supervisor:start_children/2:398 SUPERVISOR REPORT:
+    supervisor: {local,ejabberd_listener}
+    errorContext: start_error
+    reason: eaddrinuse
+    offender: [{pid,undefined},
+               {id,{5222,{0,0,0,0,0,0,0,0},tcp}},
+               {mfargs,
+                   {ejabberd_listener,start,
+                       [{5222,{0,0,0,0,0,0,0,0},tcp},
+                        ejabberd_c2s,
+                        #{accept_interval => 0,access => c2s,backlog => 128,
+                          cafile => undefined,ciphers => undefined,
+                          dhfile => undefined,
+                          ip => {0,0,0,0,0,0,0,0},
+                          max_fsm_queue => 10000,max_stanza_size => 262144,
+                          protocol_options => undefined,send_timeout => 15000,
+                          shaper => c2s_shaper,starttls => false,
+                          starttls_required => true,supervisor => true,
+                          tls => false,tls_compression => false,
+                          tls_verify => false,transport => tcp,
+                          unix_socket => #{},use_proxy_protocol => false,
+                          zlib => false}]}},
+               {restart_type,transient},
+               {significant,false},
+               {shutdown,brutal_kill},
+               {child_type,worker}]
+
+2024-08-27 13:26:15.531685+03:00 [error] <0.607.0>@supervisor:start_children/2:398 SUPERVISOR REPORT:
+    supervisor: {local,ejabberd_sup}
+    errorContext: start_error
+    reason: {shutdown,
+                {failed_to_start_child,
+                    {5222,{0,0,0,0,0,0,0,0},tcp},
+                    eaddrinuse}}
+    offender: [{pid,undefined},
+               {id,ejabberd_listener},
+               {mfargs,{ejabberd_listener,start_link,[]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,infinity},
+               {child_type,supervisor}]
+
+2024-08-27 13:26:15.543467+03:00 [critical] <0.411.0>@ejabberd_app:start/2:68 Failed to start ejabberd application: {error,
+                                       {shutdown,
+                                        {failed_to_start_child,
+                                         ejabberd_listener,
+                                         {shutdown,
+                                          {failed_to_start_child,
+                                           {5222,{0,0,0,0,0,0,0,0},tcp},
+                                           eaddrinuse}}}}}
+2024-08-27 13:26:34.925907+03:00 [info] <0.1025.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.1025.0>) Closing c2s session for moses@localhost/26401092173425477701090: Stream reset by peer
+2024-08-27 13:26:34.934484+03:00 [info] <0.1026.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.1026.0>) Closing c2s session for kim@localhost/51884854316674875722115: Stream reset by peer
+2024-08-27 13:26:34.939465+03:00 [info] <0.1027.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.1027.0>) Closing c2s session for user1@localhost/25756458011370707772147: Stream reset by peer
+2024-08-27 13:26:48.182421+03:00 [notice] <0.61.0> SIGTERM received - shutting down
+
+2024-08-27 13:26:48.185546+03:00 [info] <0.463.0>@ejabberd_listener:stop_listener/3:478 Stop accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 13:26:48.186078+03:00 [info] <0.463.0>@ejabberd_listener:stop_listener/3:478 Stop accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 13:26:48.186521+03:00 [info] <0.463.0>@ejabberd_listener:stop_listener/3:478 Stop accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 13:26:48.186947+03:00 [info] <0.463.0>@ejabberd_listener:stop_listener/3:478 Stop accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 13:26:48.187310+03:00 [info] <0.463.0>@ejabberd_listener:stop_listener/3:478 Stop accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 13:26:48.187706+03:00 [info] <0.463.0>@ejabberd_listener:stop_listener/3:478 Stop accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 13:26:48.188183+03:00 [info] <0.463.0>@ejabberd_listener:stop_listener/3:478 Stop accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 13:26:48.199529+03:00 [info] <0.463.0> Stopping ejabberd module Presence Demo
+2024-08-27 13:26:48.220922+03:00 [info] <0.463.0>@ejabberd_app:stop/1:112 ejabberd 24.7.0 is stopped in the node nonode@nohost
+2024-08-27 13:26:52.408826+03:00 [info] <0.411.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 13:26:52.600500+03:00 [info] <0.411.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 13:26:52.959373+03:00 [info] <0.596.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 13:26:53.317270+03:00 [info] <0.595.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 13:26:53.324127+03:00 [warning] <0.595.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 13:26:53.408380+03:00 [info] <0.690.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 13:26:53.465220+03:00 [info] <0.595.0> Starting ejabberd module Presence Demo
+2024-08-27 13:26:53.519428+03:00 [info] <0.721.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 13:26:53.528512+03:00 [warning] <0.729.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 13:26:53.539884+03:00 [critical] <0.732.0>@ejabberd:exit_or_halt/2:158 Failed to start Erlang application 'p1_pgsql': no such file or directory: p1_pgsql.app. This usually means that ejabberd or Erlang was compiled/installed incorrectly.
+2024-08-27 13:29:37.199874+03:00 [info] <0.411.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 13:29:37.387984+03:00 [info] <0.411.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 13:29:37.574025+03:00 [info] <0.596.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 13:29:37.930371+03:00 [info] <0.595.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 13:29:37.934557+03:00 [warning] <0.595.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 13:29:37.995043+03:00 [info] <0.690.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 13:29:38.046811+03:00 [info] <0.595.0> Starting ejabberd module Presence Demo
+2024-08-27 13:29:38.089335+03:00 [info] <0.721.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 13:29:38.098420+03:00 [warning] <0.729.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 13:29:38.129984+03:00 [info] <0.411.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 13:29:38.153402+03:00 [warning] <0.629.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 13:29:38.183739+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 13:29:38.183883+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 13:29:38.183982+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 13:29:38.184068+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 13:29:38.185296+03:00 [info] <0.411.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.02s
+2024-08-27 13:29:38.214163+03:00 [info] <0.627.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 13:29:38.214179+03:00 [info] <0.725.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 13:29:38.214294+03:00 [info] <0.628.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 13:29:38.214365+03:00 [info] <0.626.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 13:29:38.214376+03:00 [info] <0.625.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 13:29:38.214388+03:00 [info] <0.624.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 13:29:38.214398+03:00 [info] <0.623.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 13:29:38.214408+03:00 [info] <0.622.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 13:29:38.215156+03:00 [warning] <0.627.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 13:29:38.413866+03:00 [info] <0.804.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 13:29:47.863501+03:00 [info] <0.832.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 13:29:47.863855+03:00 [info] <0.832.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 197µs
+2024-08-27 13:29:48.836765+03:00 [info] <0.835.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 13:29:48.836943+03:00 [info] <0.835.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 28µs
+2024-08-27 14:17:07.582739+03:00 [info] <0.411.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 14:17:07.846226+03:00 [info] <0.411.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 14:17:08.161240+03:00 [info] <0.596.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 14:17:08.541765+03:00 [info] <0.595.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 14:17:08.547828+03:00 [warning] <0.595.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 14:17:08.618496+03:00 [info] <0.690.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 14:17:08.670117+03:00 [info] <0.595.0> Starting ejabberd module Presence Demo
+2024-08-27 14:17:08.715428+03:00 [info] <0.721.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 14:17:08.726900+03:00 [warning] <0.729.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 14:17:08.758917+03:00 [info] <0.411.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 14:17:08.784061+03:00 [warning] <0.629.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 14:17:08.814478+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 14:17:08.814663+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 14:17:08.814764+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 14:17:08.814877+03:00 [warning] <0.629.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 14:17:08.816447+03:00 [info] <0.411.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.26s
+2024-08-27 14:17:08.848477+03:00 [info] <0.627.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 14:17:08.848646+03:00 [info] <0.628.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 14:17:08.848596+03:00 [info] <0.725.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 14:17:08.848663+03:00 [info] <0.626.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 14:17:08.848669+03:00 [info] <0.625.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 14:17:08.848690+03:00 [info] <0.624.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 14:17:08.848702+03:00 [info] <0.623.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 14:17:08.848714+03:00 [info] <0.622.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 14:17:08.849720+03:00 [warning] <0.627.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 14:17:09.053756+03:00 [info] <0.804.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 14:17:21.784719+03:00 [info] <0.622.0>@ejabberd_listener:accept/7:346 (<0.830.0>) Accepted connection [::ffff:127.0.0.1]:37966 -> [::ffff:127.0.0.1]:5222
+2024-08-27 14:17:21.806669+03:00 [info] <0.622.0>@ejabberd_listener:accept/7:346 (<0.831.0>) Accepted connection [::ffff:127.0.0.1]:37972 -> [::ffff:127.0.0.1]:5222
+2024-08-27 14:17:21.807370+03:00 [info] <0.622.0>@ejabberd_listener:accept/7:346 (<0.832.0>) Accepted connection [::ffff:127.0.0.1]:37976 -> [::ffff:127.0.0.1]:5222
+2024-08-27 14:17:29.383601+03:00 [info] <0.831.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.831.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 14:17:29.423175+03:00 [info] <0.831.0>@ejabberd_c2s:bind/2:481 (tls|<0.831.0>) Opened c2s session for kim@localhost/2021274750650019177451
+2024-08-27 14:17:29.501480+03:00 [info] <0.831.0> Receive presence for kim
+2024-08-27 14:17:33.834323+03:00 [info] <0.832.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.832.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 14:17:33.836106+03:00 [info] <0.832.0>@ejabberd_c2s:bind/2:481 (tls|<0.832.0>) Opened c2s session for user1@localhost/80525128269132161081922
+2024-08-27 14:17:33.844730+03:00 [info] <0.832.0> Receive presence for user1
+2024-08-27 14:17:38.575627+03:00 [info] <0.830.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.830.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 14:17:38.577726+03:00 [info] <0.830.0>@ejabberd_c2s:bind/2:481 (tls|<0.830.0>) Opened c2s session for moses@localhost/94467104441415742311954
+2024-08-27 14:17:38.584487+03:00 [info] <0.830.0> Receive presence for moses
+2024-08-27 14:17:49.657241+03:00 [info] <0.830.0> Receive presence for moses
+2024-08-27 14:17:49.668722+03:00 [info] <0.831.0> Receive presence for kim
+2024-08-27 14:17:49.676676+03:00 [info] <0.832.0> Receive presence for user1
+2024-08-27 14:18:21.200646+03:00 [info] <0.830.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.830.0>) Closing c2s session for moses@localhost/94467104441415742311954: Stream reset by peer
+2024-08-27 14:18:21.209234+03:00 [info] <0.831.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.831.0>) Closing c2s session for kim@localhost/2021274750650019177451: Stream reset by peer
+2024-08-27 14:18:21.212750+03:00 [info] <0.832.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.832.0>) Closing c2s session for user1@localhost/80525128269132161081922: Stream reset by peer
+2024-08-27 14:44:47.509306+03:00 [info] <0.461.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 14:44:48.135765+03:00 [info] <0.461.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 14:44:48.780271+03:00 [info] <0.650.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 14:44:50.129822+03:00 [info] <0.649.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 14:44:50.239569+03:00 [warning] <0.649.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 14:44:50.522810+03:00 [info] <0.744.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 14:44:50.714593+03:00 [info] <0.649.0> Starting ejabberd module Presence Demo
+2024-08-27 14:44:50.868287+03:00 [info] <0.775.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 14:44:50.918297+03:00 [warning] <0.783.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 14:44:51.027290+03:00 [info] <0.461.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 14:44:51.115295+03:00 [warning] <0.683.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 14:44:51.354085+03:00 [warning] <0.683.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 14:44:51.354523+03:00 [warning] <0.683.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 14:44:51.354837+03:00 [warning] <0.683.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 14:44:51.355167+03:00 [warning] <0.683.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 14:44:51.366744+03:00 [info] <0.461.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 3.96s
+2024-08-27 14:44:51.396820+03:00 [info] <0.679.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 14:44:51.396814+03:00 [info] <0.676.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 14:44:51.397202+03:00 [info] <0.678.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 14:44:51.397149+03:00 [info] <0.680.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 14:44:51.397195+03:00 [info] <0.682.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 14:44:51.397217+03:00 [info] <0.779.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 14:44:51.397258+03:00 [info] <0.681.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 14:44:51.397234+03:00 [info] <0.677.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 14:44:51.399230+03:00 [warning] <0.681.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 14:44:51.680225+03:00 [info] <0.858.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 14:45:47.801868+03:00 [info] <0.676.0>@ejabberd_listener:accept/7:346 (<0.886.0>) Accepted connection [::ffff:127.0.0.1]:48140 -> [::ffff:127.0.0.1]:5222
+2024-08-27 14:45:47.808197+03:00 [info] <0.676.0>@ejabberd_listener:accept/7:346 (<0.887.0>) Accepted connection [::ffff:127.0.0.1]:48142 -> [::ffff:127.0.0.1]:5222
+2024-08-27 14:45:47.808533+03:00 [info] <0.676.0>@ejabberd_listener:accept/7:346 (<0.888.0>) Accepted connection [::ffff:127.0.0.1]:48158 -> [::ffff:127.0.0.1]:5222
+2024-08-27 14:45:52.611600+03:00 [info] <0.888.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.888.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 14:45:52.623312+03:00 [info] <0.888.0>@ejabberd_c2s:bind/2:481 (tls|<0.888.0>) Opened c2s session for user1@localhost/161869548589238990031346
+2024-08-27 14:45:52.651696+03:00 [info] <0.888.0> Receive presence for user1
+2024-08-27 14:45:55.603277+03:00 [info] <0.887.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.887.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 14:45:55.604907+03:00 [info] <0.887.0>@ejabberd_c2s:bind/2:481 (tls|<0.887.0>) Opened c2s session for kim@localhost/75008641298534257342115
+2024-08-27 14:45:55.615654+03:00 [info] <0.887.0> Receive presence for kim
+2024-08-27 14:46:01.247727+03:00 [info] <0.886.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.886.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 14:46:01.249436+03:00 [info] <0.886.0>@ejabberd_c2s:bind/2:481 (tls|<0.886.0>) Opened c2s session for moses@localhost/71554729031166329941378
+2024-08-27 14:46:01.258920+03:00 [info] <0.886.0> Receive presence for moses
+2024-08-27 14:48:45.660847+03:00 [info] <0.886.0> Receive presence for moses
+2024-08-27 14:48:45.669729+03:00 [info] <0.887.0> Receive presence for kim
+2024-08-27 14:48:45.674942+03:00 [info] <0.888.0> Receive presence for user1
+2024-08-27 14:48:57.658323+03:00 [info] <0.886.0> Receive presence for moses
+2024-08-27 14:48:57.666122+03:00 [info] <0.887.0> Receive presence for kim
+2024-08-27 14:48:57.669464+03:00 [info] <0.888.0> Receive presence for user1
+2024-08-27 14:54:38.464400+03:00 [info] <0.921.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:54:38.464652+03:00 [info] <0.921.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 130µs
+2024-08-27 14:54:54.618115+03:00 [info] <0.925.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:54:54.618245+03:00 [info] <0.925.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 2µs
+2024-08-27 14:55:13.654311+03:00 [info] <0.928.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:55:13.654620+03:00 [info] <0.928.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 4µs
+2024-08-27 14:57:40.799682+03:00 [info] <0.933.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:57:40.799857+03:00 [info] <0.933.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 2µs
+2024-08-27 14:57:41.551946+03:00 [info] <0.936.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:57:41.552142+03:00 [info] <0.936.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 2µs
+2024-08-27 14:57:42.019974+03:00 [info] <0.939.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:57:42.020124+03:00 [info] <0.939.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 2µs
+2024-08-27 14:58:57.341242+03:00 [info] <0.943.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:58:57.341352+03:00 [info] <0.943.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 1µs
+2024-08-27 14:58:58.058215+03:00 [info] <0.946.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:58:58.058358+03:00 [info] <0.946.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 2µs
+2024-08-27 14:58:58.488830+03:00 [info] <0.949.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:58:58.488950+03:00 [info] <0.949.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 2µs
+2024-08-27 14:58:58.762774+03:00 [info] <0.952.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:58:58.762978+03:00 [info] <0.952.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 3µs
+2024-08-27 14:58:59.000085+03:00 [info] <0.955.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:58:59.000378+03:00 [info] <0.955.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 4µs
+2024-08-27 14:58:59.252012+03:00 [info] <0.958.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 14:58:59.252363+03:00 [info] <0.958.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 5µs
+2024-08-27 14:59:29.590980+03:00 [error] <0.961.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.961.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.960.0>,<0.959.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.960.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 233
+    stack_size: 28
+    reductions: 220
+  neighbours:
+
+2024-08-27 14:59:29.666308+03:00 [error] <0.960.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:51.460637+03:00 [error] <0.968.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.968.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.967.0>,<0.966.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.967.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:51.461444+03:00 [error] <0.967.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:52.269488+03:00 [error] <0.971.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.971.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.970.0>,<0.969.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.970.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:52.270247+03:00 [error] <0.970.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:52.765139+03:00 [error] <0.974.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.974.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.973.0>,<0.972.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.973.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:52.766632+03:00 [error] <0.973.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:53.025689+03:00 [error] <0.977.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.977.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.976.0>,<0.975.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.976.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:53.026841+03:00 [error] <0.976.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:53.260990+03:00 [error] <0.980.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.980.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.979.0>,<0.978.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.979.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:53.261859+03:00 [error] <0.979.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:53.527853+03:00 [error] <0.983.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.983.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.982.0>,<0.981.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.982.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:53.528777+03:00 [error] <0.982.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:03:14.345022+03:00 [info] <0.421.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 15:03:14.527684+03:00 [info] <0.421.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 15:03:14.773488+03:00 [info] <0.610.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 15:03:15.143864+03:00 [info] <0.609.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 15:03:15.151241+03:00 [warning] <0.609.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 15:03:15.245832+03:00 [info] <0.704.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 15:03:15.296513+03:00 [info] <0.609.0> Starting ejabberd module Presence Demo
+2024-08-27 15:03:15.340684+03:00 [info] <0.735.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 15:03:15.349947+03:00 [warning] <0.743.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 15:03:15.381698+03:00 [info] <0.421.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 15:03:15.406707+03:00 [warning] <0.643.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 15:03:15.435986+03:00 [warning] <0.643.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 15:03:15.436135+03:00 [warning] <0.643.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 15:03:15.436214+03:00 [warning] <0.643.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 15:03:15.436279+03:00 [warning] <0.643.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 15:03:15.437630+03:00 [info] <0.421.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.12s
+2024-08-27 15:03:15.441506+03:00 [info] <0.641.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 15:03:15.441694+03:00 [info] <0.636.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 15:03:15.441718+03:00 [info] <0.638.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 15:03:15.441869+03:00 [info] <0.640.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 15:03:15.441874+03:00 [info] <0.637.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 15:03:15.441883+03:00 [info] <0.642.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 15:03:15.442016+03:00 [info] <0.739.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 15:03:15.441967+03:00 [info] <0.639.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 15:03:15.442854+03:00 [warning] <0.641.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 15:03:15.633301+03:00 [info] <0.818.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 15:03:31.510760+03:00 [info] <0.636.0>@ejabberd_listener:accept/7:346 (<0.844.0>) Accepted connection [::ffff:127.0.0.1]:39770 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:03:31.651414+03:00 [info] <0.844.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.844.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:03:31.665530+03:00 [info] <0.844.0>@ejabberd_c2s:bind/2:481 (tls|<0.844.0>) Opened c2s session for user1@localhost/118045098744629282472146
+2024-08-27 15:03:31.692186+03:00 [info] <0.844.0> Receive presence for user1
+2024-08-27 15:03:33.126142+03:00 [info] <0.636.0>@ejabberd_listener:accept/7:346 (<0.847.0>) Accepted connection [::ffff:127.0.0.1]:39784 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:03:33.195717+03:00 [info] <0.847.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.847.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:03:33.197339+03:00 [info] <0.847.0>@ejabberd_c2s:bind/2:481 (tls|<0.847.0>) Opened c2s session for moses@localhost/111723555266059623142210
+2024-08-27 15:03:33.204809+03:00 [info] <0.847.0> Receive presence for moses
+2024-08-27 15:03:40.115571+03:00 [info] <0.421.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 15:03:40.293937+03:00 [info] <0.421.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 15:03:40.673410+03:00 [info] <0.618.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 15:03:41.068947+03:00 [info] <0.617.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 15:03:41.076485+03:00 [warning] <0.617.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 15:03:41.177621+03:00 [info] <0.712.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 15:03:41.224752+03:00 [info] <0.617.0> Starting ejabberd module Presence Demo
+2024-08-27 15:03:41.267740+03:00 [info] <0.743.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 15:03:41.277451+03:00 [warning] <0.751.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 15:03:41.309303+03:00 [info] <0.421.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 15:03:41.340688+03:00 [warning] <0.651.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 15:03:41.369762+03:00 [warning] <0.651.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 15:03:41.369917+03:00 [warning] <0.651.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 15:03:41.370023+03:00 [warning] <0.651.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 15:03:41.370140+03:00 [warning] <0.651.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 15:03:41.372053+03:00 [info] <0.421.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.29s
+2024-08-27 15:03:41.378326+03:00 [info] <0.649.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 15:03:41.378512+03:00 [info] <0.747.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 15:03:41.378498+03:00 [info] <0.650.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 15:03:41.378700+03:00 [info] <0.646.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 15:03:41.378673+03:00 [info] <0.644.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 15:03:41.378867+03:00 [info] <0.648.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 15:03:41.378688+03:00 [info] <0.645.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 15:03:41.378733+03:00 [info] <0.647.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 15:03:41.380832+03:00 [warning] <0.649.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 15:03:41.577524+03:00 [info] <0.826.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 15:03:41.902220+03:00 [info] <0.644.0>@ejabberd_listener:accept/7:346 (<0.852.0>) Accepted connection [::ffff:127.0.0.1]:57890 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:03:42.172950+03:00 [info] <0.852.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.852.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:03:42.195554+03:00 [info] <0.852.0>@ejabberd_c2s:bind/2:481 (tls|<0.852.0>) Opened c2s session for kim@localhost/1676078490549050254450
+2024-08-27 15:03:42.241036+03:00 [info] <0.852.0> Receive presence for kim
+2024-08-27 15:03:47.176230+03:00 [error] <0.857.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.857.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.856.0>,<0.855.0>,<0.828.0>,<0.827.0>,<0.826.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.821.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.856.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 236
+  neighbours:
+
+2024-08-27 15:03:47.193231+03:00 [error] <0.856.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:03:47.911067+03:00 [error] <0.860.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.860.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.859.0>,<0.858.0>,<0.828.0>,<0.827.0>,<0.826.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.821.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.859.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:03:47.911729+03:00 [error] <0.859.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:03:53.564543+03:00 [info] <0.644.0>@ejabberd_listener:accept/7:346 (<0.861.0>) Accepted connection [::ffff:127.0.0.1]:60374 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:03:53.660187+03:00 [info] <0.861.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.861.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:03:53.662066+03:00 [info] <0.861.0>@ejabberd_c2s:bind/2:481 (tls|<0.861.0>) Opened c2s session for user1@localhost/7083858821379110824578
+2024-08-27 15:03:53.670257+03:00 [info] <0.861.0> Receive presence for user1
+2024-08-27 15:04:29.338696+03:00 [info] <0.644.0>@ejabberd_listener:accept/7:346 (<0.862.0>) Accepted connection [::ffff:127.0.0.1]:59408 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:04:29.430451+03:00 [info] <0.862.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.862.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:04:29.432318+03:00 [info] <0.862.0>@ejabberd_c2s:bind/2:481 (tls|<0.862.0>) Opened c2s session for moses@localhost/9430430731153602807642
+2024-08-27 15:04:29.443383+03:00 [info] <0.862.0> Receive presence for moses
+2024-08-27 15:04:38.756335+03:00 [info] <0.428.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 15:04:38.937493+03:00 [info] <0.428.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 15:04:39.316394+03:00 [info] <0.625.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 15:04:39.618225+03:00 [info] <0.624.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 15:04:39.624108+03:00 [warning] <0.624.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 15:04:39.707844+03:00 [info] <0.719.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 15:04:39.758220+03:00 [info] <0.624.0> Starting ejabberd module Presence Demo
+2024-08-27 15:04:39.804571+03:00 [info] <0.750.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 15:04:39.813718+03:00 [warning] <0.758.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 15:04:39.844838+03:00 [info] <0.428.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 15:04:39.868120+03:00 [warning] <0.658.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 15:04:39.897233+03:00 [warning] <0.658.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 15:04:39.897432+03:00 [warning] <0.658.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 15:04:39.897570+03:00 [warning] <0.658.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 15:04:39.897666+03:00 [warning] <0.658.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 15:04:39.898912+03:00 [info] <0.428.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.17s
+2024-08-27 15:04:39.903694+03:00 [info] <0.754.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 15:04:39.903711+03:00 [info] <0.657.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 15:04:39.903692+03:00 [info] <0.656.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 15:04:39.903889+03:00 [info] <0.654.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 15:04:39.903880+03:00 [info] <0.655.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 15:04:39.903911+03:00 [info] <0.651.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 15:04:39.903894+03:00 [info] <0.653.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 15:04:39.903904+03:00 [info] <0.652.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 15:04:39.904558+03:00 [warning] <0.656.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 15:04:40.085660+03:00 [info] <0.833.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 15:04:46.647118+03:00 [error] <0.861.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.861.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.860.0>,<0.859.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.860.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 236
+  neighbours:
+
+2024-08-27 15:04:46.661160+03:00 [error] <0.860.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:04:51.698953+03:00 [info] <0.651.0>@ejabberd_listener:accept/7:346 (<0.862.0>) Accepted connection [::ffff:127.0.0.1]:48626 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:04:51.874884+03:00 [info] <0.862.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.862.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:04:51.887787+03:00 [info] <0.862.0>@ejabberd_c2s:bind/2:481 (tls|<0.862.0>) Opened c2s session for user1@localhost/11790270837485915440674
+2024-08-27 15:04:51.912610+03:00 [info] <0.862.0> Receive presence for user1
+2024-08-27 15:05:17.956423+03:00 [info] <0.651.0>@ejabberd_listener:accept/7:346 (<0.865.0>) Accepted connection [::ffff:127.0.0.1]:43424 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:05:18.053077+03:00 [info] <0.865.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.865.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:05:18.054939+03:00 [info] <0.865.0>@ejabberd_c2s:bind/2:481 (tls|<0.865.0>) Opened c2s session for moses@localhost/5261262669046040880738
+2024-08-27 15:05:18.065301+03:00 [info] <0.865.0> Receive presence for moses
+2024-08-27 15:05:29.594592+03:00 [info] <0.651.0>@ejabberd_listener:accept/7:346 (<0.866.0>) Accepted connection [::ffff:127.0.0.1]:59848 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:05:29.690602+03:00 [info] <0.866.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.866.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:05:29.692558+03:00 [info] <0.866.0>@ejabberd_c2s:bind/2:481 (tls|<0.866.0>) Opened c2s session for kim@localhost/7277969153736916767802
+2024-08-27 15:05:29.702620+03:00 [info] <0.866.0> Receive presence for kim
+2024-08-27 15:06:57.321344+03:00 [error] <0.870.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.870.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.869.0>,<0.868.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.869.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:06:57.321941+03:00 [error] <0.869.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:06:58.069892+03:00 [error] <0.873.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.873.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.872.0>,<0.871.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.872.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:06:58.070817+03:00 [error] <0.872.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:06:58.258846+03:00 [error] <0.876.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.876.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.875.0>,<0.874.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.875.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:06:58.259893+03:00 [error] <0.875.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:06:58.434288+03:00 [error] <0.879.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.879.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.878.0>,<0.877.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.878.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:06:58.436058+03:00 [error] <0.878.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:06:58.608159+03:00 [error] <0.882.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.882.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.881.0>,<0.880.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.881.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:06:58.609686+03:00 [error] <0.881.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:07:03.448845+03:00 [info] <0.885.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 15:07:03.449041+03:00 [info] <0.885.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 3µs
+2024-08-27 15:07:52.461635+03:00 [info] <0.895.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 15:07:52.461764+03:00 [info] <0.895.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 2µs
+2024-08-27 15:07:56.264394+03:00 [error] <0.898.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.898.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.897.0>,<0.896.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.897.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:07:56.265165+03:00 [error] <0.897.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:09:59.789714+03:00 [info] <0.416.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 15:09:59.978393+03:00 [info] <0.416.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 15:10:00.339412+03:00 [info] <0.605.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 15:10:00.690419+03:00 [info] <0.604.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 15:10:00.695766+03:00 [warning] <0.604.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 15:10:00.799054+03:00 [info] <0.699.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 15:10:00.847666+03:00 [info] <0.604.0> Starting ejabberd module Presence Demo
+2024-08-27 15:10:00.894216+03:00 [info] <0.730.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 15:10:00.903532+03:00 [warning] <0.738.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 15:10:00.934532+03:00 [info] <0.416.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 15:10:00.960904+03:00 [warning] <0.638.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 15:10:00.987962+03:00 [warning] <0.638.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 15:10:00.988150+03:00 [warning] <0.638.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 15:10:00.988235+03:00 [warning] <0.638.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 15:10:00.988309+03:00 [warning] <0.638.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 15:10:00.989541+03:00 [info] <0.416.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.23s
+2024-08-27 15:10:01.014865+03:00 [info] <0.636.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 15:10:01.014915+03:00 [info] <0.734.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 15:10:01.014933+03:00 [info] <0.637.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 15:10:01.015180+03:00 [info] <0.632.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 15:10:01.015068+03:00 [info] <0.635.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 15:10:01.015088+03:00 [info] <0.634.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 15:10:01.015175+03:00 [info] <0.631.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 15:10:01.015101+03:00 [info] <0.633.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 15:10:01.015808+03:00 [warning] <0.636.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 15:10:01.210560+03:00 [info] <0.813.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 15:10:06.321349+03:00 [info] <0.631.0>@ejabberd_listener:accept/7:346 (<0.839.0>) Accepted connection [::ffff:127.0.0.1]:42712 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:10:06.537955+03:00 [info] <0.839.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.839.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:10:06.549562+03:00 [info] <0.839.0>@ejabberd_c2s:bind/2:481 (tls|<0.839.0>) Opened c2s session for moses@localhost/88852516657254816031954
+2024-08-27 15:10:06.577000+03:00 [info] <0.839.0> Receive presence for moses
+2024-08-27 15:10:13.014543+03:00 [error] <0.844.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.844.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.843.0>,<0.842.0>,<0.815.0>,<0.814.0>,<0.813.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.808.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.843.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 236
+  neighbours:
+
+2024-08-27 15:10:13.029174+03:00 [error] <0.843.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:10:31.104988+03:00 [info] <0.631.0>@ejabberd_listener:accept/7:346 (<0.845.0>) Accepted connection [::ffff:127.0.0.1]:53680 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:10:31.230534+03:00 [info] <0.845.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.845.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:10:31.232194+03:00 [info] <0.845.0>@ejabberd_c2s:bind/2:481 (tls|<0.845.0>) Opened c2s session for user1@localhost/48992451263598679342050
+2024-08-27 15:10:31.239239+03:00 [info] <0.845.0> Receive presence for user1
+2024-08-27 15:10:41.544957+03:00 [info] <0.631.0>@ejabberd_listener:accept/7:346 (<0.846.0>) Accepted connection [::ffff:127.0.0.1]:33808 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:10:41.733059+03:00 [info] <0.846.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.846.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:10:41.735981+03:00 [info] <0.846.0>@ejabberd_c2s:bind/2:481 (tls|<0.846.0>) Opened c2s session for kim@localhost/156952218423260880512114
+2024-08-27 15:10:41.746263+03:00 [info] <0.846.0> Receive presence for kim
+2024-08-27 15:15:19.509677+03:00 [error] <0.858.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.858.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.857.0>,<0.856.0>,<0.815.0>,<0.814.0>,<0.813.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.808.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.857.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:15:19.510284+03:00 [error] <0.857.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:15:20.566132+03:00 [error] <0.861.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.861.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.860.0>,<0.859.0>,<0.815.0>,<0.814.0>,<0.813.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.808.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.860.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:15:20.566730+03:00 [error] <0.860.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:15:30.754309+03:00 [info] <0.428.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 15:15:30.943463+03:00 [info] <0.428.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 15:15:31.236802+03:00 [info] <0.617.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 15:15:31.553060+03:00 [info] <0.616.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 15:15:31.559015+03:00 [warning] <0.616.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 15:15:31.649066+03:00 [info] <0.711.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 15:15:31.698120+03:00 [info] <0.616.0> Starting ejabberd module Presence Demo
+2024-08-27 15:15:31.744344+03:00 [info] <0.742.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 15:15:31.754482+03:00 [warning] <0.750.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 15:15:31.783613+03:00 [info] <0.428.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 15:15:31.811854+03:00 [warning] <0.650.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 15:15:31.840378+03:00 [warning] <0.650.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 15:15:31.840528+03:00 [warning] <0.650.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 15:15:31.840629+03:00 [warning] <0.650.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 15:15:31.840709+03:00 [warning] <0.650.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 15:15:31.842067+03:00 [info] <0.428.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.12s
+2024-08-27 15:15:31.846586+03:00 [info] <0.648.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 15:15:31.846594+03:00 [info] <0.649.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 15:15:31.846760+03:00 [info] <0.647.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 15:15:31.846856+03:00 [info] <0.646.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 15:15:31.846737+03:00 [info] <0.746.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 15:15:31.846877+03:00 [info] <0.645.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 15:15:31.846888+03:00 [info] <0.644.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 15:15:31.846987+03:00 [info] <0.643.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 15:15:31.847671+03:00 [warning] <0.648.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 15:15:32.034621+03:00 [info] <0.825.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 15:15:39.810564+03:00 [info] <0.643.0>@ejabberd_listener:accept/7:346 (<0.851.0>) Accepted connection [::ffff:127.0.0.1]:53630 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:15:39.955262+03:00 [info] <0.851.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.851.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:15:39.969073+03:00 [info] <0.851.0>@ejabberd_c2s:bind/2:481 (tls|<0.851.0>) Opened c2s session for kim@localhost/112049720304141978762018
+2024-08-27 15:15:39.994710+03:00 [info] <0.851.0> Receive presence for kim
+2024-08-27 15:15:40.384388+03:00 [info] <0.643.0>@ejabberd_listener:accept/7:346 (<0.854.0>) Accepted connection [::ffff:127.0.0.1]:53634 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:15:40.483656+03:00 [info] <0.854.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.854.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:15:40.485500+03:00 [info] <0.854.0>@ejabberd_c2s:bind/2:481 (tls|<0.854.0>) Opened c2s session for moses@localhost/62053962309608501322082
+2024-08-27 15:15:40.493112+03:00 [info] <0.854.0> Receive presence for moses
+2024-08-27 15:15:40.750684+03:00 [info] <0.643.0>@ejabberd_listener:accept/7:346 (<0.855.0>) Accepted connection [::ffff:127.0.0.1]:53642 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:15:40.809078+03:00 [info] <0.855.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.855.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:15:40.811491+03:00 [info] <0.855.0>@ejabberd_c2s:bind/2:481 (tls|<0.855.0>) Opened c2s session for user1@localhost/149321498400261911922146
+2024-08-27 15:15:40.821814+03:00 [info] <0.855.0> Receive presence for user1
+2024-08-27 15:15:43.769237+03:00 [info] <0.858.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:15:43.775912+03:00 [info] <0.858.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 6ms
+2024-08-27 15:17:50.446140+03:00 [info] <0.927.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:17:50.446432+03:00 [info] <0.927.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 156µs
+2024-08-27 15:19:07.405095+03:00 [info] <0.421.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 15:19:07.582601+03:00 [info] <0.421.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 15:19:08.052708+03:00 [info] <0.610.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 15:19:08.806971+03:00 [info] <0.609.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 15:19:08.811393+03:00 [warning] <0.609.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 15:19:08.870499+03:00 [info] <0.704.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 15:19:08.920825+03:00 [info] <0.609.0> Starting ejabberd module Presence Demo
+2024-08-27 15:19:08.963880+03:00 [info] <0.735.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 15:19:08.972891+03:00 [warning] <0.743.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 15:19:09.003972+03:00 [info] <0.421.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 15:19:09.031300+03:00 [warning] <0.643.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 15:19:09.060972+03:00 [warning] <0.643.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 15:19:09.061108+03:00 [warning] <0.643.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 15:19:09.061179+03:00 [warning] <0.643.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 15:19:09.061249+03:00 [warning] <0.643.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 15:19:09.062581+03:00 [info] <0.421.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.69s
+2024-08-27 15:19:09.066744+03:00 [info] <0.739.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 15:19:09.066744+03:00 [info] <0.641.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 15:19:09.066882+03:00 [info] <0.642.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 15:19:09.066914+03:00 [info] <0.640.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 15:19:09.066949+03:00 [info] <0.639.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 15:19:09.067072+03:00 [info] <0.637.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 15:19:09.067066+03:00 [info] <0.638.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 15:19:09.067080+03:00 [info] <0.636.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 15:19:09.067776+03:00 [warning] <0.641.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 15:19:09.274488+03:00 [info] <0.818.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 15:19:09.919756+03:00 [info] <0.636.0>@ejabberd_listener:accept/7:346 (<0.844.0>) Accepted connection [::ffff:127.0.0.1]:55684 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:19:10.241803+03:00 [info] <0.844.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.844.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:19:10.262005+03:00 [info] <0.844.0>@ejabberd_c2s:bind/2:481 (tls|<0.844.0>) Opened c2s session for moses@localhost/13360550563552731843195
+2024-08-27 15:19:10.295651+03:00 [info] <0.844.0> Receive presence for moses
+2024-08-27 15:19:10.847472+03:00 [info] <0.636.0>@ejabberd_listener:accept/7:346 (<0.847.0>) Accepted connection [::ffff:127.0.0.1]:55690 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:19:10.995430+03:00 [info] <0.847.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.847.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:19:10.998013+03:00 [info] <0.847.0>@ejabberd_c2s:bind/2:481 (tls|<0.847.0>) Opened c2s session for kim@localhost/135188991932515245492082
+2024-08-27 15:19:11.006281+03:00 [info] <0.847.0> Receive presence for kim
+2024-08-27 15:19:11.556570+03:00 [info] <0.636.0>@ejabberd_listener:accept/7:346 (<0.848.0>) Accepted connection [::ffff:127.0.0.1]:55700 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:19:11.660176+03:00 [info] <0.848.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.848.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:19:11.662397+03:00 [info] <0.848.0>@ejabberd_c2s:bind/2:481 (tls|<0.848.0>) Opened c2s session for user1@localhost/170859340990896124812146
+2024-08-27 15:19:11.670621+03:00 [info] <0.848.0> Receive presence for user1
+2024-08-27 15:19:15.706695+03:00 [info] <0.851.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:15.712025+03:00 [info] <0.851.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 5ms
+2024-08-27 15:19:17.387000+03:00 [info] <0.854.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:17.387378+03:00 [info] <0.854.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 236µs
+2024-08-27 15:19:28.395878+03:00 [info] <0.857.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:28.396366+03:00 [info] <0.857.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 321µs
+2024-08-27 15:19:28.988214+03:00 [info] <0.860.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:28.988563+03:00 [info] <0.860.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 217µs
+2024-08-27 15:19:29.547547+03:00 [info] <0.863.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:29.548189+03:00 [info] <0.863.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 431µs
+2024-08-27 15:19:40.549446+03:00 [info] <0.866.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:40.549814+03:00 [info] <0.866.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 242µs
+2024-08-27 15:19:40.958189+03:00 [info] <0.869.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:40.958523+03:00 [info] <0.869.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 206µs
+2024-08-27 15:19:41.437576+03:00 [info] <0.872.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:41.438279+03:00 [info] <0.872.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 445µs
+2024-08-27 15:19:41.661169+03:00 [info] <0.875.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:41.661635+03:00 [info] <0.875.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 288µs
+2024-08-27 15:19:41.867686+03:00 [info] <0.878.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:41.868095+03:00 [info] <0.878.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 219µs
+2024-08-27 15:19:42.091466+03:00 [info] <0.881.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:42.092072+03:00 [info] <0.881.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 322µs
+2024-08-27 15:19:42.294599+03:00 [info] <0.884.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:42.294959+03:00 [info] <0.884.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 199µs
+2024-08-27 15:19:42.503865+03:00 [info] <0.887.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:42.504169+03:00 [info] <0.887.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 177µs
+2024-08-27 15:19:42.702992+03:00 [info] <0.890.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:42.703373+03:00 [info] <0.890.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 183µs
+2024-08-27 15:19:42.921067+03:00 [info] <0.893.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:42.921370+03:00 [info] <0.893.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 156µs
+2024-08-27 15:19:43.169091+03:00 [info] <0.896.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:43.169451+03:00 [info] <0.896.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 174µs
+2024-08-27 15:19:43.386903+03:00 [info] <0.899.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:43.387469+03:00 [info] <0.899.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 334µs
+2024-08-27 15:19:43.612618+03:00 [info] <0.902.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:43.613257+03:00 [info] <0.902.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 391µs
+2024-08-27 15:19:43.830972+03:00 [info] <0.905.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:43.831724+03:00 [info] <0.905.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 439µs
+2024-08-27 15:19:47.961159+03:00 [info] <0.908.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 15:19:47.961324+03:00 [info] <0.908.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 3µs
+2024-08-27 15:19:50.748179+03:00 [info] <0.911.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:19:50.748593+03:00 [info] <0.911.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 254µs
+2024-08-27 15:21:46.013452+03:00 [info] <0.915.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:21:46.013725+03:00 [info] <0.915.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 144µs
+2024-08-27 15:21:46.559885+03:00 [info] <0.918.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:21:46.560472+03:00 [info] <0.918.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 305µs
+2024-08-27 15:22:25.875753+03:00 [info] <0.928.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:22:25.876237+03:00 [info] <0.928.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 284µs
+2024-08-27 15:24:12.335391+03:00 [info] <0.844.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.844.0>) Closing c2s session for moses@localhost/13360550563552731843195: Stream reset by peer
+2024-08-27 15:24:12.343347+03:00 [info] <0.847.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.847.0>) Closing c2s session for kim@localhost/135188991932515245492082: Stream reset by peer
+2024-08-27 15:24:12.346772+03:00 [info] <0.848.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.848.0>) Closing c2s session for user1@localhost/170859340990896124812146: Stream reset by peer
+2024-08-27 15:24:14.079166+03:00 [error] <0.1009.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1009.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1008.0>,<0.1007.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1008.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 233
+    stack_size: 28
+    reductions: 220
+  neighbours:
+
+2024-08-27 15:24:14.098039+03:00 [error] <0.1008.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:14.817665+03:00 [error] <0.1012.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1012.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1011.0>,<0.1010.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1011.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:14.818511+03:00 [error] <0.1011.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:15.228780+03:00 [error] <0.1015.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1015.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1014.0>,<0.1013.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1014.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:15.229641+03:00 [error] <0.1014.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:15.443918+03:00 [error] <0.1018.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1018.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1017.0>,<0.1016.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1017.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:15.444621+03:00 [error] <0.1017.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:15.629430+03:00 [error] <0.1021.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1021.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1020.0>,<0.1019.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1020.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:15.630365+03:00 [error] <0.1020.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:16.197488+03:00 [error] <0.1024.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1024.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1023.0>,<0.1022.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1023.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:16.199210+03:00 [error] <0.1023.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:16.419779+03:00 [error] <0.1027.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1027.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1026.0>,<0.1025.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1026.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:16.421138+03:00 [error] <0.1026.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:40.467347+03:00 [info] <0.421.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 15:24:40.661748+03:00 [info] <0.421.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 15:24:41.200202+03:00 [info] <0.613.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 15:24:42.003905+03:00 [info] <0.612.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 15:24:42.010520+03:00 [warning] <0.612.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 15:24:42.091870+03:00 [info] <0.707.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 15:24:42.141265+03:00 [info] <0.612.0> Starting ejabberd module Presence Demo
+2024-08-27 15:24:42.189962+03:00 [info] <0.738.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 15:24:42.198821+03:00 [warning] <0.746.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 15:24:42.234388+03:00 [info] <0.421.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 15:24:42.260222+03:00 [warning] <0.646.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 15:24:42.289409+03:00 [warning] <0.646.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 15:24:42.289572+03:00 [warning] <0.646.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 15:24:42.289668+03:00 [warning] <0.646.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 15:24:42.289775+03:00 [warning] <0.646.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 15:24:42.291079+03:00 [info] <0.421.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.85s
+2024-08-27 15:24:42.295043+03:00 [info] <0.644.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 15:24:42.295109+03:00 [info] <0.643.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 15:24:42.295111+03:00 [info] <0.645.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 15:24:42.295229+03:00 [info] <0.642.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 15:24:42.295249+03:00 [info] <0.640.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 15:24:42.295257+03:00 [info] <0.639.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 15:24:42.295240+03:00 [info] <0.641.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 15:24:42.295073+03:00 [info] <0.742.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 15:24:42.295955+03:00 [warning] <0.644.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 15:24:42.481300+03:00 [info] <0.821.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 15:24:47.719866+03:00 [error] <0.849.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.849.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.848.0>,<0.847.0>,<0.823.0>,<0.822.0>,<0.821.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.819.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.848.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 236
+  neighbours:
+
+2024-08-27 15:24:47.734509+03:00 [error] <0.848.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:48.291568+03:00 [error] <0.852.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.852.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.851.0>,<0.850.0>,<0.823.0>,<0.822.0>,<0.821.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.819.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.851.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:48.292611+03:00 [error] <0.851.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:48.607231+03:00 [error] <0.855.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.855.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.854.0>,<0.853.0>,<0.823.0>,<0.822.0>,<0.821.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.819.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.854.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:48.607878+03:00 [error] <0.854.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:48.866327+03:00 [error] <0.858.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.858.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.857.0>,<0.856.0>,<0.823.0>,<0.822.0>,<0.821.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.819.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.857.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:48.868016+03:00 [error] <0.857.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:49.106422+03:00 [error] <0.861.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.861.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.860.0>,<0.859.0>,<0.823.0>,<0.822.0>,<0.821.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.819.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.860.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:49.107817+03:00 [error] <0.860.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:51.390154+03:00 [info] <0.864.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.register_user
+2024-08-27 15:24:51.390312+03:00 [info] <0.864.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 2µs
+2024-08-27 15:29:23.639799+03:00 [info] <0.430.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 15:29:23.840927+03:00 [info] <0.430.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 15:29:24.234693+03:00 [info] <0.615.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 15:29:25.004560+03:00 [info] <0.614.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 15:29:25.007571+03:00 [warning] <0.614.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 15:29:25.067131+03:00 [info] <0.709.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 15:29:25.116651+03:00 [info] <0.614.0> Starting ejabberd module Presence Demo
+2024-08-27 15:29:25.164275+03:00 [info] <0.740.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 15:29:25.171575+03:00 [warning] <0.748.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 15:29:25.203430+03:00 [info] <0.430.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 15:29:25.231616+03:00 [warning] <0.648.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 15:29:25.264289+03:00 [warning] <0.648.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 15:29:25.264523+03:00 [warning] <0.648.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 15:29:25.264634+03:00 [warning] <0.648.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 15:29:25.264750+03:00 [warning] <0.648.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 15:29:25.266278+03:00 [info] <0.430.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.66s
+2024-08-27 15:29:25.271090+03:00 [info] <0.647.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 15:29:25.271142+03:00 [info] <0.645.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 15:29:25.271081+03:00 [info] <0.646.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 15:29:25.271357+03:00 [info] <0.641.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 15:29:25.271320+03:00 [info] <0.644.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 15:29:25.271338+03:00 [info] <0.643.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 15:29:25.271350+03:00 [info] <0.642.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 15:29:25.271083+03:00 [info] <0.744.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 15:29:25.272514+03:00 [warning] <0.646.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 15:29:25.457613+03:00 [info] <0.823.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 15:29:34.908166+03:00 [info] <0.851.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:29:34.908273+03:00 [info] <0.851.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 0µs
+2024-08-27 15:29:50.371993+03:00 [info] <0.854.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:29:50.372157+03:00 [info] <0.854.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 1µs
+2024-08-27 15:29:51.036955+03:00 [info] <0.857.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:29:51.037165+03:00 [info] <0.857.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 1µs
+2024-08-27 15:29:58.272670+03:00 [info] <0.931.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:29:58.272819+03:00 [info] <0.931.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 0µs
+2024-08-27 15:31:06.584912+03:00 [info] <0.934.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:31:06.585068+03:00 [info] <0.934.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 0µs
+2024-08-27 15:31:18.340990+03:00 [info] <0.1001.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:31:18.341133+03:00 [info] <0.1001.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 0µs
+2024-08-27 15:31:30.597798+03:00 [info] <0.1005.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:31:30.597921+03:00 [info] <0.1005.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 0µs
+2024-08-27 15:31:32.805058+03:00 [info] <0.1008.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:31:32.805184+03:00 [info] <0.1008.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 0µs
+2024-08-27 15:31:33.335934+03:00 [info] <0.1011.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:31:33.336160+03:00 [info] <0.1011.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 1µs
+2024-08-27 15:32:07.273969+03:00 [info] <0.1014.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:32:07.274112+03:00 [info] <0.1014.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 0µs
+2024-08-27 15:32:37.869098+03:00 [error] <0.1162.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1162.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1161.0>,<0.1160.0>,<0.825.0>,<0.824.0>,<0.823.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.818.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1161.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 233
+    stack_size: 28
+    reductions: 220
+  neighbours:
+
+2024-08-27 15:32:37.880882+03:00 [error] <0.1161.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:32:38.858422+03:00 [error] <0.1165.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1165.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1164.0>,<0.1163.0>,<0.825.0>,<0.824.0>,<0.823.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.818.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1164.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:32:38.859172+03:00 [error] <0.1164.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:35:10.989471+03:00 [error] <0.1169.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1169.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1168.0>,<0.1167.0>,<0.825.0>,<0.824.0>,<0.823.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.818.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1168.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:35:10.990148+03:00 [error] <0.1168.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:35:11.756107+03:00 [error] <0.1172.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1172.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1171.0>,<0.1170.0>,<0.825.0>,<0.824.0>,<0.823.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.818.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1171.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:35:11.757186+03:00 [error] <0.1171.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:35:12.059653+03:00 [error] <0.1175.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1175.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1174.0>,<0.1173.0>,<0.825.0>,<0.824.0>,<0.823.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.818.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1174.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:35:12.060649+03:00 [error] <0.1174.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:35:17.170006+03:00 [info] <0.430.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-08-27 15:35:17.346881+03:00 [info] <0.430.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-08-27 15:35:17.745724+03:00 [info] <0.615.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-08-27 15:35:18.528159+03:00 [info] <0.614.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-08-27 15:35:18.534590+03:00 [warning] <0.614.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-08-27 15:35:18.626781+03:00 [info] <0.709.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-08-27 15:35:18.673264+03:00 [info] <0.614.0> Starting ejabberd module Presence Demo
+2024-08-27 15:35:18.716716+03:00 [info] <0.740.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-08-27 15:35:18.726195+03:00 [warning] <0.748.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-08-27 15:35:18.756158+03:00 [info] <0.430.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-08-27 15:35:18.779969+03:00 [warning] <0.648.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-08-27 15:35:18.807411+03:00 [warning] <0.648.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-08-27 15:35:18.807552+03:00 [warning] <0.648.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-08-27 15:35:18.807623+03:00 [warning] <0.648.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-08-27 15:35:18.807691+03:00 [warning] <0.648.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-08-27 15:35:18.808810+03:00 [info] <0.430.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.68s
+2024-08-27 15:35:18.813515+03:00 [info] <0.744.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-08-27 15:35:18.813510+03:00 [info] <0.646.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-08-27 15:35:18.813718+03:00 [info] <0.647.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-08-27 15:35:18.813733+03:00 [info] <0.645.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-08-27 15:35:18.813740+03:00 [info] <0.644.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-08-27 15:35:18.813751+03:00 [info] <0.643.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-08-27 15:35:18.813770+03:00 [info] <0.642.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-08-27 15:35:18.813779+03:00 [info] <0.641.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-08-27 15:35:18.814965+03:00 [warning] <0.646.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-08-27 15:35:18.991785+03:00 [info] <0.823.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-08-27 15:35:21.958659+03:00 [info] <0.851.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:35:21.958862+03:00 [info] <0.851.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 36µs
+2024-08-27 15:37:11.110629+03:00 [info] <0.854.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:37:11.110926+03:00 [info] <0.854.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 43µs
+2024-08-27 15:37:11.709995+03:00 [info] <0.857.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:37:11.710228+03:00 [info] <0.857.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 41µs
+2024-08-27 15:37:11.987259+03:00 [info] <0.860.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:37:11.987573+03:00 [info] <0.860.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 53µs
+2024-08-27 15:37:12.278821+03:00 [info] <0.863.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:37:12.279048+03:00 [info] <0.863.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 39µs
+2024-08-27 15:37:18.944514+03:00 [info] <0.641.0>@ejabberd_listener:accept/7:346 (<0.865.0>) Accepted connection [::ffff:127.0.0.1]:35998 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:37:18.950532+03:00 [info] <0.641.0>@ejabberd_listener:accept/7:346 (<0.866.0>) Accepted connection [::ffff:127.0.0.1]:36000 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:37:18.950797+03:00 [info] <0.641.0>@ejabberd_listener:accept/7:346 (<0.867.0>) Accepted connection [::ffff:127.0.0.1]:36006 -> [::ffff:127.0.0.1]:5222
+2024-08-27 15:37:23.331947+03:00 [info] <0.866.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.866.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:37:23.345330+03:00 [info] <0.866.0>@ejabberd_c2s:bind/2:481 (tls|<0.866.0>) Opened c2s session for kim@localhost/15596851961808995767483
+2024-08-27 15:37:23.374323+03:00 [info] <0.866.0> Receive presence for kim
+2024-08-27 15:37:26.587413+03:00 [info] <0.867.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.867.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:37:26.589352+03:00 [info] <0.867.0>@ejabberd_c2s:bind/2:481 (tls|<0.867.0>) Opened c2s session for user1@localhost/99967974487080924531986
+2024-08-27 15:37:26.598411+03:00 [info] <0.867.0> Receive presence for user1
+2024-08-27 15:37:29.225712+03:00 [info] <0.865.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.865.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 15:37:29.230583+03:00 [info] <0.865.0>@ejabberd_c2s:bind/2:481 (tls|<0.865.0>) Opened c2s session for moses@localhost/18258695780683110746515
+2024-08-27 15:37:29.241938+03:00 [info] <0.865.0> Receive presence for moses
+2024-08-27 15:37:30.943357+03:00 [info] <0.872.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:37:30.943555+03:00 [info] <0.872.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 75µs
+2024-08-27 15:51:49.767733+03:00 [info] <0.893.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:51:49.768072+03:00 [info] <0.893.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 180µs
+2024-08-27 15:52:15.658956+03:00 [info] <0.865.0> Receive presence for moses
+2024-08-27 15:52:15.667674+03:00 [info] <0.866.0> Receive presence for kim
+2024-08-27 15:52:15.670420+03:00 [info] <0.867.0> Receive presence for user1
+2024-08-27 15:52:29.551502+03:00 [info] <0.896.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:52:29.551749+03:00 [info] <0.896.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 87µs
+2024-08-27 15:52:40.573737+03:00 [info] <0.865.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.865.0>) Closing c2s session for moses@localhost/18258695780683110746515: Stream reset by peer
+2024-08-27 15:52:40.582671+03:00 [info] <0.866.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.866.0>) Closing c2s session for kim@localhost/15596851961808995767483: Stream reset by peer
+2024-08-27 15:52:40.586640+03:00 [info] <0.867.0>@ejabberd_c2s:process_terminated/2:317 (tls|<0.867.0>) Closing c2s session for user1@localhost/99967974487080924531986: Stream reset by peer
+2024-08-27 15:52:41.985066+03:00 [info] <0.899.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.Server.get_presence
+2024-08-27 15:52:41.985236+03:00 [info] <0.899.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 32µs
+2024-08-27 16:02:17.414663+03:00 [info] <0.641.0>@ejabberd_listener:accept/7:346 (<0.912.0>) Accepted connection [::ffff:127.0.0.1]:46912 -> [::ffff:127.0.0.1]:5222
+2024-08-27 16:02:17.415388+03:00 [info] <0.641.0>@ejabberd_listener:accept/7:346 (<0.913.0>) Accepted connection [::ffff:127.0.0.1]:46924 -> [::ffff:127.0.0.1]:5222
+2024-08-27 16:02:17.415778+03:00 [info] <0.641.0>@ejabberd_listener:accept/7:346 (<0.914.0>) Accepted connection [::ffff:127.0.0.1]:46928 -> [::ffff:127.0.0.1]:5222
+2024-08-27 16:02:22.362801+03:00 [info] <0.914.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.914.0>) Accepted c2s SCRAM-SHA-512 authentication for user1@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 16:02:22.364491+03:00 [info] <0.914.0>@ejabberd_c2s:bind/2:481 (tls|<0.914.0>) Opened c2s session for user1@localhost/8173268296967852218579
+2024-08-27 16:02:22.373346+03:00 [info] <0.914.0> Receive presence for user1
+2024-08-27 16:02:26.633786+03:00 [info] <0.913.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.913.0>) Accepted c2s SCRAM-SHA-512 authentication for kim@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 16:02:26.638348+03:00 [info] <0.913.0>@ejabberd_c2s:bind/2:481 (tls|<0.913.0>) Opened c2s session for kim@localhost/13442264760968085419611
+2024-08-27 16:02:26.647334+03:00 [info] <0.913.0> Receive presence for kim
+2024-08-27 16:02:34.010746+03:00 [warning] <0.912.0>@ejabberd_c2s:process_auth_result/3:302 (tls|<0.912.0>) Failed c2s SCRAM-SHA-512 authentication for moses@localhost from ::ffff:127.0.0.1: Invalid username or password
+2024-08-27 16:02:34.067835+03:00 [warning] <0.912.0>@ejabberd_c2s:process_auth_result/3:302 (tls|<0.912.0>) Failed c2s SCRAM-SHA-512 authentication for moses@localhost from ::ffff:127.0.0.1: Invalid username or password
+2024-08-27 16:02:34.085309+03:00 [warning] <0.912.0>@ejabberd_c2s:process_auth_result/3:302 (tls|<0.912.0>) Failed c2s SCRAM-SHA-256 authentication for moses@localhost from ::ffff:127.0.0.1: Invalid username or password
+2024-08-27 16:02:34.102476+03:00 [warning] <0.912.0>@ejabberd_c2s:process_auth_result/3:302 (tls|<0.912.0>) Failed c2s SCRAM-SHA-256 authentication for moses@localhost from ::ffff:127.0.0.1: Invalid username or password
+2024-08-27 16:02:34.118664+03:00 [warning] <0.912.0>@ejabberd_c2s:process_auth_result/3:302 (tls|<0.912.0>) Failed c2s SCRAM-SHA-1 authentication for moses@localhost from ::ffff:127.0.0.1: Invalid username or password
+2024-08-27 16:02:34.136145+03:00 [warning] <0.912.0>@ejabberd_c2s:process_auth_result/3:302 (tls|<0.912.0>) Failed c2s SCRAM-SHA-1 authentication for moses@localhost from ::ffff:127.0.0.1: Invalid username or password
+2024-08-27 16:02:36.422554+03:00 [info] <0.641.0>@ejabberd_listener:accept/7:346 (<0.916.0>) Accepted connection [::ffff:127.0.0.1]:38784 -> [::ffff:127.0.0.1]:5222
+2024-08-27 16:02:38.651815+03:00 [info] <0.916.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.916.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-08-27 16:02:38.653612+03:00 [info] <0.916.0>@ejabberd_c2s:bind/2:481 (tls|<0.916.0>) Opened c2s session for moses@localhost/8948291064499221430675
+2024-08-27 16:02:38.660701+03:00 [info] <0.916.0> Receive presence for moses

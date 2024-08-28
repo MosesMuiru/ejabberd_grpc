@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package RegisterUsers;
+
+
+// register a user will have the following
+
+message RegisterRequest{
+
+
+	string username = 1;
+	string host = 2;
+	string password = 3;
+}
+
+message RegisterResponse{
+	string message = 1;
+	string user_details = 2; // will have username@host
+}
+
+// proto for geting the presence of a user
+
+message GetPresenceRequest{
+
+	string username = 1;
+	string host = 2;
+}
+
+message GetPresenceResponse{
+
+	string jid = 1;
+	string show = 2;
+	string status = 3;
+}
+
+service Register{
+
+	rpc RegisterUser (RegisterRequest) returns (RegisterResponse) {}
+	rpc GetPresence (GetPresenceRequest) returns (GetPresenceResponse) {}
+}
+
+

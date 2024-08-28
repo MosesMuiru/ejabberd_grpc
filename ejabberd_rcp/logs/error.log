@@ -1,0 +1,1027 @@
+2024-08-26 15:44:13.355167+03:00 [critical] <0.13456.0>@ejabberd_app:start/2:72 Failed to start ejabberd application: Failed to read YAML file '/home/sparks/Desktop/grpc/ejabberd_rcp/conf/ejabberd.yml': no such file or directory
+2024-08-26 15:45:57.854874+03:00 [critical] <0.400.0>@ejabberd_app:start/2:72 Failed to start ejabberd application: Invalid value of option ca_file: Failed to read PEM file '/home/sparks/Desktop/grpc/ejabberd_rcp/config/cacert.pem': no such file or directory
+2024-08-27 13:25:59.041825+03:00 [critical] <0.411.0>@ejabberd_app:start/2:72 Failed to start ejabberd application: Invalid value of option host_config->'localhost'->sql_type: Unexpected value: psql. Did you mean pgsql? Possible values are: mssql, mysql, odbc, pgsql, sqlite
+2024-08-27 13:26:15.529898+03:00 [error] <0.634.0>@ejabberd_listener:report_socket_error/3:554 Failed to open socket at [::]:5222 for ejabberd_c2s: address already in use
+2024-08-27 13:26:15.530402+03:00 [error] <0.633.0>@supervisor:start_children/2:398 SUPERVISOR REPORT:
+    supervisor: {local,ejabberd_listener}
+    errorContext: start_error
+    reason: eaddrinuse
+    offender: [{pid,undefined},
+               {id,{5222,{0,0,0,0,0,0,0,0},tcp}},
+               {mfargs,
+                   {ejabberd_listener,start,
+                       [{5222,{0,0,0,0,0,0,0,0},tcp},
+                        ejabberd_c2s,
+                        #{accept_interval => 0,access => c2s,backlog => 128,
+                          cafile => undefined,ciphers => undefined,
+                          dhfile => undefined,
+                          ip => {0,0,0,0,0,0,0,0},
+                          max_fsm_queue => 10000,max_stanza_size => 262144,
+                          protocol_options => undefined,send_timeout => 15000,
+                          shaper => c2s_shaper,starttls => false,
+                          starttls_required => true,supervisor => true,
+                          tls => false,tls_compression => false,
+                          tls_verify => false,transport => tcp,
+                          unix_socket => #{},use_proxy_protocol => false,
+                          zlib => false}]}},
+               {restart_type,transient},
+               {significant,false},
+               {shutdown,brutal_kill},
+               {child_type,worker}]
+
+2024-08-27 13:26:15.531685+03:00 [error] <0.607.0>@supervisor:start_children/2:398 SUPERVISOR REPORT:
+    supervisor: {local,ejabberd_sup}
+    errorContext: start_error
+    reason: {shutdown,
+                {failed_to_start_child,
+                    {5222,{0,0,0,0,0,0,0,0},tcp},
+                    eaddrinuse}}
+    offender: [{pid,undefined},
+               {id,ejabberd_listener},
+               {mfargs,{ejabberd_listener,start_link,[]}},
+               {restart_type,permanent},
+               {significant,false},
+               {shutdown,infinity},
+               {child_type,supervisor}]
+
+2024-08-27 13:26:15.543467+03:00 [critical] <0.411.0>@ejabberd_app:start/2:68 Failed to start ejabberd application: {error,
+                                       {shutdown,
+                                        {failed_to_start_child,
+                                         ejabberd_listener,
+                                         {shutdown,
+                                          {failed_to_start_child,
+                                           {5222,{0,0,0,0,0,0,0,0},tcp},
+                                           eaddrinuse}}}}}
+2024-08-27 13:26:53.539884+03:00 [critical] <0.732.0>@ejabberd:exit_or_halt/2:158 Failed to start Erlang application 'p1_pgsql': no such file or directory: p1_pgsql.app. This usually means that ejabberd or Erlang was compiled/installed incorrectly.
+2024-08-27 14:59:29.590980+03:00 [error] <0.961.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.961.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.960.0>,<0.959.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.960.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 233
+    stack_size: 28
+    reductions: 220
+  neighbours:
+
+2024-08-27 14:59:29.666308+03:00 [error] <0.960.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:51.460637+03:00 [error] <0.968.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.968.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.967.0>,<0.966.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.967.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:51.461444+03:00 [error] <0.967.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:52.269488+03:00 [error] <0.971.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.971.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.970.0>,<0.969.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.970.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:52.270247+03:00 [error] <0.970.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:52.765139+03:00 [error] <0.974.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.974.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.973.0>,<0.972.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.973.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:52.766632+03:00 [error] <0.973.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:53.025689+03:00 [error] <0.977.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.977.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.976.0>,<0.975.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.976.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:53.026841+03:00 [error] <0.976.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:53.260990+03:00 [error] <0.980.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.980.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.979.0>,<0.978.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.979.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:53.261859+03:00 [error] <0.979.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:02:53.527853+03:00 [error] <0.983.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.983.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.982.0>,<0.981.0>,<0.860.0>,<0.859.0>,<0.858.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.852.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.982.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:02:53.528777+03:00 [error] <0.982.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:03:47.176230+03:00 [error] <0.857.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.857.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.856.0>,<0.855.0>,<0.828.0>,<0.827.0>,<0.826.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.821.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.856.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 236
+  neighbours:
+
+2024-08-27 15:03:47.193231+03:00 [error] <0.856.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:03:47.911067+03:00 [error] <0.860.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.860.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.859.0>,<0.858.0>,<0.828.0>,<0.827.0>,<0.826.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.821.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.859.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:03:47.911729+03:00 [error] <0.859.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:04:46.647118+03:00 [error] <0.861.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.861.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.860.0>,<0.859.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.860.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 236
+  neighbours:
+
+2024-08-27 15:04:46.661160+03:00 [error] <0.860.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:06:57.321344+03:00 [error] <0.870.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.870.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.869.0>,<0.868.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.869.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:06:57.321941+03:00 [error] <0.869.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:06:58.069892+03:00 [error] <0.873.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.873.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.872.0>,<0.871.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.872.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:06:58.070817+03:00 [error] <0.872.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:06:58.258846+03:00 [error] <0.876.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.876.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.875.0>,<0.874.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.875.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:06:58.259893+03:00 [error] <0.875.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:06:58.434288+03:00 [error] <0.879.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.879.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.878.0>,<0.877.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.878.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:06:58.436058+03:00 [error] <0.878.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:06:58.608159+03:00 [error] <0.882.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.882.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.881.0>,<0.880.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.881.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:06:58.609686+03:00 [error] <0.881.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:07:56.264394+03:00 [error] <0.898.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.898.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.897.0>,<0.896.0>,<0.835.0>,<0.834.0>,<0.833.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.827.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.897.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:07:56.265165+03:00 [error] <0.897.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:10:13.014543+03:00 [error] <0.844.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.844.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.843.0>,<0.842.0>,<0.815.0>,<0.814.0>,<0.813.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.808.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.843.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 236
+  neighbours:
+
+2024-08-27 15:10:13.029174+03:00 [error] <0.843.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:15:19.509677+03:00 [error] <0.858.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.858.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.857.0>,<0.856.0>,<0.815.0>,<0.814.0>,<0.813.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.808.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.857.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:15:19.510284+03:00 [error] <0.857.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:15:20.566132+03:00 [error] <0.861.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.861.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.860.0>,<0.859.0>,<0.815.0>,<0.814.0>,<0.813.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.808.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.860.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:15:20.566730+03:00 [error] <0.860.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:14.079166+03:00 [error] <0.1009.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1009.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1008.0>,<0.1007.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1008.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 233
+    stack_size: 28
+    reductions: 220
+  neighbours:
+
+2024-08-27 15:24:14.098039+03:00 [error] <0.1008.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:14.817665+03:00 [error] <0.1012.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1012.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1011.0>,<0.1010.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1011.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:14.818511+03:00 [error] <0.1011.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:15.228780+03:00 [error] <0.1015.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1015.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1014.0>,<0.1013.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1014.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:15.229641+03:00 [error] <0.1014.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:15.443918+03:00 [error] <0.1018.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1018.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1017.0>,<0.1016.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1017.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:15.444621+03:00 [error] <0.1017.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:15.629430+03:00 [error] <0.1021.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1021.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1020.0>,<0.1019.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1020.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:15.630365+03:00 [error] <0.1020.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:16.197488+03:00 [error] <0.1024.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1024.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1023.0>,<0.1022.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1023.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:16.199210+03:00 [error] <0.1023.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:16.419779+03:00 [error] <0.1027.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1027.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1026.0>,<0.1025.0>,<0.820.0>,<0.819.0>,<0.818.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.813.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1026.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:16.421138+03:00 [error] <0.1026.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:47.719866+03:00 [error] <0.849.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.849.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.848.0>,<0.847.0>,<0.823.0>,<0.822.0>,<0.821.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.819.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.848.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 236
+  neighbours:
+
+2024-08-27 15:24:47.734509+03:00 [error] <0.848.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:48.291568+03:00 [error] <0.852.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.852.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.851.0>,<0.850.0>,<0.823.0>,<0.822.0>,<0.821.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.819.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.851.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:48.292611+03:00 [error] <0.851.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:48.607231+03:00 [error] <0.855.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.855.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.854.0>,<0.853.0>,<0.823.0>,<0.822.0>,<0.821.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.819.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.854.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:48.607878+03:00 [error] <0.854.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:48.866327+03:00 [error] <0.858.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.858.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.857.0>,<0.856.0>,<0.823.0>,<0.822.0>,<0.821.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.819.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.857.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:48.868016+03:00 [error] <0.857.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:24:49.106422+03:00 [error] <0.861.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.861.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.860.0>,<0.859.0>,<0.823.0>,<0.822.0>,<0.821.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.819.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.860.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:24:49.107817+03:00 [error] <0.860.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:32:37.869098+03:00 [error] <0.1162.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1162.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1161.0>,<0.1160.0>,<0.825.0>,<0.824.0>,<0.823.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.818.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1161.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 233
+    stack_size: 28
+    reductions: 220
+  neighbours:
+
+2024-08-27 15:32:37.880882+03:00 [error] <0.1161.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:32:38.858422+03:00 [error] <0.1165.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1165.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1164.0>,<0.1163.0>,<0.825.0>,<0.824.0>,<0.823.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.818.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1164.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:32:38.859172+03:00 [error] <0.1164.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:35:10.989471+03:00 [error] <0.1169.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1169.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1168.0>,<0.1167.0>,<0.825.0>,<0.824.0>,<0.823.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.818.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1168.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:35:10.990148+03:00 [error] <0.1168.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:35:11.756107+03:00 [error] <0.1172.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1172.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1171.0>,<0.1170.0>,<0.825.0>,<0.824.0>,<0.823.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.818.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1171.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:35:11.757186+03:00 [error] <0.1171.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
+2024-08-27 15:35:12.059653+03:00 [error] <0.1175.0>@proc_lib:crash_report/4:539 CRASH REPORT:
+  crasher:
+    initial call: 'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3
+    pid: <0.1175.0>
+    registered_name: []
+    exception exit: {#{'__exception__' => true,
+                       '__struct__' => 'Elixir.GRPC.RPCError',
+                       message =>
+                           <<"Operation is not implemented or not supported/enabled in this service">>,
+                       status => 12},
+                     []}
+      in function  'Elixir.GRPC.Server.Adapters.Cowboy.Handler':call_rpc/3 (lib/grpc/server/adapters/cowboy/handler.ex, line 521)
+    ancestors: [<0.1174.0>,<0.1173.0>,<0.825.0>,<0.824.0>,<0.823.0>,
+                  'Elixir.EjabberdRcp.Supervisor',<0.818.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.1174.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 376
+    stack_size: 28
+    reductions: 171
+  neighbours:
+
+2024-08-27 15:35:12.060649+03:00 [error] <0.1174.0>@'Elixir.GRPC.Server.Adapters.Cowboy.Handler':log_error/2:668 ** (GRPC.Server.Adapters.ReportException) Exception raised while handling /RegisterUsers.Register/GetPresence:
+** (GRPC.RPCError) Operation is not implemented or not supported/enabled in this service
