@@ -4,7 +4,6 @@ defmodule EjabberdRcp.Application do
   @moduledoc false
 
   use Application
-
   @impl true
   def start(_type, _args) do
     children = [
@@ -17,5 +16,9 @@ defmodule EjabberdRcp.Application do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: EjabberdRcp.Supervisor]
     Supervisor.start_link(children, opts)
+  end
+
+  def application do
+    [extra_applications: [:logger], mod: {EjabberdRcp.Application, []}]
   end
 end

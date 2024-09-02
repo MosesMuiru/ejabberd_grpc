@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package Message;
+
+option go_package = "./pb";
+
+message SendMessageRequest{
+
+	string type = 1;
+	string from = 2;
+	string to = 3;
+	string subject = 4;
+	string body = 5;
+}
+
+message SendMessageResponse{
+
+	string send_confirmation = 1;
+}
+
+service Message{
+
+	rpc SendMessage (SendMessageRequest) returns (SendMessageResponse) {}
+
+}

@@ -33,6 +33,8 @@ message GetPresenceResponse{
 	string status = 3;
 }
 
+message 
+
 service Register{
 
 	rpc RegisterUser (RegisterRequest) returns (RegisterResponse) {}

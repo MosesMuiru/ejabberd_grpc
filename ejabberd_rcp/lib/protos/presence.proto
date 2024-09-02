@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package Status;
+
+option go_package = "./pb";
+
+message SetPresenceRequest{
+	string user = 1;
+	string host = 2;
+	string type = 4;
+	string show = 5;
+	string status = 6;
+	int32 priority = 7;
+}
+
+message SetPresenceResponse{
+
+	string user = 1;
+	string show = 2;
+}
+
+service PresenceService{
+	rpc SetPresence(SetPresenceRequest) returns (SetPresenceResponse);
+}

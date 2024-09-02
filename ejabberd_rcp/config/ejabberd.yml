@@ -67,6 +67,7 @@ listen:
     ip: "::"
     module: ejabberd_http
     request_handlers:
+      /api: mod_http_api
       /admin: ejabberd_web_admin
       /.well-known/acme-challenge: ejabberd_acme
   -
@@ -122,17 +123,8 @@ api_permissions:
     who: admin
     what: "*"
   "admin access":
-    who:
-      access:
-        allow:
-          - acl: loopback
-          - acl: admin
-      oauth:
-        scope: "ejabberd:admin"
-        access:
-          allow:
-            - acl: loopback
-            - acl: admin
+    who: all
+
     what:
       - "*"
       - "!stop"

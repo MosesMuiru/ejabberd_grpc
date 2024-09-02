@@ -3,9 +3,9 @@ defmodule RegisterUsers.RegisterRequest do
 
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
-  field :username, 1, type: :string
-  field :host, 2, type: :string
-  field :password, 3, type: :string
+  field(:username, 1, type: :string)
+  field(:host, 2, type: :string)
+  field(:password, 3, type: :string)
 end
 
 defmodule RegisterUsers.RegisterResponse do
@@ -13,8 +13,8 @@ defmodule RegisterUsers.RegisterResponse do
 
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
-  field :message, 1, type: :string
-  field :user_details, 2, type: :string, json_name: "userDetails"
+  field(:message, 1, type: :string)
+  field(:user_details, 2, type: :string, json_name: "userDetails")
 end
 
 defmodule RegisterUsers.GetPresenceRequest do
@@ -22,8 +22,8 @@ defmodule RegisterUsers.GetPresenceRequest do
 
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
-  field :username, 1, type: :string
-  field :host, 2, type: :string
+  field(:username, 1, type: :string)
+  field(:host, 2, type: :string)
 end
 
 defmodule RegisterUsers.GetPresenceResponse do
@@ -31,9 +31,9 @@ defmodule RegisterUsers.GetPresenceResponse do
 
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
-  field :jid, 1, type: :string
-  field :show, 2, type: :string
-  field :status, 3, type: :string
+  field(:jid, 1, type: :string)
+  field(:show, 2, type: :string)
+  field(:status, 3, type: :string)
 end
 
 defmodule RegisterUsers.Register.Service do
@@ -41,9 +41,9 @@ defmodule RegisterUsers.Register.Service do
 
   use GRPC.Service, name: "RegisterUsers.Register", protoc_gen_elixir_version: "0.12.0"
 
-  rpc :RegisterUser, RegisterUsers.RegisterRequest, RegisterUsers.RegisterResponse
+  rpc(:RegisterUser, RegisterUsers.RegisterRequest, RegisterUsers.RegisterResponse)
 
-  rpc :GetPresence, RegisterUsers.GetPresenceRequest, RegisterUsers.GetPresenceResponse
+  rpc(:GetPresence, RegisterUsers.GetPresenceRequest, RegisterUsers.GetPresenceResponse)
 end
 
 defmodule RegisterUsers.Register.Stub do

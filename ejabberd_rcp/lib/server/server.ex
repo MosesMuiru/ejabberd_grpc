@@ -17,10 +17,9 @@ defmodule EjabberdRcp.Server do
     }
   end
 
- # get presence
+  # get presence
   #
   def get_presence(request, _) do
-
     {jid, show, status} = :mod_admin_extra.get_presence(request.username, request.host)
 
     %RegisterUsers.GetPresenceResponse{
