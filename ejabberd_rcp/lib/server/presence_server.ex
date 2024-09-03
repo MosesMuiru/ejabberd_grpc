@@ -5,7 +5,7 @@ defmodule EjabberdRcp.PresenceServer do
     :ejabberd_sm.get_user_resources(request.user, request.host)
     |> case do
       [] ->
-        response(request.user, "failed to set presence")
+        response(request.user, "failed: user is not login or doesn't exist")
 
       data ->
         res = List.first(data)

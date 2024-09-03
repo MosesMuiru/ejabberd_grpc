@@ -4934,3 +4934,74 @@
 2024-09-02 17:33:38.231688+03:00 [info] <0.845.0> Receive presence for moses
 2024-09-02 17:33:38.232139+03:00 [info] <0.845.0> {:presence, "", :available, "", {:jid, "moses", "localhost", "9735201136691238489482", "moses", "localhost", "9735201136691238489482"}, {:jid, "moses", "localhost", "", "moses", "localhost", ""}, :away, [{:text, "en", "BB"}], 7, [], %{}}
 2024-09-02 17:33:38.232653+03:00 [info] <0.845.0> should dispaly abve
+2024-09-03 05:46:30.131920+03:00 [info] <0.422.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-09-03 05:46:31.774051+03:00 [info] <0.422.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-09-03 05:46:33.104855+03:00 [info] <0.611.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-09-03 05:46:33.886733+03:00 [info] <0.610.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-09-03 05:46:33.968039+03:00 [warning] <0.610.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-09-03 05:46:34.196662+03:00 [info] <0.705.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-09-03 05:46:34.373324+03:00 [info] <0.610.0> Starting ejabberd module Presence Demo
+2024-09-03 05:46:34.590175+03:00 [info] <0.736.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-09-03 05:46:34.652381+03:00 [warning] <0.744.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-09-03 05:46:34.915163+03:00 [info] <0.422.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-09-03 05:46:35.083376+03:00 [warning] <0.644.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-09-03 05:46:35.250734+03:00 [warning] <0.644.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-09-03 05:46:35.250943+03:00 [warning] <0.644.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-09-03 05:46:35.251087+03:00 [warning] <0.644.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-09-03 05:46:35.251266+03:00 [warning] <0.644.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-09-03 05:46:35.253334+03:00 [info] <0.422.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 5.49s
+2024-09-03 05:46:35.262684+03:00 [info] <0.642.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-09-03 05:46:35.262972+03:00 [info] <0.740.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-09-03 05:46:35.263103+03:00 [info] <0.643.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-09-03 05:46:35.263077+03:00 [info] <0.640.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-09-03 05:46:35.263051+03:00 [info] <0.637.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-09-03 05:46:35.263071+03:00 [info] <0.639.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-09-03 05:46:35.263084+03:00 [info] <0.641.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-09-03 05:46:35.263060+03:00 [info] <0.638.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-09-03 05:46:35.264033+03:00 [warning] <0.642.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-09-03 05:46:35.976191+03:00 [info] <0.819.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-09-03 05:46:41.592204+03:00 [info] <0.847.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.PresenceServer.set_presence
+2024-09-03 05:46:41.592685+03:00 [info] <0.847.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 109µs
+2024-09-03 05:48:03.068193+03:00 [info] <0.850.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.PresenceServer.set_presence
+2024-09-03 05:48:03.068398+03:00 [info] <0.850.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 43µs
+2024-09-03 05:48:12.176054+03:00 [info] <0.428.0>@ejabberd_config:load/1:82 Loading configuration from ejabberd.yml
+2024-09-03 05:48:12.401038+03:00 [info] <0.428.0>@ejabberd_config:load/1:89 Configuration loaded successfully
+2024-09-03 05:48:12.688255+03:00 [info] <0.613.0>@ejabberd_systemd:init/1:94 Got no NOTIFY_SOCKET, notifications disabled
+2024-09-03 05:48:13.104468+03:00 [info] <0.612.0>@gen_mod:start_modules/0:143 Loading modules for localhost
+2024-09-03 05:48:13.114064+03:00 [warning] <0.612.0>@mod_mam:start/2:114 Mnesia backend for mod_mam is not recommended: it's limited to 2GB and often gets corrupted when reaching this limit. SQL backend is recommended. Namely, for small servers SQLite is a preferred choice because it's very easy to configure.
+2024-09-03 05:48:13.240480+03:00 [info] <0.707.0>@mod_stun_disco:parse_listener/1:599 Won't auto-announce STUN/TURN service on port 3478 (udp) without public IP address, please specify 'turn_ipv4_address' and optionally 'turn_ipv6_address'
+2024-09-03 05:48:13.304669+03:00 [info] <0.612.0> Starting ejabberd module Presence Demo
+2024-09-03 05:48:13.385672+03:00 [info] <0.738.0>@mod_mqtt:init_topic_cache/2:644 Building MQTT cache for localhost, this may take a while
+2024-09-03 05:48:13.408944+03:00 [warning] <0.746.0>@ejabberd_captcha:get_prog_name/0:445 The option captcha_cmd is not configured, but some module wants to use the CAPTCHA feature.
+2024-09-03 05:48:13.471124+03:00 [info] <0.428.0>@ejabberd_cluster_mnesia:wait_for_sync/1:123 Waiting for Mnesia synchronization to complete
+2024-09-03 05:48:13.505723+03:00 [warning] <0.646.0>@ejabberd_pkix:log_warnings/1:389 Invalid certificate in /home/sparks/Desktop/grpc/ejabberd_rcp/server.pem: at line 53: self-signed certificate
+2024-09-03 05:48:13.542809+03:00 [warning] <0.646.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching pubsub.localhost
+2024-09-03 05:48:13.543221+03:00 [warning] <0.646.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching proxy.localhost
+2024-09-03 05:48:13.543451+03:00 [warning] <0.646.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching conference.localhost
+2024-09-03 05:48:13.543831+03:00 [warning] <0.646.0>@ejabberd_pkix:check_domain_certfiles/1:308 No certificate found matching upload.localhost
+2024-09-03 05:48:13.548165+03:00 [info] <0.428.0>@ejabberd_app:start/2:63 ejabberd 24.7.0 is started in the node nonode@nohost in 1.41s
+2024-09-03 05:48:13.556169+03:00 [info] <0.643.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5280 for ejabberd_http
+2024-09-03 05:48:13.556143+03:00 [info] <0.642.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5443 for ejabberd_http
+2024-09-03 05:48:13.556195+03:00 [info] <0.644.0>@ejabberd_listener:init/4:130 Start accepting UDP connections at [::]:3478 for ejabberd_stun
+2024-09-03 05:48:13.556372+03:00 [info] <0.641.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5269 for ejabberd_s2s_in
+2024-09-03 05:48:13.556574+03:00 [info] <0.639.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:5222 for ejabberd_c2s
+2024-09-03 05:48:13.556565+03:00 [info] <0.640.0>@ejabberd_listener:init/4:165 Start accepting TLS connections at [::]:5223 for ejabberd_c2s
+2024-09-03 05:48:13.556819+03:00 [info] <0.645.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at [::]:1883 for mod_mqtt
+2024-09-03 05:48:13.556864+03:00 [info] <0.742.0>@ejabberd_listener:init/4:165 Start accepting TCP connections at 127.0.1.1:7777 for mod_proxy65_stream
+2024-09-03 05:48:13.558021+03:00 [warning] <0.644.0>@ejabberd_stun:prepare_turn_opts/2:115 Option 'turn_ipv4_address' is undefined and the server's hostname doesn't resolve to a public IPv4 address, most likely the TURN relay won't be working properly
+2024-09-03 05:48:13.878182+03:00 [info] <0.821.0>@'Elixir.GRPC.Server.Adapters.Cowboy':start_link/4:90 Running EjabberdRcp.Endpoint with Cowboy using http://0.0.0.0:5051
+2024-09-03 05:48:17.060033+03:00 [info] <0.849.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.PresenceServer.set_presence
+2024-09-03 05:48:17.060211+03:00 [info] <0.849.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 37µs
+2024-09-03 05:48:40.081032+03:00 [info] <0.639.0>@ejabberd_listener:accept/7:346 (<0.850.0>) Accepted connection [::ffff:127.0.0.1]:58254 -> [::ffff:127.0.0.1]:5222
+2024-09-03 05:48:46.547093+03:00 [info] <0.850.0>@ejabberd_c2s:process_auth_result/3:294 (tls|<0.850.0>) Accepted c2s SCRAM-SHA-512 authentication for moses@localhost by mnesia backend from ::ffff:127.0.0.1
+2024-09-03 05:48:46.595434+03:00 [info] <0.850.0>@ejabberd_c2s:bind/2:481 (tls|<0.850.0>) Opened c2s session for moses@localhost/97818318781190877141826
+2024-09-03 05:48:46.735139+03:00 [info] <0.850.0> Receive presence for moses
+2024-09-03 05:48:46.824292+03:00 [info] <0.850.0> {:presence, "", :available, "en", {:jid, "moses", "localhost", "97818318781190877141826", "moses", "localhost", "97818318781190877141826"}, {:jid, "moses", "localhost", "", "moses", "localhost", ""}, :undefined, [], 1, [{:xmlel, "c", [{"xmlns", "http://jabber.org/protocol/caps"}, {"node", "http://pidgin.im/"}, {"hash", "sha-1"}, {"ver", "AcN1/PEN8nq7AHD+9jpxMV4U6YM="}, {"ext", "voice-v1 camera-v1 video-v1"}], []}, {:xmlel, "x", [{"xmlns", "vcard-temp:x:update"}], [{:xmlel, "photo", [], []}]}], %{ip: {0, 0, 0, 0, 0, 65535, 32512, 1}}}
+2024-09-03 05:48:46.824819+03:00 [info] <0.850.0> should dispaly abve
+2024-09-03 05:48:50.746750+03:00 [info] <0.855.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.PresenceServer.set_presence
+2024-09-03 05:48:50.747235+03:00 [info] <0.855.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 89µs
+2024-09-03 05:49:05.133914+03:00 [info] <0.858.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:38 Handled by EjabberdRcp.PresenceServer.set_presence
+2024-09-03 05:49:05.134800+03:00 [info] <0.858.0>@'Elixir.GRPC.Server.Interceptors.Logger':call/4:47 Response :ok in 485µs
+2024-09-03 05:49:05.137950+03:00 [info] <0.850.0> Receive presence for moses
+2024-09-03 05:49:05.138489+03:00 [info] <0.850.0> {:presence, "", :available, "", {:jid, "moses", "localhost", "97818318781190877141826", "moses", "localhost", "97818318781190877141826"}, {:jid, "moses", "localhost", "", "moses", "localhost", ""}, :away, [{:text, "en", "BB"}], 7, [], %{}}
+2024-09-03 05:49:05.139080+03:00 [info] <0.850.0> should dispaly abve
