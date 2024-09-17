@@ -19,13 +19,19 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/ejabberd_rcp>.
 
-**add deps**
-to download all the deps
-    mix deps.get 
+## Add deps
 
-To run the ejabberd server along side grpc
+```elixir
+    mix deps.get 
+```
+
+### start ejabberd server + grpc
+
+```elixir
+
     iex -S mix 
 
-port 5051 --> where grpc runs
-
+    # grpc server
+    port: 5051 
+```
 
