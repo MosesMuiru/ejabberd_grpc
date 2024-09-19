@@ -1,8 +1,16 @@
 services:
-  ejaberd_rpcc:
+  ejabberd-grpc-server:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "5051:5051"
-    command: mix run --no-halt
+  envoy-proxy:
+    image: envoyproxy/envoy:v1.25-latest
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
+    ports: 
+    - "8081:8081"
+    depends_on: 
+      - ejabberd-grpc-server
+    command: ["envoy", "-c", "/etc/envoy/envoy.yaml"]
