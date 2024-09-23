@@ -35,3 +35,68 @@ be found at <https://hexdocs.pm/ejabberd_rcp>.
     port: 5051 
 ```
 
+### Docker config
+
+
+```
+
+    
+    docker compose build
+
+    docker compose up
+
+    
+    envoy port: 8081
+
+```
+
+** Register User first**
+
+```
+localhost:8081/{registeruser}
+
+    {
+        "user": "bob",
+        "host": "example.com",
+        "password": "SomEPass44"
+    }
+
+
+```
+
+** sending messages **
+
+```
+    localhost:8081/{send message protofile}
+
+    {
+        "type": "headline",
+        "from": "moses@localhost",
+        "to": "kamau@localhost",
+        "subject": "Restart",
+        "body": "In 5 minutes"
+    }
+
+```
+
+** Recieving Messages**
+
+use da-messaging-svc
+
+```
+    git clone
+    
+    envs
+
+    start server
+
+    localhost:{port}/MessageService/Monitor
+
+    {
+	"jid": "moses@localhost",
+	"server": "localhost:5222",
+	"password": "password"
+    }
+
+```
+
