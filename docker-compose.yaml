@@ -6,12 +6,20 @@ services:
     ports:
       - "5051:5051"
       - "5222:5222"
+    networks:
+      - messaging
   envoy-proxy:
     image: envoyproxy/envoy:v1.25-latest
     volumes:
       - ./envoy.yaml:/etc/envoy/envoy.yaml
     ports: 
     - "8081:8081"
+    - "5223:5223"
     depends_on: 
       - ejabberd-grpc-server
     command: ["envoy", "-c", "/etc/envoy/envoy.yaml"]
+    networks:
+      - messaging
+
+networks:
+  messaging: {}
