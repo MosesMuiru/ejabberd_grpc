@@ -7,7 +7,9 @@ defmodule EjabberdRcp.CORSPlug do
     conn
     |> put_resp_header("access-control-allow-origin", "*")
     |> put_resp_header("access-control-allow-methods", "GET, POST, OPTIONS")
-    |> put_resp_header("access-control-allow-headers", "Origin, Content-Type, Accept, Authorization")
+    |> put_resp_header(
+      "access-control-allow-headers",
+      "Origin, Content-Type, Accept, Authorization"
+    )
   end
 end
-

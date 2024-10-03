@@ -28,12 +28,12 @@ defmodule EjabberdRcp.PresenceServer do
   def get_presence(request, _stream) do
     {jid, show, status} = :mod_admin_extra.get_presence(request.user, request.host)
     IO.inspect(label: "jid")
+
     %Status.GetPresenceResponse{
       jid: jid,
       show: show,
       status: status
     }
-
   end
 
   def response(user, show) do

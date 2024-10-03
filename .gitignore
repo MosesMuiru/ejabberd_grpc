@@ -28,3 +28,14 @@ ejabberd_rcp-*.tar
 /database
 
 /logs
+
+/protos
+
+/proto
+
+/lib/services/message_server.ex
+/lib/services/presence_server.ex
+/lib/services/server.ex
+
+Makefile
+

@@ -3,12 +3,12 @@ defmodule Status.SetPresenceRequest do
 
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
-  field :user, 1, type: :string
-  field :host, 2, type: :string
-  field :type, 4, type: :string
-  field :show, 5, type: :string
-  field :status, 6, type: :string
-  field :priority, 7, type: :int32
+  field(:user, 1, type: :string)
+  field(:host, 2, type: :string)
+  field(:type, 4, type: :string)
+  field(:show, 5, type: :string)
+  field(:status, 6, type: :string)
+  field(:priority, 7, type: :int32)
 end
 
 defmodule Status.GetPresenceRequest do
@@ -16,8 +16,8 @@ defmodule Status.GetPresenceRequest do
 
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
-  field :user, 1, type: :string
-  field :host, 2, type: :string
+  field(:user, 1, type: :string)
+  field(:host, 2, type: :string)
 end
 
 defmodule Status.GetPresenceResponse do
@@ -25,9 +25,9 @@ defmodule Status.GetPresenceResponse do
 
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
-  field :jid, 2, type: :string
-  field :show, 4, type: :string
-  field :status, 5, type: :string
+  field(:jid, 2, type: :string)
+  field(:show, 4, type: :string)
+  field(:status, 5, type: :string)
 end
 
 defmodule Status.SetPresenceResponse do
@@ -35,8 +35,8 @@ defmodule Status.SetPresenceResponse do
 
   use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
 
-  field :user, 1, type: :string
-  field :show, 2, type: :string
+  field(:user, 1, type: :string)
+  field(:show, 2, type: :string)
 end
 
 defmodule Status.PresenceService.Service do
@@ -44,9 +44,9 @@ defmodule Status.PresenceService.Service do
 
   use GRPC.Service, name: "Status.PresenceService", protoc_gen_elixir_version: "0.12.0"
 
-  rpc :SetPresence, Status.SetPresenceRequest, Status.SetPresenceResponse
+  rpc(:SetPresence, Status.SetPresenceRequest, Status.SetPresenceResponse)
 
-  rpc :GetPresence, Status.GetPresenceRequest, Status.GetPresenceResponse
+  rpc(:GetPresence, Status.GetPresenceRequest, Status.GetPresenceResponse)
 end
 
 defmodule Status.PresenceService.Stub do
