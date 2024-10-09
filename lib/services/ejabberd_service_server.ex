@@ -61,4 +61,19 @@ defmodule EjabberdRcp.EjabberdServiceServer do
       status: status
     }
   end
+
+  def end_session(request, _stream) do
+    case :ejabberd_sm.kick_user(request.username, request.host) do
+      0 -> end_session_response("session of the user #{request.username} is not active")
+      1 -> end_session_response("session of user #{request.username} terminated")
+    end
+  end
+
+  @spec end_session_response(String.t()) :: any()
+  defp end_session_response(response) do
+    %Da.Proto.EndSessionResponse{
+      response: response
+    }
+  end
+
 end
