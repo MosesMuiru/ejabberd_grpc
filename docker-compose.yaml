@@ -18,3 +18,21 @@ services:
 
   ej:
     image: ejabberd
+    depends_on:
+      - db
+    links:
+      - db
+  
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_DB: ejabberd
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: 
+      - "5432:5432"
+    volumes:
+      - data:/var/lib/postgresql/data
+volumes:
+  data: 
