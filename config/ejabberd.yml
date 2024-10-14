@@ -234,7 +234,7 @@ modules:
 
 default_db: sql
 sql_type: pgsql
-sql_server: db 
+sql_server: localhost 
 sql_port: 5432
 sql_database: ejabberd 
 sql_username: postgres

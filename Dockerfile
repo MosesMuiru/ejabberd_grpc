@@ -1,6 +1,6 @@
 FROM elixir:1.14.1-alpine AS builder
 
-RUN apk add --no-cache openssl gcc libc-dev libstdc++ openssl-dev yaml-dev zlib-dev expat-dev g++
+RUN apk add --no-cache openssl gcc libc-dev libstdc++ openssl-dev yaml-dev zlib-dev expat-dev g++ git make 
 
 WORKDIR /app
 
