@@ -76,4 +76,19 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     }
   end
 
+  @spec create_room(Da.Proto.CreateRoomRequest.t(), GRPC.Server.Stream.t()) :: any()
+  def create_room(request, _stream) do
+    :mod_muc_admin.create_room(request.name, request.service, request.host)
+    |> case do
+      :ok -> %Da.Proto.CreateRoomResponse{
+        name: request.name,
+        host: request.host
+      }
+      _ -> %Da.Proto.CreateRoomResponse{
+        name: "Could not create room" ,
+        host: "could not create room"
+      }
+    end
+  end
+
 end

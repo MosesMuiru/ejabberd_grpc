@@ -75,6 +75,25 @@ defmodule Da.Proto.EndSessionResponse do
   field :response, 1, type: :string
 end
 
+defmodule Da.Proto.CreateRoomRequest do
+  @moduledoc false
+
+  use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
+
+  field :name, 1, type: :string
+  field :service, 2, type: :string
+  field :host, 3, type: :string
+end
+
+defmodule Da.Proto.CreateRoomResponse do
+  @moduledoc false
+
+  use Protobuf, protoc_gen_elixir_version: "0.12.0", syntax: :proto3
+
+  field :name, 1, type: :string
+  field :host, 2, type: :string
+end
+
 defmodule Da.Proto.EjabberdService.Service do
   @moduledoc false
 
@@ -87,6 +106,8 @@ defmodule Da.Proto.EjabberdService.Service do
   rpc :RegisterUser, Da.Proto.RegisterRequest, Da.Proto.RegisterResponse
 
   rpc :EndSession, Da.Proto.EndSessionRequest, Da.Proto.EndSessionResponse
+
+  rpc :CreateRoom, Da.Proto.CreateRoomRequest, Da.Proto.CreateRoomResponse
 end
 
 defmodule Da.Proto.EjabberdService.Stub do

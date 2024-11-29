@@ -4,3 +4,5 @@ proto:
 	protoc --elixir_out=plugins=grpc:./lib/ ./protos/*.proto
 start:
 	iex -S mix
+# pgsql: 
+# 	git clone https://github.com/processone/p1_pgsql.git; cd p1_pgsql ; make
