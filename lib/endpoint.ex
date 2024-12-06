@@ -6,4 +6,5 @@ defmodule EjabberdRcp.Endpoint do
   intercept(GRPC.Server.Interceptors.Logger)
   run(EjabberdRcp.EjabberdServiceServer)
   run(EjabberdRcp.MessagingServiceServer)
+  run(EjabberdRcp.Reflection.Server)
 end

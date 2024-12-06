@@ -78,7 +78,20 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
   @spec create_room(Da.Proto.CreateRoomRequest.t(), GRPC.Server.Stream.t()) :: any()
   def create_room(request, _stream) do
-    :mod_muc_admin.create_room(request.name, request.service, request.host)
+    option = [
+      {"title", request.options.title},
+      {"description", request.options.description},
+      {"members_only", request.options.members_only},
+      {"max_users",request.options.max_users},
+      {"allow_user_invites", request.options.allow_user_invites},
+      {"public", request.options.public},
+      {"persistent", "true"},
+      {"affiliations", "#{request.options.affliations}@localhost"},
+      {"subscribers", "#{request.options.subscribers}@localhost:messages:subject"},
+      {"allow_subscription", "true"}
+    ]
+    :mod_muc_admin.create_room_with_opts(request.name, request.service, request.host, option)
+    |> IO.inspect(label: "this is the response from the jeabbed create room -->")
     |> case do
       :ok -> %Da.Proto.CreateRoomResponse{
         name: request.name,
@@ -91,4 +104,37 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     end
   end
 
+  def invite_user(request, _stream) do
+    nodes = [
+    "urn:xmpp:mucsub:nodes:messages",
+    "urn:xmpp:mucsub:nodes:affiliations"
+    ]
+    :mod_muc_admin.subscribe_room(request.user, request.nick, request.room, nodes)
+    |> case do
+      {:error, reason} ->
+        %Da.Proto.InviteUserResponse{
+          status: reason
+        }
+      _ ->
+        %Da.Proto.InviteUserResponse{
+        status: "invite sent"
+      }
+    end
+  end
+
+  def send_direct_invitation(request, _stream) do
+    request
+    |> IO.inspect(label: "this is the request")
+    :mod_muc_admin.send_direct_invitation(request.room_name, request.service, request.password, request.invite_description, request.jids)
+    |> case do
+      {:error, reason} ->
+        %Da.Proto.InviteUserResponse{
+          status: reason
+        }
+      :ok ->
+        %Da.Proto.InviteUserResponse{
+        status: "Invite sent"
+        }
+  end
+  end
 end

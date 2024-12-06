@@ -9,7 +9,8 @@ defmodule EjabberdRcp.Application do
     children = [
       # Starts a worker by calling: EjabberdRcp.Worker.start_link(arg)
       # {EjabberdRcp.Worker, arg}
-      {GRPC.Server.Supervisor, endpoint: EjabberdRcp.Endpoint, port: 5051, start_server: true}
+      {GRPC.Server.Supervisor, endpoint: EjabberdRcp.Endpoint, port: 5051, start_server: true},
+      GrpcReflection
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
