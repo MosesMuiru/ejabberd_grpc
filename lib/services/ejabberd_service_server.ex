@@ -123,8 +123,6 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   end
 
   def send_direct_invitation(request, _stream) do
-    request
-    |> IO.inspect(label: "this is the request")
     :mod_muc_admin.send_direct_invitation(request.room_name, request.service, request.password, request.invite_description, request.jids)
     |> case do
       {:error, reason} ->
@@ -137,4 +135,51 @@ defmodule EjabberdRcp.EjabberdServiceServer do
         }
   end
   end
+
+  def get_user_rooms(request, _stream) do
+    :mod_muc_admin.get_user_rooms(request.user, "conference.localhost")
+    |> IO.inspect(label: "roooooms ------>")
+    |> case do
+      [] -> %Da.Proto.GetUserRoomsResponse{
+        rooms: ""
+      }
+      [rooms] -> %Da.Proto.GetUserRoomsResponse{
+        rooms: rooms
+      }
+    end
+  end
+
+  def get_subscribers(request, _stream) do
+    :mod_muc_admin.get_subscribers(request.room_name, request.room_service)
+    |> IO.inspect(label: "this is rooom")
+    |> case do
+      [subscribers] ->
+        %Da.Proto.GetSubscribersResponse{
+          user: subscribers
+        }
+      {:error, reason} ->
+        %Da.Proto.GetSubscribersResponse{
+          user: reason
+        }
+    end
+  end
+
+def destroy_room(request, _stream) do
+  :mod_muc_admin.destroy_room(request.room_name, request.service)
+  |> IO.inspect(label: "room destroyed ---->")
+  |> case do
+    _ ->
+      %Da.Proto.DestroyRoomResponse{
+        status: 0
+      }
+    {:error, _reason} ->
+      %Da.Proto.DestroyRoomResponse{
+        status: 0
+      }
+    :ok ->
+      %Da.Proto.DestroyRoomResponse{
+        status: 200
+      }
+      end
+end
 end
