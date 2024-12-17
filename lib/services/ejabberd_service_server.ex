@@ -91,7 +91,6 @@ defmodule EjabberdRcp.EjabberdServiceServer do
       {"allow_subscription", "true"}
     ]
     :mod_muc_admin.create_room_with_opts(request.name, request.service, request.host, option)
-    |> IO.inspect(label: "this is the response from the jeabbed create room -->")
     |> case do
       :ok -> %Da.Proto.CreateRoomResponse{
         name: request.name,
@@ -138,48 +137,45 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
   def get_user_rooms(request, _stream) do
     :mod_muc_admin.get_user_rooms(request.user, "conference.localhost")
-    |> IO.inspect(label: "roooooms ------>")
     |> case do
-      [] -> %Da.Proto.GetUserRoomsResponse{
-        rooms: ""
-      }
       [rooms] -> %Da.Proto.GetUserRoomsResponse{
-        rooms: rooms
+        rooms: [rooms]
+      }
+      _ -> %Da.Proto.GetUserRoomsResponse{
+        rooms: ""
       }
     end
   end
 
   def get_subscribers(request, _stream) do
-    :mod_muc_admin.get_subscribers(request.room_name, request.room_service)
-    |> IO.inspect(label: "this is rooom")
+    :mod_muc_admin.get_subscribers(request.room_name, request.service)
     |> case do
       [subscribers] ->
         %Da.Proto.GetSubscribersResponse{
-          user: subscribers
+          user: [subscribers]
         }
-      {:error, reason} ->
-        %Da.Proto.GetSubscribersResponse{
-          user: reason
+        _ ->
+          %Da.Proto.GetSubscribersResponse{
+            user: ["empty or room doesn't exists"]
         }
     end
   end
 
 def destroy_room(request, _stream) do
   :mod_muc_admin.destroy_room(request.room_name, request.service)
-  |> IO.inspect(label: "room destroyed ---->")
   |> case do
-    _ ->
-      %Da.Proto.DestroyRoomResponse{
-        status: 0
-      }
-    {:error, _reason} ->
-      %Da.Proto.DestroyRoomResponse{
-        status: 0
-      }
+    # {:error, _reason} ->
+    #   %Da.Proto.DestroyRoomResponse{
+    #     status: 0
+    # }
     :ok ->
       %Da.Proto.DestroyRoomResponse{
         status: 200
       }
+    _ ->
+      %Da.Proto.DestroyRoomResponse{
+        status: 0
+    }
       end
 end
 end
