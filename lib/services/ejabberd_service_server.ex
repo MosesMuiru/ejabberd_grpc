@@ -1,7 +1,8 @@
 defmodule EjabberdRcp.EjabberdServiceServer do
   use GRPC.Server, service: Da.Proto.EjabberdService.Service
 
-  @spec register_user(Da.Proto.RegisterRequest.t, GRPC.Server.Stream.t) :: Da.Proto.RegisterResponse.t
+  @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
+          Da.Proto.RegisterResponse.t()
   def register_user(request, _stream) do
     case :ejabberd_auth.try_register(request.username, request.host, request.password) do
       :ok -> reg_response("User created succefully", "#{request.username}@#{request.host}")
@@ -9,6 +10,27 @@ defmodule EjabberdRcp.EjabberdServiceServer do
       _ -> reg_response("ensure all details are there", "password, username, host")
     end
   end
+
+   # this will contain serivecs of the message
+  # sending, recieving and initiating a session
+  @spec send_messages(Da.Proto.SendMessagesRequest.t(), GRPC.Server.Stream.t()) ::
+          Da.Proto.SendMessagesResponse.t()
+  def send_messages(request, _stream) do
+    :mod_admin_extra.send_message(
+      request.type,
+      request.from,
+      request.to,
+      request.subject,
+      request.body
+    )
+    |> case do
+      :ok ->
+        %Da.Proto.SendMessagesResponse{
+          response: "0"
+        }
+    end
+  end
+
 
   def reg_response(message, details) do
     %Da.Proto.RegisterResponse{
@@ -18,7 +40,8 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   end
 
   # set presence of the
-  @spec set_presence(Da.Proto.SetPresenceRequest.t, GRPC.Server.Stream.t) :: Da.Proto.SetPresenceResponse.t
+  @spec set_presence(Da.Proto.SetPresenceRequest.t(), GRPC.Server.Stream.t()) ::
+          Da.Proto.SetPresenceResponse.t()
   def set_presence(request, _stream) do
     :ejabberd_sm.get_user_resources(request.user, request.host)
     |> case do
@@ -51,7 +74,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   end
 
   # get presence of user
-   def get_presence(request, _stream) do
+  def get_presence(request, _stream) do
     {jid, show, status} = :mod_admin_extra.get_presence(request.user, request.host)
     IO.inspect(label: "jid")
 
@@ -82,7 +105,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
       {"title", request.options.title},
       {"description", request.options.description},
       {"members_only", request.options.members_only},
-      {"max_users",request.options.max_users},
+      {"max_users", request.options.max_users},
       {"allow_user_invites", request.options.allow_user_invites},
       {"public", request.options.public},
       {"persistent", "true"},
@@ -90,60 +113,76 @@ defmodule EjabberdRcp.EjabberdServiceServer do
       {"subscribers", "#{request.options.subscribers}@localhost:messages:subject"},
       {"allow_subscription", "true"}
     ]
+
     :mod_muc_admin.create_room_with_opts(request.name, request.service, request.host, option)
     |> case do
-      :ok -> %Da.Proto.CreateRoomResponse{
-        name: request.name,
-        host: request.host
-      }
-      _ -> %Da.Proto.CreateRoomResponse{
-        name: "Could not create room" ,
-        host: "could not create room"
-      }
+      :ok ->
+        %Da.Proto.CreateRoomResponse{
+          name: request.name,
+          host: request.host
+        }
+
+      _ ->
+        %Da.Proto.CreateRoomResponse{
+          name: "Could not create room",
+          host: "could not create room"
+        }
     end
   end
 
   def invite_user(request, _stream) do
     nodes = [
-    "urn:xmpp:mucsub:nodes:messages",
-    "urn:xmpp:mucsub:nodes:affiliations"
+      "urn:xmpp:mucsub:nodes:messages",
+      "urn:xmpp:mucsub:nodes:affiliations"
     ]
+
     :mod_muc_admin.subscribe_room(request.user, request.nick, request.room, nodes)
     |> case do
       {:error, reason} ->
         %Da.Proto.InviteUserResponse{
           status: reason
         }
+
       _ ->
         %Da.Proto.InviteUserResponse{
-        status: "invite sent"
-      }
+          status: "invite sent"
+        }
     end
   end
 
   def send_direct_invitation(request, _stream) do
-    :mod_muc_admin.send_direct_invitation(request.room_name, request.service, request.password, request.invite_description, request.jids)
+    :mod_muc_admin.send_direct_invitation(
+      request.room_name,
+      request.service,
+      request.password,
+      request.invite_description,
+      request.jids
+    )
     |> case do
       {:error, reason} ->
         %Da.Proto.InviteUserResponse{
           status: reason
         }
+
       :ok ->
         %Da.Proto.InviteUserResponse{
-        status: "Invite sent"
+          status: "Invite sent"
         }
-  end
+    end
   end
 
   def get_user_rooms(request, _stream) do
     :mod_muc_admin.get_user_rooms(request.user, "conference.localhost")
     |> case do
-      [rooms] -> %Da.Proto.GetUserRoomsResponse{
-        rooms: [rooms]
-      }
-      _ -> %Da.Proto.GetUserRoomsResponse{
-        rooms: ""
-      }
+      [rooms] ->
+        %Da.Proto.GetUserRoomsResponse{
+          rooms: [rooms]
+        }
+
+      _ ->
+        %Da.Proto.GetUserRoomsResponse{
+          rooms: ""
+        }
     end
   end
 
@@ -154,28 +193,57 @@ defmodule EjabberdRcp.EjabberdServiceServer do
         %Da.Proto.GetSubscribersResponse{
           user: [subscribers]
         }
-        _ ->
-          %Da.Proto.GetSubscribersResponse{
-            user: ["empty or room doesn't exists"]
+
+      _ ->
+        %Da.Proto.GetSubscribersResponse{
+          user: ["empty or room doesn't exists"]
         }
     end
   end
 
-def destroy_room(request, _stream) do
-  :mod_muc_admin.destroy_room(request.room_name, request.service)
-  |> case do
-    # {:error, _reason} ->
-    #   %Da.Proto.DestroyRoomResponse{
-    #     status: 0
-    # }
-    :ok ->
-      %Da.Proto.DestroyRoomResponse{
-        status: 200
-      }
-    _ ->
-      %Da.Proto.DestroyRoomResponse{
-        status: 0
-    }
-      end
-end
+  def get_room_occupants(request, _stream) do
+    :mod_muc_admin.get_room_occupants(request.room_name, "conference.localhost")
+    |> case do
+      user_details ->
+        f_user_details =
+          user_details
+          |> format_user_details()
+
+        %Da.Proto.GetRoomOccupantsResponse{
+          user_details: f_user_details
+        }
+
+      _ ->
+        %Da.Proto.GetRoomOccupantsResponse{
+          user_details: []
+        }
+    end
+  end
+
+  def destroy_room(request, _stream) do
+    :mod_muc_admin.destroy_room(request.room_name, request.service)
+    |> case do
+      # {:error, _reason} ->
+      #   %Da.Proto.DestroyRoomResponse{
+      #     status: 0
+      # }
+      :ok ->
+        %Da.Proto.DestroyRoomResponse{
+          status: 200
+        }
+
+      _ ->
+        %Da.Proto.DestroyRoomResponse{
+          status: 0
+        }
+    end
+  end
+
+  # create a map from the user details
+  def format_user_details([{_, jid, role} | tail]) do
+    IO.inspect(tail, label: "working")
+    [%{jid => to_string(role)} | format_user_details(tail)]
+  end
+
+  def format_user_details([]), do: []
 end
