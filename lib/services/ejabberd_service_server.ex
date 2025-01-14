@@ -1,6 +1,8 @@
 defmodule EjabberdRcp.EjabberdServiceServer do
   use GRPC.Server, service: Da.Proto.EjabberdService.Service
 
+  alias EjabberdRcp.MessagesDb
+
   @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.RegisterResponse.t()
   def register_user(request, _stream) do
@@ -11,7 +13,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     end
   end
 
-   # this will contain serivecs of the message
+  # this will contain serivecs of the message
   # sending, recieving and initiating a session
   @spec send_messages(Da.Proto.SendMessagesRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.SendMessagesResponse.t()
@@ -30,7 +32,6 @@ defmodule EjabberdRcp.EjabberdServiceServer do
         }
     end
   end
-
 
   def reg_response(message, details) do
     %Da.Proto.RegisterResponse{
@@ -237,6 +238,23 @@ defmodule EjabberdRcp.EjabberdServiceServer do
           status: 0
         }
     end
+  end
+
+  #  getting messagse all and by username
+
+  def get_all_messages(_request, _stream) do
+
+    messages = MessagesDb.get_all_messages()
+    %Da.Proto.GetAllMessagesResponse{
+      messages: messages
+    }
+  end
+
+  def get_messages_by_username(request, _) do
+    messages = MessagesDb.get_messages_by_username(request.username)
+    %Da.Proto.GetMessagesByUsernameResponse{
+      messages: messages
+    }
   end
 
   # create a map from the user details

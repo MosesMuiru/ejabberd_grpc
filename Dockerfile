@@ -13,11 +13,12 @@ RUN HEX_HTTP_CONCURRENCY=1 HEX_HTTP_TIMEOUT=120 mix deps.get
 
 COPY config config
 
-COPY cacert.pem certfile.pem server.pem ejabberd.yml ./
 
 COPY lib lib
 
 RUN mix deps.compile 
+
+COPY cacert.pem certfile.pem server.pem ejabberd.yml ./
 
 EXPOSE 5051
 

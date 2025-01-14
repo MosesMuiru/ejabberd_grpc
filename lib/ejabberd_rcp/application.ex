@@ -9,6 +9,7 @@ defmodule EjabberdRcp.Application do
     children = [
       # Starts a worker by calling: EjabberdRcp.Worker.start_link(arg)
       # {EjabberdRcp.Worker, arg}
+      EjabberdRcp.Repo,
       {GRPC.Server.Supervisor, endpoint: EjabberdRcp.Endpoint, port: 5051, start_server: true},
       GrpcReflection
     ]

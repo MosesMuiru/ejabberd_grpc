@@ -35,7 +35,11 @@ defmodule EjabberdRcp.MixProject do
       {:cors_plug, "~> 3.0"},
       {:plug_cowboy, "~> 2.0"},
       {:p1_pgsql, "~> 1.1"},
-      {:grpc_reflection, "~> 0.1.0"}
+      {:grpc_reflection, "~> 0.1.0"},
+      {:ecto, "~> 3.12"},
+      {:postgrex, "~> 0.19.3"},
+      {:ecto_sql, "~> 3.10"},
+      {:sweet_xml, "~> 0.7.5"}
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
   end
