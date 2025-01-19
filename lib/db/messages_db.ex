@@ -43,6 +43,5 @@ defmodule EjabberdRcp.MessagesDb do
         xml: x.xml
       }
     end)
-    |> IO.inspect(label: "data")
   end
 end

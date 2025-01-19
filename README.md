@@ -99,4 +99,5 @@ use da-messaging-svc
     }
 
 ```
-
+invites
+https://xmpp.org/extensions/xep-0249.html
