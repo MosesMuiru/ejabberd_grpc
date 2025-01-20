@@ -101,3 +101,5 @@ use da-messaging-svc
 ```
 invites
 https://xmpp.org/extensions/xep-0249.html
+
+https://xmpp.org/extensions/xep-0045.html#invite-mediated

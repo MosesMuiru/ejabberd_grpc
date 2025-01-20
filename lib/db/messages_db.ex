@@ -8,11 +8,13 @@ defmodule EjabberdRcp.MessagesDb do
     Repo.all(Archive)
     |> extract_xml()
   end
+
   # @spec all_messages(String.t()) :: map(list)
   def get_messages_by_username(username) do
     query =
-      from a in Archive,
-      where: a.username == ^username
+      from(a in Archive,
+        where: a.username == ^username
+      )
 
     Repo.all(query)
     |> extract_xml
@@ -20,12 +22,11 @@ defmodule EjabberdRcp.MessagesDb do
 
   # extracting the data from xml to a vid
   def extract_xml(data) do
-
     data
     |> Enum.map(fn x ->
       parsed_data =
-      x.xml
-      |> SweetXml.parse()
+        x.xml
+        |> SweetXml.parse()
 
       %{
         id: x.id,

@@ -2,6 +2,8 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   use GRPC.Server, service: Da.Proto.EjabberdService.Service
 
   alias EjabberdRcp.MessagesDb
+  alias EjabberdRcp.InvitesRepo
+  alias EjabberdRcp.RoomsRepo
 
   @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.RegisterResponse.t()
@@ -115,9 +117,17 @@ defmodule EjabberdRcp.EjabberdServiceServer do
       {"allow_subscription", "true"}
     ]
 
+    [_, name] = String.split(request.options.affliations, ":")
+
     :mod_muc_admin.create_room_with_opts(request.name, request.service, request.host, option)
     |> case do
       :ok ->
+        %EjabberdRcp.RoomSchema{
+          user_jid: "#{name}@#{request.host}",
+          room_jid: "#{request.name}@#{request.service}"
+        }
+        |> EjabberdRcp.RoomsRepo.insert_room()
+
         %Da.Proto.CreateRoomResponse{
           name: request.name,
           host: request.host
@@ -151,25 +161,22 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     end
   end
 
-  def send_direct_invitation(request, _stream) do
-    :mod_muc_admin.send_direct_invitation(
-      request.room_name,
-      request.service,
-      request.password,
-      request.invite_description,
-      request.jids
-    )
-    |> case do
-      {:error, reason} ->
-        %Da.Proto.InviteUserResponse{
-          status: reason
-        }
 
-      :ok ->
-        %Da.Proto.InviteUserResponse{
-          status: "Invite sent"
-        }
-    end
+  def send_direct_invitation(request, _stream) do
+    Enum.map(request.jids, fn jid ->
+      %EjabberdRcp.Invites{
+        to: jid,
+        description: request.invite_description,
+        password: request.password,
+        accepted: false,
+        rooms_id: request.room_id
+      }
+      |> EjabberdRcp.InvitesRepo.insert_invite()
+    end)
+
+    %Da.Proto.InviteUserResponse{
+      status: "Invite sent"
+    }
   end
 
   def get_user_rooms(request, _stream) do
@@ -243,8 +250,8 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   #  getting messagse all and by username
 
   def get_all_messages(_request, _stream) do
-
     messages = MessagesDb.get_all_messages()
+
     %Da.Proto.GetAllMessagesResponse{
       messages: messages
     }
@@ -252,14 +259,58 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
   def get_messages_by_username(request, _) do
     messages = MessagesDb.get_messages_by_username(request.username)
+
     %Da.Proto.GetMessagesByUsernameResponse{
       messages: messages
     }
   end
 
+  @docs """
+
+  when invite is sent
+  save to invite table with accepted as false
+
+  accept invite
+
+  fetch the invite either by the username or the id of the invite
+  add the rooms name to the rooms table
+
+  joins automatically
+
+  get invite by uuid
+
+  get the room name ,
+
+  """
+
+  def accept_invitation(request, _stream) do
+    %{rooms_id: rooms_id} = invite = InvitesRepo.get_invite_by_uuid(request.uuid)
+
+    room = RoomsRepo.get_room_by_id(rooms_id)
+
+    new_invite = Ecto.Changeset.change(invite, accepted: true)
+
+    %EjabberdRcp.RoomSchema{
+      user_jid: invite.to,
+      room_jid: room.room_jid
+    }
+    |> RoomsRepo.insert_room()
+
+    case EjabberdRcp.Repo.update(new_invite) do
+      {:ok, invite} ->
+        %Da.Proto.AcceptInvitationResponse{
+          id: invite.id,
+          uuid: invite.uuid,
+          to: invite.to,
+          description: invite.description,
+          rooms_id: room.id,
+          accepted: invite.accepted
+        }
+    end
+  end
+
   # create a map from the user details
   def format_user_details([{_, jid, role} | tail]) do
-    IO.inspect(tail, label: "working")
     [%{jid => to_string(role)} | format_user_details(tail)]
   end
 

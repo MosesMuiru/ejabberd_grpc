@@ -3,9 +3,9 @@ defmodule EjabberdRcp.RoomSchema do
   import Ecto.Changeset
 
   schema "rooms" do
-    field :uuid, Ecto.UUID, autogenerate: true
-    field :user_jid, :string
-    field :room_jid, :string
+    field(:uuid, Ecto.UUID, autogenerate: true)
+    field(:user_jid, :string)
+    field(:room_jid, :string)
   end
 
   def changeset(rooms, attrs) do
