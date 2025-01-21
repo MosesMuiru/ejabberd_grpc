@@ -1,6 +1,7 @@
 defmodule EjabberdRcp.MessagesDb do
   alias EjabberdRcp.Repo
   alias EjabberdRcp.Archive
+  alias EjabberdRcp.Spool
   import Ecto.Query, warn: false
   import SweetXml
 
@@ -18,6 +19,43 @@ defmodule EjabberdRcp.MessagesDb do
 
     Repo.all(query)
     |> extract_xml
+  end
+
+  # get offline messages
+
+  def get_offline_messages_by_username(username) do
+    Spool
+    |> where([s], s.username == ^username)
+    |> select([s], %{username: s.username, xml: s.xml, seq: s.seq, created_at: s.created_at})
+    |> Repo.all()
+    |> extra_xml()
+  end
+
+  def get_offline_messages() do
+    Spool
+    |> select([s], %{username: s.username, xml: s.xml, seq: s.seq, created_at: s.created_at})
+    |> Repo.all()
+    |> extract_xml()
+  end
+
+  def extra_xml(messages) do
+    messages
+    |> Enum.map(fn x ->
+      parsed_data =
+        x.xml
+        |> SweetXml.parse()
+
+      # IO.inspect(xpath(parsed_data, ~x"//messages/body"))
+      IO.inspect(xpath(parsed_data, ~x"//message//body/text()"), label: "xml -->")
+
+      %{
+        to: to_string(xpath(parsed_data, ~x"//message/@to")),
+        from: to_string(xpath(parsed_data, ~x"//message/@from")),
+        txt: xpath(parsed_data, ~x"//message//body/text()"),
+        created_at: x.created_at,
+        seq: x.seq
+      }
+    end)
   end
 
   # extracting the data from xml to a vid
