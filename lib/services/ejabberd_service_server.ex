@@ -122,7 +122,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     :mod_muc_admin.create_room_with_opts(request.name, request.service, request.host, option)
     |> case do
       :ok ->
-        %EjabberdRcp.RoomSchema{
+        %EjabberdRcp.Rooms{
           user_jid: "#{name}@#{request.host}",
           room_jid: "#{request.name}@#{request.service}"
         }
@@ -160,7 +160,6 @@ defmodule EjabberdRcp.EjabberdServiceServer do
         }
     end
   end
-
 
   def send_direct_invitation(request, _stream) do
     Enum.map(request.jids, fn jid ->
@@ -221,10 +220,10 @@ defmodule EjabberdRcp.EjabberdServiceServer do
           user_details: f_user_details
         }
 
-      _ ->
-        %Da.Proto.GetRoomOccupantsResponse{
-          user_details: []
-        }
+      # _ ->
+        # %Da.Proto.GetRoomOccupantsResponse{
+          # user_details: []
+        # }
     end
   end
 
@@ -265,24 +264,6 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     }
   end
 
-  @docs """
-
-  when invite is sent
-  save to invite table with accepted as false
-
-  accept invite
-
-  fetch the invite either by the username or the id of the invite
-  add the rooms name to the rooms table
-
-  joins automatically
-
-  get invite by uuid
-
-  get the room name ,
-
-  """
-
   def accept_invitation(request, _stream) do
     %{rooms_id: rooms_id} = invite = InvitesRepo.get_invite_by_uuid(request.uuid)
 
@@ -290,7 +271,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
     new_invite = Ecto.Changeset.change(invite, accepted: true)
 
-    %EjabberdRcp.RoomSchema{
+    %EjabberdRcp.Rooms{
       user_jid: invite.to,
       room_jid: room.room_jid
     }
