@@ -11,8 +11,9 @@ defmodule EjabberdRcp.Invites do
     field(:accepted, :boolean)
 
     # invites belong to a room
-
     belongs_to(:rooms, Rooms)
+
+    timestamps()
   end
 
   def changeset(invites, attrs) do

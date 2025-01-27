@@ -1,5 +1,6 @@
 defmodule EjabberdRcp.Archive do
   use Ecto.Schema
+  # import Ecto.Changeset
 
   schema "archive" do
     field(:username, :string)
@@ -12,5 +13,11 @@ defmodule EjabberdRcp.Archive do
     field(:kind, :string)
     field(:nick, :string)
     field(:created_at, :naive_datetime)
+    field(:reaction_id, :int)
   end
+
+  # def changeset(archive, _params) do
+  #   archive
+  #   |> cast()
+  # end
 end
