@@ -13,7 +13,7 @@ defmodule EjabberdRcp.Archive do
     field(:kind, :string)
     field(:nick, :string)
     field(:created_at, :naive_datetime)
-    field(:reaction_id, :int)
+    field(:reaction_id, :integer)
   end
 
   # def changeset(archive, _params) do
