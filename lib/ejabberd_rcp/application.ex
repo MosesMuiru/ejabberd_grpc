@@ -9,6 +9,10 @@ defmodule EjabberdRcp.Application do
     children = [
       # Starts a worker by calling: EjabberdRcp.Worker.start_link(arg)
       # {EjabberdRcp.Worker, arg}
+
+      {Plug.Cowboy, scheme: :http, plug: EjabberdRcp.ReactionRouter, options: [port: 4040]},
+      {Phoenix.PubSub, name: EjabberdRcp.PubSub},
+      EjabberdRcp.SocketHandler,
       EjabberdRcp.Repo,
       {GRPC.Server.Supervisor, endpoint: EjabberdRcp.Endpoint, port: 5051, start_server: true},
       GrpcReflection

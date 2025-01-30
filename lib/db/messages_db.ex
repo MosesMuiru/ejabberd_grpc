@@ -4,6 +4,7 @@ defmodule EjabberdRcp.MessagesDb do
   alias EjabberdRcp.Spool
   import Ecto.Query, warn: false
   import SweetXml
+  import Ecto.Query
 
   def get_all_messages() do
     Repo.all(Archive)
@@ -12,13 +13,11 @@ defmodule EjabberdRcp.MessagesDb do
 
   # @spec all_messages(String.t()) :: map(list)
   def get_messages_by_username(username) do
-    query =
-      from(a in Archive,
-        where: a.username == ^username
-      )
-
-    Repo.all(query)
-    |> extract_xml
+    Archive
+    |> where(username: ^username)
+    |> Repo.all()
+    |> Repo.preload(:user_reactions)
+    |> extract_xml()
   end
 
   # get offline messages
@@ -82,5 +81,28 @@ defmodule EjabberdRcp.MessagesDb do
         xml: x.xml
       }
     end)
+  end
+
+  # search the message by id and eddit the the
+  def get_and_update_message_by_id_and_reaction_id(reaction_id, message_id) do
+    Archive
+    |> where([a], a.origin_id == ^message_id)
+    |> update([a], set: [reaction_id: ^reaction_id])
+    |> Repo.update_all([])
+  end
+
+  def get_message_id_by_origin_and_username(origin_id, username) do
+    Archive
+    |> where([a], a.origin_id == ^origin_id and a.username == ^username)
+    |> Repo.all()
+  end
+
+  # a user can react to a message
+  # who reacted to the message, and the message id of the message
+  # get the details of the message that the user reacted to
+
+  # what if i just get the reaction of the message, and who reacted to the
+
+  def get_messages_with_reactions(username) do
   end
 end

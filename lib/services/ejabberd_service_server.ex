@@ -4,6 +4,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   alias EjabberdRcp.MessagesDb
   alias EjabberdRcp.InvitesRepo
   alias EjabberdRcp.RoomsRepo
+  alias EjabberRcp.ReactionsRepo
 
   @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.RegisterResponse.t()
@@ -220,9 +221,9 @@ defmodule EjabberdRcp.EjabberdServiceServer do
           user_details: f_user_details
         }
 
-      # _ ->
+        # _ ->
         # %Da.Proto.GetRoomOccupantsResponse{
-          # user_details: []
+        # user_details: []
         # }
     end
   end
@@ -286,6 +287,32 @@ defmodule EjabberdRcp.EjabberdServiceServer do
           description: invite.description,
           rooms_id: room.id,
           accepted: invite.accepted
+        }
+    end
+  end
+
+  # reactions
+  def get_all_reactions(request, _stream) do
+    all_reactions = ReactionsRepo.get_all_reactions()
+
+    %Da.Proto.GetAllReactionsResponse{
+      reactions: all_reactions
+    }
+  end
+
+  def react_to_message(request, _stream) do
+    %EjabberdRcp.UserReaction{
+      archive_origin_id: request.message_id,
+      username: request.username,
+      reactions_id: String.to_integer(request.reaction_id)
+    }
+    |> EjabberdRcp.ReactionsRepo.insert_user_reactions()
+    |> case do
+      {:ok, reaction} ->
+        %Da.Proto.ReactToMessageResponse{
+          message_id: reaction.archive_origin_id,
+          reaction_id: reaction.reactions_id,
+          username: reaction.username
         }
     end
   end
