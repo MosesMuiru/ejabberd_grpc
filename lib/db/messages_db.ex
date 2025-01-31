@@ -102,7 +102,4 @@ defmodule EjabberdRcp.MessagesDb do
   # get the details of the message that the user reacted to
 
   # what if i just get the reaction of the message, and who reacted to the
-
-  def get_messages_with_reactions(username) do
-  end
 end

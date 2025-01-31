@@ -11,12 +11,7 @@ defmodule EjabberdRcp.ReactionRouter do
     send_resp(conn, 200, "Hello from Cowboy")
   end
 
-  # should a process be created when there is 
   get "/reactions/:message_id" do
-    # each message will have same global 
-    :global.register_name(:reaction_pid, self())
-
-    # Set up the response for Server-Sent Events (SSE)
     conn =
       conn
       |> put_resp_header("access-control-allow-origin", "*")
@@ -27,7 +22,18 @@ defmodule EjabberdRcp.ReactionRouter do
       # Ensure chunked transfer encoding
       |> send_chunked(200)
 
-    sse_loop(conn)
+    message_id = conn.params["message_id"] || "messege_id"
+    message_id = String.to_atom(message_id)
+
+    :global.register_name(message_id, self())
+
+    data =
+      EjabberdRcp.ReactionsRepo.get_message_user_reaction(conn.params["message_id"])
+      |> EjabberdRcp.ReactionsRepo.user_reactions_formatter()
+
+    {:ok, conn} = send_event(conn, data)
+
+    sse_loop(conn, message_id)
   end
 
   defp send_event(conn, message) do
@@ -39,16 +45,14 @@ defmodule EjabberdRcp.ReactionRouter do
   end
 
   # This is the infinite loop that listens for incoming messages
-  def sse_loop(conn) do
+  def sse_loop(conn, message_id) do
     receive do
-      {:reaction_update, data} ->
-        IO.inspect(data, label: "inside infinity loop")
-
+      # PID<0.1354.0>
+      {^message_id, data} ->
         # Send a message to the client
         {:ok, conn} = send_event(conn, data)
 
-        # Ensure the loop continues with the updated connection
-        sse_loop(conn)
+        sse_loop(conn, message_id)
     end
   end
 

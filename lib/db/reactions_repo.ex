@@ -41,26 +41,39 @@ defmodule EjabberdRcp.ReactionsRepo do
         # a list of reactions but  is hould broadcast the emoji, origin_id, inserted_at
         user_reactions =
           get_message_user_reaction(reaction.archive_origin_id)
-          |> Enum.map(fn data ->
-            %{
-              id: data.id,
-              message_id: data.archive_origin_id,
-              username: data.username,
-              reactions_id: data.reactions.id,
-              reaction_name: data.reactions.reaction_name,
-              reaction_code: data.reactions.reaction_code,
-              reacted_at: data.inserted_at
-            }
-          end)
-          |> IO.inspect(label: "before deoding")
-          |> Jason.encode!()
-          |> IO.inspect(label: "after deoding")
+          |> user_reactions_formatter()
 
-        pid = :global.whereis_name(:reaction_pid)
+        message_id = String.to_atom(reaction.archive_origin_id)
+        pid = :global.whereis_name(String.to_atom(reaction.archive_origin_id))
+
+
         #  remember to handle when the pid is not registered || the client is offlinet
-        send(pid, {:reaction_update, user_reactions})
+        send(pid, {message_id, user_reactions})
     end
   end
+
+  def send do
+    send(self(), {:"1", "waaah"})
+  end
+
+  def user_reactions_formatter(user_reaction) do
+    user_reaction
+    |> Enum.map(fn data ->
+      %{
+        id: data.id,
+        message_id: data.archive_origin_id,
+        username: data.username,
+        reactions_id: data.reactions.id,
+        reaction_name: data.reactions.reaction_name,
+        reaction_code: data.reactions.reaction_code,
+        reacted_at: data.inserted_at
+      }
+    end)
+    |> Jason.encode!()
+  end
+
+  # create a process when a reacts to a message
+  # the role of these process is to fetch data
 
   # get message reactions, message_id, this is the data i will send through the api
   def get_message_user_reaction(message_id) do

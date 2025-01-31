@@ -301,20 +301,39 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   end
 
   def react_to_message(request, _stream) do
-    %EjabberdRcp.UserReaction{
-      archive_origin_id: request.message_id,
-      username: request.username,
-      reactions_id: String.to_integer(request.reaction_id)
+    # create a process based on the message id
+    #
+
+    reaction_res =
+      %EjabberdRcp.UserReaction{
+        archive_origin_id: request.message_id,
+        username: request.username,
+        reactions_id: String.to_integer(request.reaction_id)
+      }
+      |> EjabberdRcp.ReactionsRepo.insert_user_reactions()
+
+    # reaction_process_name = String.to_atom(request.message_id)
+    # if the process exists re_register it with the same name
+    # to make sure that the process exist always
+    # :global.register_name(reaction_process_name, pid)
+    # |> case do
+    # :no ->
+    # :global.re_register_name(reaction_process_name, pid)
+
+    # :yes ->
+    # end
+
+    %Da.Proto.ReactToMessageResponse{
+      message_id: reaction_res.archive_origin_id,
+      reaction_id: reaction_res.reactions_id,
+      username: reaction_res.username
     }
-    |> EjabberdRcp.ReactionsRepo.insert_user_reactions()
-    |> case do
-      {:ok, reaction} ->
-        %Da.Proto.ReactToMessageResponse{
-          message_id: reaction.archive_origin_id,
-          reaction_id: reaction.reactions_id,
-          username: reaction.username
-        }
-    end
+  end
+
+  # a process that seeds data to db
+  @spec create_a_process_based_on_message_id(map()) :: pid()
+  def create_a_process_based_on_message_id(reaction) do
+    spawn(EjabberdRcp.ReactionsRepo, :insert_user_reactions, [reaction])
   end
 
   # create a map from the user details
