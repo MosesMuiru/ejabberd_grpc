@@ -12,7 +12,6 @@ defmodule EjabberdRcp.Reactions do
     timestamps()
   end
 
-
   def changeset(reactions, attrs) do
     reactions
     |> cast(attrs, [:reactions_name, :reactions_code])

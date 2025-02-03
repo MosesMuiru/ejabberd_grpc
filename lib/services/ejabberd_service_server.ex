@@ -4,6 +4,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   alias EjabberdRcp.MessagesDb
   alias EjabberdRcp.InvitesRepo
   alias EjabberdRcp.RoomsRepo
+  alias EjabberRcp.ReactionsRepo
 
   @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.RegisterResponse.t()
@@ -18,7 +19,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   # this will contain serivecs of the message
   # sending, recieving and initiating a session
   @spec send_messages(Da.Proto.SendMessagesRequest.t(), GRPC.Server.Stream.t()) ::
-          Da.Proto.SendMessagesResponse.t()
+  Da.Proto.SendMessagesResponse.t()
   def send_messages(request, _stream) do
     :mod_admin_extra.send_message(
       request.type,
@@ -44,7 +45,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
   # set presence of the
   @spec set_presence(Da.Proto.SetPresenceRequest.t(), GRPC.Server.Stream.t()) ::
-          Da.Proto.SetPresenceResponse.t()
+  Da.Proto.SetPresenceResponse.t()
   def set_presence(request, _stream) do
     :ejabberd_sm.get_user_resources(request.user, request.host)
     |> case do
@@ -220,9 +221,9 @@ defmodule EjabberdRcp.EjabberdServiceServer do
           user_details: f_user_details
         }
 
-      # _ ->
+        # _ ->
         # %Da.Proto.GetRoomOccupantsResponse{
-          # user_details: []
+        # user_details: []
         # }
     end
   end
@@ -288,6 +289,61 @@ defmodule EjabberdRcp.EjabberdServiceServer do
           accepted: invite.accepted
         }
     end
+  end
+
+  # reactions
+  def get_all_reactions(request, _stream) do
+    all_reactions = ReactionsRepo.get_all_reactions()
+
+    %Da.Proto.GetAllReactionsResponse{
+      reactions: all_reactions
+    }
+  end
+
+  def react_to_message(request, _stream) do
+    # create a process based on the message id
+    #
+
+    reaction_res =
+      %EjabberdRcp.UserReaction{
+        archive_origin_id: request.message_id,
+        username: request.username,
+        reactions_id: String.to_integer(request.reaction_id)
+      }
+      |> EjabberdRcp.ReactionsRepo.insert_user_reactions()
+
+    # reaction_process_name = String.to_atom(request.message_id)
+    # if the process exists re_register it with the same name
+    # to make sure that the process exist always
+    # :global.register_name(reaction_process_name, pid)
+    # |> case do
+    # :no ->
+    # :global.re_register_name(reaction_process_name, pid)
+
+    # :yes ->
+    # end
+
+    %Da.Proto.ReactToMessageResponse{
+      message_id: reaction_res.archive_origin_id,
+      reaction_id: reaction_res.reactions_id,
+      username: reaction_res.username
+    }
+  end
+
+  # message actions
+  def pin_message(request, _stream) do
+        MessagesDb.pin_message(request.message_id, request.username, request.pin)
+        |> case do
+          {1, nil} -> 
+            %Da.Proto.PinMessageResponse{
+              pinned: request.pin
+            }
+        end
+  end
+  # a process that seeds data to db
+  @spec create_a_process_based_on_message_id(map()) :: pid()
+  def create_a_process_based_on_message_id(reaction) do
+    spawn(EjabberdRcp.ReactionsRepo, :insert_user_reactions, [reaction])
   end
 
   # create a map from the user details
