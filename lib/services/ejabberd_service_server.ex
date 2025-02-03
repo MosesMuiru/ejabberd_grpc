@@ -19,7 +19,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   # this will contain serivecs of the message
   # sending, recieving and initiating a session
   @spec send_messages(Da.Proto.SendMessagesRequest.t(), GRPC.Server.Stream.t()) ::
-          Da.Proto.SendMessagesResponse.t()
+  Da.Proto.SendMessagesResponse.t()
   def send_messages(request, _stream) do
     :mod_admin_extra.send_message(
       request.type,
@@ -45,7 +45,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
   # set presence of the
   @spec set_presence(Da.Proto.SetPresenceRequest.t(), GRPC.Server.Stream.t()) ::
-          Da.Proto.SetPresenceResponse.t()
+  Da.Proto.SetPresenceResponse.t()
   def set_presence(request, _stream) do
     :ejabberd_sm.get_user_resources(request.user, request.host)
     |> case do
@@ -330,6 +330,16 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     }
   end
 
+  # message actions
+  def pin_message(request, _stream) do
+        MessagesDb.pin_message(request.message_id, request.username, request.pin)
+        |> case do
+          {1, nil} -> 
+            %Da.Proto.PinMessageResponse{
+              pinned: request.pin
+            }
+        end
+  end
   # a process that seeds data to db
   @spec create_a_process_based_on_message_id(map()) :: pid()
   def create_a_process_based_on_message_id(reaction) do
