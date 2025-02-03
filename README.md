@@ -103,3 +103,25 @@ invites
 https://xmpp.org/extensions/xep-0249.html
 
 https://xmpp.org/extensions/xep-0045.html#invite-mediated
+
+<!-- check list for reactions -->
+
+    1. create a table for storing reactions
+    2. you can only react to an existing message
+    3. so sending and invite as a message containing the message id, and the reaction type, 
+    4. On the other side i should stream
+
+    reaction the api
+
+    reaction_description
+    reaction_emoji
+    message_id
+    username --> the person who reacted to that message
+     
+    1. store this to db
+    2. 
+
+
+<!-- reaction -->
+seed the initial reaction to db
+ mix run priv/repo/reactions_seeds.exs 

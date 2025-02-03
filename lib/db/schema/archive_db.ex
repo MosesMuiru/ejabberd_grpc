@@ -13,6 +13,7 @@ defmodule EjabberdRcp.Archive do
     field(:kind, :string)
     field(:nick, :string)
     field(:created_at, :naive_datetime)
+    field(:pinned, :boolean)
     has_many(:reactions, EjabberdRcp.UserReactions)
   end
 
