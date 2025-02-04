@@ -104,7 +104,7 @@ https://xmpp.org/extensions/xep-0249.html
 
 https://xmpp.org/extensions/xep-0045.html#invite-mediated
 
-<!-- check list for reactions -->
+***check list for reactions***
 
     1. create a table for storing reactions
     2. you can only react to an existing message
@@ -122,6 +122,14 @@ https://xmpp.org/extensions/xep-0045.html#invite-mediated
     2. 
 
 
-<!-- reaction -->
+##Reaction  and Actions
 seed the initial reaction to db
+ ```
  mix run priv/repo/reactions_seeds.exs 
+ ```
+
+ Execute sql file to change permission on users folder i.e
+ changing the adding id column and making it a username, 
+ ```
+ priv/repo/alter_user_table_add_to_id.sql
+ ```

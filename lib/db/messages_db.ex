@@ -103,6 +103,11 @@ defmodule EjabberdRcp.MessagesDb do
     |> where([a], a.username == ^username and a.origin_id == ^message_id)
     |> update(set: [pinned: ^pin])
     |> Repo.update_all([])
+  end
 
+  def  delete_message_by_id(message_id) do
+    Archive
+    |> where([a], a.id == ^message_id)
+    |> Repo.delete_all()
   end
 end

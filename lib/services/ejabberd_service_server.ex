@@ -5,6 +5,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   alias EjabberdRcp.InvitesRepo
   alias EjabberdRcp.RoomsRepo
   alias EjabberRcp.ReactionsRepo
+  alias EjabberdRcp.SavesRepo
 
   @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.RegisterResponse.t()
@@ -339,6 +340,33 @@ defmodule EjabberdRcp.EjabberdServiceServer do
               pinned: request.pin
             }
         end
+  end
+
+  def delete_message(request, _stream) do
+  
+    EjabberdRcp.MessagesDb.delete_message_by_id(request.message_id)
+
+    %Da.Proto.DeleteMessageResponse{
+      response: 0
+    }
+  end
+
+  def save_message(request, _stream) do
+    {:ok, saves} = SavesRepo.save_a_message(request.message_id, request.user_id)
+
+    %Da.Proto.SaveMessageRequest{
+       message_id: saves.archive_id 
+     }
+  end
+
+  def get_saved_messages_by_user_id(request, _stream) do
+
+   saves =  SavesRepo.get_saved_message_by_user_id(request.user_id)
+
+    %Da.Proto.GetSavedMessagesByUserIdResponse{
+      messages: saves
+    }
+    
   end
   # a process that seeds data to db
   @spec create_a_process_based_on_message_id(map()) :: pid()
