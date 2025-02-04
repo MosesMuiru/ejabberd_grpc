@@ -27,5 +27,10 @@ defmodule EjabberdRcp.SavesRepo do
     
   end
 
+  def unsave_message(save_id) do
+    SavesDb
+    |> where([s], s.id == ^save_id)
+    |> Repo.delete_all()
+  end
 
 end

@@ -368,6 +368,13 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     }
     
   end
+
+  def unsave_message(request, _stream) do
+    {count, _} = SavesRepo.unsave_message(request.user_id)
+    %Da.Proto.UnsaveMessageResponse{
+      response: count
+    }
+  end
   # a process that seeds data to db
   @spec create_a_process_based_on_message_id(map()) :: pid()
   def create_a_process_based_on_message_id(reaction) do
