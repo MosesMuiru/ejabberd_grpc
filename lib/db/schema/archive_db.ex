@@ -1,6 +1,6 @@
 defmodule EjabberdRcp.Archive do
   use Ecto.Schema
-   import Ecto.Changeset
+  import Ecto.Changeset
 
   schema "archive" do
     field(:username, :string)
@@ -18,8 +18,20 @@ defmodule EjabberdRcp.Archive do
     has_many(:saves, EjabberdRcp.SavesDb)
   end
 
-   def changeset(archive, params) do
-     archive
-     |> cast(params, [:username, :timestamp, :peer, :bare_peer, :xml, :txt, :origin_id, :kind, :nick, :created_at, :pinned])
-   end
+  def changeset(archive, params) do
+    archive
+    |> cast(params, [
+      :username,
+      :timestamp,
+      :peer,
+      :bare_peer,
+      :xml,
+      :txt,
+      :origin_id,
+      :kind,
+      :nick,
+      :created_at,
+      :pinned
+    ])
+  end
 end

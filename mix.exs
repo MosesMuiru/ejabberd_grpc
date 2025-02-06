@@ -42,7 +42,8 @@ defmodule EjabberdRcp.MixProject do
       {:sweet_xml, "~> 0.7.5"},
       {:cowboy, "~> 2.12"},
       {:phoenix_pubsub, "~> 2.1"},
-      {:jason, "~> 1.4"}
+      {:jason, "~> 1.4"},
+      {:oban, "~> 2.19"}
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
   end

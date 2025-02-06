@@ -20,7 +20,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   # this will contain serivecs of the message
   # sending, recieving and initiating a session
   @spec send_messages(Da.Proto.SendMessagesRequest.t(), GRPC.Server.Stream.t()) ::
-  Da.Proto.SendMessagesResponse.t()
+          Da.Proto.SendMessagesResponse.t()
   def send_messages(request, _stream) do
     :mod_admin_extra.send_message(
       request.type,
@@ -46,7 +46,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
   # set presence of the
   @spec set_presence(Da.Proto.SetPresenceRequest.t(), GRPC.Server.Stream.t()) ::
-  Da.Proto.SetPresenceResponse.t()
+          Da.Proto.SetPresenceResponse.t()
   def set_presence(request, _stream) do
     :ejabberd_sm.get_user_resources(request.user, request.host)
     |> case do
@@ -333,17 +333,16 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
   # message actions
   def pin_message(request, _stream) do
-        MessagesDb.pin_message(request.message_id, request.username, request.pin)
-        |> case do
-          {1, nil} -> 
-            %Da.Proto.PinMessageResponse{
-              pinned: request.pin
-            }
-        end
+    MessagesDb.pin_message(request.message_id, request.username, request.pin)
+    |> case do
+      {1, nil} ->
+        %Da.Proto.PinMessageResponse{
+          pinned: request.pin
+        }
+    end
   end
 
   def delete_message(request, _stream) do
-  
     EjabberdRcp.MessagesDb.delete_message_by_id(request.message_id)
 
     %Da.Proto.DeleteMessageResponse{
@@ -355,26 +354,26 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     {:ok, saves} = SavesRepo.save_a_message(request.message_id, request.user_id)
 
     %Da.Proto.SaveMessageRequest{
-       message_id: saves.archive_id 
-     }
+      message_id: saves.archive_id
+    }
   end
 
   def get_saved_messages_by_user_id(request, _stream) do
-
-   saves =  SavesRepo.get_saved_message_by_user_id(request.user_id)
+    saves = SavesRepo.get_saved_message_by_user_id(request.user_id)
 
     %Da.Proto.GetSavedMessagesByUserIdResponse{
       messages: saves
     }
-    
   end
 
   def unsave_message(request, _stream) do
     {count, _} = SavesRepo.unsave_message(request.user_id)
+
     %Da.Proto.UnsaveMessageResponse{
       response: count
     }
   end
+
   # a process that seeds data to db
   @spec create_a_process_based_on_message_id(map()) :: pid()
   def create_a_process_based_on_message_id(reaction) do
