@@ -6,6 +6,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   alias EjabberdRcp.RoomsRepo
   alias EjabberRcp.ReactionsRepo
   alias EjabberdRcp.SavesRepo
+  alias EjabberdRcp.ReminderRepo
 
   @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.RegisterResponse.t()
@@ -371,6 +372,32 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
     %Da.Proto.UnsaveMessageResponse{
       response: count
+    }
+  end
+
+  def add_reminder(request, _stream) do
+    {:ok, datetime, 0} = DateTime.from_iso8601(request.execution_time)
+
+    %EjabberdRcp.ReminderDb{
+      archive_id: request.message_id,
+      user_id: request.user_id,
+      schedule_date: datetime,
+      completed: false
+    }
+    |> EjabberdRcp.ReminderRepo.create_reminder()
+    |> case do
+      {:ok, job} ->
+        %Da.Proto.AddReminderResponse{
+          job_id: job.id
+        }
+    end
+  end
+
+  def get_reminders(request, _stream) do
+    reminder = ReminderRepo.fetch_reminder_by_user_id(request.user_id)
+
+    %Da.Proto.GetRemindersResponse{
+      reminder: reminder
     }
   end
 
