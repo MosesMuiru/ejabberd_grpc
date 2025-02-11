@@ -7,6 +7,8 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   alias EjabberRcp.ReactionsRepo
   alias EjabberdRcp.SavesRepo
   alias EjabberdRcp.ReminderRepo
+  alias EjabberdRcp.ThreadsRepo
+  alias EjabberdRcp.ThreadsDb
 
   @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.RegisterResponse.t()
@@ -16,6 +18,13 @@ defmodule EjabberdRcp.EjabberdServiceServer do
       {:error, :exists} -> reg_response("user exists", "User exists")
       _ -> reg_response("ensure all details are there", "password, username, host")
     end
+  end
+
+  def reg_response(message, details) do
+    %Da.Proto.RegisterResponse{
+      message: message,
+      user_details: details
+    }
   end
 
   # this will contain serivecs of the message
@@ -38,10 +47,37 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     end
   end
 
-  def reg_response(message, details) do
-    %Da.Proto.RegisterResponse{
-      message: message,
-      user_details: details
+  # forward stanza
+  def forward_message(request, _stream) do
+    IO.inspect(request.forward_details.body, label: "this is working")
+
+    req =
+      "<message to='#{request.forward_to}' from='#{request.forward_from}' id='#{:p1_rand.get_string()}' type='#{request.forward_type}'>
+  <body>#{request.forward_body}</body>
+  <forwarded xmlns='urn:xmpp:forward:0'>
+    <delay xmlns='urn:xmpp:delay' stamp='2010-07-10T23:08:25Z'/>
+    <message from='#{request.forward_details.from}'
+             to='#{request.forward_details.to}'
+             type='#{request.forward_details.type}'
+             xmlns='jabber:client'>
+      <body>#{request.forward_details.body}</body>
+      <mood xmlns='http://jabber.org/protocol/mood'>
+        <amorous/>
+      </mood>
+    </message>
+  </forwarded>
+</message>"
+
+    IO.inspect(req, label: "request")
+
+    :mod_admin_extra.send_stanza(request.forward_from, request.forward_to, req)
+    |> IO.inspect(label: "the forwarding is sent")
+
+    request
+    |> IO.inspect(label: "this is the stanza that will be forwaded")
+
+    %Da.Proto.ForwardMessageResponse{
+      response: "sent"
     }
   end
 
@@ -398,6 +434,41 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
     %Da.Proto.GetRemindersResponse{
       reminder: reminder
+    }
+  end
+
+  # threads
+  def create_thread(request, _stream) do
+    %ThreadsDb{
+      user_id: request.user_id
+    }
+    |> ThreadsRepo.create_thread()
+    |> case do
+      {:ok, thread} ->
+        %Da.Proto.CreateThreadResponse{
+          thread_uuid: thread.uuid
+        }
+    end
+  end
+
+  def send_thread_message(request, _stream) do
+    stanza = "
+   <message
+   to='#{request.to}'
+   from='#{request.from}'
+   id='#{:p1_rand.get_string()}'
+   type='#{request.type}'
+   xml:lang='en'>
+   <body>#{request.body}</body>
+   <thread parent='#{request.parent_id}'>
+   #{request.thread_uuid}
+   </thread>
+   </message>"
+
+    :mod_admin_extra.send_stanza(request.from, request.to, stanza)
+
+    %Da.Proto.SendThreadMessageResponse{
+      response: "sent"
     }
   end
 

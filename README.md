@@ -133,3 +133,22 @@ seed the initial reaction to db
  ```
  priv/repo/alter_user_table_add_to_id.sql
  ```
+ reminder
+
+    insert_to_reminder to db --> insert it to worker
+    worker --> fetch the reminder --> send notification by userid
+ execution time --> insert to worker
+ reminde
+ id
+ user_id
+ message_id
+
+
+# this is how threading is supposed to work
+create thread --> returns a uuid
+    user_id
+    thread_uuid
+
+then threis sending of messages
+    
+

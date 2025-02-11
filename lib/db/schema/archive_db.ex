@@ -14,8 +14,11 @@ defmodule EjabberdRcp.Archive do
     field(:nick, :string)
     field(:created_at, :naive_datetime)
     field(:pinned, :boolean)
+    field(:parent_id, :integer)
     has_many(:reactions, EjabberdRcp.UserReactions)
     has_many(:saves, EjabberdRcp.SavesDb)
+
+    belongs_to(:threads, EjabberdRcp.ThreadsDb)
   end
 
   def changeset(archive, params) do

@@ -46,7 +46,6 @@ defmodule EjabberdRcp.ReactionsRepo do
         message_id = String.to_atom(reaction.archive_origin_id)
         pid = :global.whereis_name(String.to_atom(reaction.archive_origin_id))
 
-
         #  remember to handle when the pid is not registered || the client is offlinet
         send(pid, {message_id, user_reactions})
     end

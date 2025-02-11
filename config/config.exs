@@ -47,7 +47,7 @@ config :ejabberd_rcp, EjabberdRcp.Repo,
 config :ejabberd_rcp,
   ecto_repos: [EjabberdRcp.Repo]
 
-config :ejabberd_rcp, Oban, 
+config :ejabberd_rcp, Oban,
   repo: EjabberdRcp.Repo,
   queues: [reminders: 10],
   plugins: [Oban.Plugins.Pruner],
