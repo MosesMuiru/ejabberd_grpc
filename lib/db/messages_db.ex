@@ -97,9 +97,17 @@ defmodule EjabberdRcp.MessagesDb do
     |> Repo.all()
   end
 
-  # a user can react to a message
-  # who reacted to the message, and the message id of the message
-  # get the details of the message that the user reacted to
+  # message action 
+  def pin_message(message_id, username, pin) do
+    Archive
+    |> where([a], a.username == ^username and a.origin_id == ^message_id)
+    |> update(set: [pinned: ^pin])
+    |> Repo.update_all([])
+  end
 
-  # what if i just get the reaction of the message, and who reacted to the
+  def  delete_message_by_id(message_id) do
+    Archive
+    |> where([a], a.id == ^message_id)
+    |> Repo.delete_all()
+  end
 end

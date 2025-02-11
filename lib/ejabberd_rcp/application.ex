@@ -14,6 +14,7 @@ defmodule EjabberdRcp.Application do
       {Phoenix.PubSub, name: EjabberdRcp.PubSub},
       EjabberdRcp.SocketHandler,
       EjabberdRcp.Repo,
+      {Oban, Application.fetch_env!(:ejabberd_rcp, Oban)},
       {GRPC.Server.Supervisor, endpoint: EjabberdRcp.Endpoint, port: 5051, start_server: true},
       GrpcReflection
     ]

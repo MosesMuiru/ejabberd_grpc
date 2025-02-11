@@ -5,6 +5,10 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   alias EjabberdRcp.InvitesRepo
   alias EjabberdRcp.RoomsRepo
   alias EjabberRcp.ReactionsRepo
+  alias EjabberdRcp.SavesRepo
+  alias EjabberdRcp.ReminderRepo
+  alias EjabberdRcp.ThreadsRepo
+  alias EjabberdRcp.ThreadsDb
 
   @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.RegisterResponse.t()
@@ -16,10 +20,17 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     end
   end
 
+  def reg_response(message, details) do
+    %Da.Proto.RegisterResponse{
+      message: message,
+      user_details: details
+    }
+  end
+
   # this will contain serivecs of the message
   # sending, recieving and initiating a session
   @spec send_messages(Da.Proto.SendMessagesRequest.t(), GRPC.Server.Stream.t()) ::
-  Da.Proto.SendMessagesResponse.t()
+          Da.Proto.SendMessagesResponse.t()
   def send_messages(request, _stream) do
     :mod_admin_extra.send_message(
       request.type,
@@ -36,16 +47,43 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     end
   end
 
-  def reg_response(message, details) do
-    %Da.Proto.RegisterResponse{
-      message: message,
-      user_details: details
+  # forward stanza
+  def forward_message(request, _stream) do
+    IO.inspect(request.forward_details.body, label: "this is working")
+
+    req =
+      "<message to='#{request.forward_to}' from='#{request.forward_from}' id='#{:p1_rand.get_string()}' type='#{request.forward_type}'>
+  <body>#{request.forward_body}</body>
+  <forwarded xmlns='urn:xmpp:forward:0'>
+    <delay xmlns='urn:xmpp:delay' stamp='2010-07-10T23:08:25Z'/>
+    <message from='#{request.forward_details.from}'
+             to='#{request.forward_details.to}'
+             type='#{request.forward_details.type}'
+             xmlns='jabber:client'>
+      <body>#{request.forward_details.body}</body>
+      <mood xmlns='http://jabber.org/protocol/mood'>
+        <amorous/>
+      </mood>
+    </message>
+  </forwarded>
+</message>"
+
+    IO.inspect(req, label: "request")
+
+    :mod_admin_extra.send_stanza(request.forward_from, request.forward_to, req)
+    |> IO.inspect(label: "the forwarding is sent")
+
+    request
+    |> IO.inspect(label: "this is the stanza that will be forwaded")
+
+    %Da.Proto.ForwardMessageResponse{
+      response: "sent"
     }
   end
 
   # set presence of the
   @spec set_presence(Da.Proto.SetPresenceRequest.t(), GRPC.Server.Stream.t()) ::
-  Da.Proto.SetPresenceResponse.t()
+          Da.Proto.SetPresenceResponse.t()
   def set_presence(request, _stream) do
     :ejabberd_sm.get_user_resources(request.user, request.host)
     |> case do
@@ -332,14 +370,108 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
   # message actions
   def pin_message(request, _stream) do
-        MessagesDb.pin_message(request.message_id, request.username, request.pin)
-        |> case do
-          {1, nil} -> 
-            %Da.Proto.PinMessageResponse{
-              pinned: request.pin
-            }
-        end
+    MessagesDb.pin_message(request.message_id, request.username, request.pin)
+    |> case do
+      {1, nil} ->
+        %Da.Proto.PinMessageResponse{
+          pinned: request.pin
+        }
+    end
   end
+
+  def delete_message(request, _stream) do
+    EjabberdRcp.MessagesDb.delete_message_by_id(request.message_id)
+
+    %Da.Proto.DeleteMessageResponse{
+      response: 0
+    }
+  end
+
+  def save_message(request, _stream) do
+    {:ok, saves} = SavesRepo.save_a_message(request.message_id, request.user_id)
+
+    %Da.Proto.SaveMessageRequest{
+      message_id: saves.archive_id
+    }
+  end
+
+  def get_saved_messages_by_user_id(request, _stream) do
+    saves = SavesRepo.get_saved_message_by_user_id(request.user_id)
+
+    %Da.Proto.GetSavedMessagesByUserIdResponse{
+      messages: saves
+    }
+  end
+
+  def unsave_message(request, _stream) do
+    {count, _} = SavesRepo.unsave_message(request.user_id)
+
+    %Da.Proto.UnsaveMessageResponse{
+      response: count
+    }
+  end
+
+  def add_reminder(request, _stream) do
+    {:ok, datetime, 0} = DateTime.from_iso8601(request.execution_time)
+
+    %EjabberdRcp.ReminderDb{
+      archive_id: request.message_id,
+      user_id: request.user_id,
+      schedule_date: datetime,
+      completed: false
+    }
+    |> EjabberdRcp.ReminderRepo.create_reminder()
+    |> case do
+      {:ok, job} ->
+        %Da.Proto.AddReminderResponse{
+          job_id: job.id
+        }
+    end
+  end
+
+  def get_reminders(request, _stream) do
+    reminder = ReminderRepo.fetch_reminder_by_user_id(request.user_id)
+
+    %Da.Proto.GetRemindersResponse{
+      reminder: reminder
+    }
+  end
+
+  # threads
+  def create_thread(request, _stream) do
+    %ThreadsDb{
+      user_id: request.user_id
+    }
+    |> ThreadsRepo.create_thread()
+    |> case do
+      {:ok, thread} ->
+        %Da.Proto.CreateThreadResponse{
+          thread_uuid: thread.uuid
+        }
+    end
+  end
+
+  def send_thread_message(request, _stream) do
+    stanza = "
+   <message
+   to='#{request.to}'
+   from='#{request.from}'
+   id='#{:p1_rand.get_string()}'
+   type='#{request.type}'
+   xml:lang='en'>
+   <body>#{request.body}</body>
+   <thread parent='#{request.parent_id}'>
+   #{request.thread_uuid}
+   </thread>
+   </message>"
+
+    :mod_admin_extra.send_stanza(request.from, request.to, stanza)
+
+    %Da.Proto.SendThreadMessageResponse{
+      response: "sent"
+    }
+  end
+
   # a process that seeds data to db
   @spec create_a_process_based_on_message_id(map()) :: pid()
   def create_a_process_based_on_message_id(reaction) do

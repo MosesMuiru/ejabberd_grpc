@@ -23,6 +23,7 @@ config :ejabberd_rcp, EjabberdRcp.Rooms,
   username: "user",
   password: "pass",
   hostname: "localhost"
+
 # Configures Elixir's Logger
 config :logger, :console, format: "$time $metadata[$level] $message\n"
 
@@ -45,5 +46,12 @@ config :ejabberd_rcp, EjabberdRcp.Repo,
 
 config :ejabberd_rcp,
   ecto_repos: [EjabberdRcp.Repo]
+
+config :ejabberd_rcp, Oban,
+  repo: EjabberdRcp.Repo,
+  queues: [reminders: 10],
+  plugins: [Oban.Plugins.Pruner],
+  queues: [default: 10]
+
 # OR use a URL to connect instead
 # url: "postgres://postgres:postgres@localhost/ecto_simple"
