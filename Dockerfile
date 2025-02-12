@@ -10,11 +10,11 @@ COPY mix.exs mix.lock ./
 
 RUN HEX_HTTP_CONCURRENCY=1 HEX_HTTP_TIMEOUT=120 mix deps.get
 
-
 COPY config config
 
-
 COPY lib lib
+
+COPY priv priv
 
 RUN mix deps.compile 
 
