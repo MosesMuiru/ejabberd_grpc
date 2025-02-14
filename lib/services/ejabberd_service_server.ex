@@ -9,6 +9,8 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   alias EjabberdRcp.ReminderRepo
   alias EjabberdRcp.ThreadsRepo
   alias EjabberdRcp.ThreadsDb
+  alias EjabberdRcp.MentionsRepo
+  alias EjabberdRcp.MentionsDb
 
   @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.RegisterResponse.t()
@@ -32,7 +34,17 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   @spec send_messages(Da.Proto.SendMessagesRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.SendMessagesResponse.t()
   def send_messages(request, _stream) do
-    :mod_admin_extra.send_message(
+
+    mention_from = 
+      request.from
+      |> String.split("@")
+      |> List.first()
+
+    if request.type == "groupchat" do
+      scan_for_mentions(mention_from, request.body)
+    end
+
+      :mod_admin_extra.send_message(
       request.type,
       request.from,
       request.to,
@@ -44,6 +56,27 @@ defmodule EjabberdRcp.EjabberdServiceServer do
         %Da.Proto.SendMessagesResponse{
           response: "0"
         }
+    end
+  end
+
+  def scan_for_mentions(mention_from,  message) do
+    regex = ~r/@([\w\d_]+)/u
+    Regex.scan(regex, message)
+    |> case do
+      [] -> message
+      mentions -> 
+        mentions
+        |> Enum.map(fn [_, mention_to] -> 
+          user_ids = MentionsRepo.get_ids_from_username(mention_from, mention_to)
+                     |> IO.inspect(label: "this si the retuns")
+          # insert the ids to the databases
+          %MentionsDb{
+            user_id: user_ids.mention_to,
+            mention_from: user_ids.mention_from,
+            message: message
+          }
+          |> MentionsRepo.insert_mention()
+        end)
     end
   end
 
