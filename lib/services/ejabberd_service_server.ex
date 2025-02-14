@@ -1,5 +1,7 @@
 defmodule EjabberdRcp.EjabberdServiceServer do
-  use GRPC.Server, service: Da.Proto.EjabberdService.Service
+  use GRPC.Server,
+    service: Da.Proto.EjabberdService.Service,
+    http_transcode: true
 
   alias EjabberdRcp.MessagesDb
   alias EjabberdRcp.InvitesRepo
@@ -34,8 +36,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   @spec send_messages(Da.Proto.SendMessagesRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.SendMessagesResponse.t()
   def send_messages(request, _stream) do
-
-    mention_from = 
+    mention_from =
       request.from
       |> String.split("@")
       |> List.first()
@@ -44,7 +45,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
       scan_for_mentions(mention_from, request.body)
     end
 
-      :mod_admin_extra.send_message(
+    :mod_admin_extra.send_message(
       request.type,
       request.from,
       request.to,
@@ -59,16 +60,21 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     end
   end
 
-  def scan_for_mentions(mention_from,  message) do
+  def scan_for_mentions(mention_from, message) do
     regex = ~r/@([\w\d_]+)/u
+
     Regex.scan(regex, message)
     |> case do
-      [] -> message
-      mentions -> 
+      [] ->
+        message
+
+      mentions ->
         mentions
-        |> Enum.map(fn [_, mention_to] -> 
-          user_ids = MentionsRepo.get_ids_from_username(mention_from, mention_to)
-                     |> IO.inspect(label: "this si the retuns")
+        |> Enum.map(fn [_, mention_to] ->
+          user_ids =
+            MentionsRepo.get_ids_from_username(mention_from, mention_to)
+            |> IO.inspect(label: "this si the retuns")
+
           # insert the ids to the databases
           %MentionsDb{
             user_id: user_ids.mention_to,
