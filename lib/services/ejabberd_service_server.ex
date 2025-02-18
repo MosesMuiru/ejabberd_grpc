@@ -511,6 +511,17 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     }
   end
 
+  def fetch_from_messages(request, _stream) do
+
+    messages = MessagesDb.search_in_messages(request.user_id, request.sender_id, request.searching_for)
+               |> IO.inspect(label: "this si workin")
+
+    %Da.Proto.FetchFromMessagesResponse{
+      messages: messages
+    }
+    
+  end
+
   # a process that seeds data to db
   @spec create_a_process_based_on_message_id(map()) :: pid()
   def create_a_process_based_on_message_id(reaction) do

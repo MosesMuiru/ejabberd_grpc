@@ -105,9 +105,43 @@ defmodule EjabberdRcp.MessagesDb do
     |> Repo.update_all([])
   end
 
-  def  delete_message_by_id(message_id) do
+  def delete_message_by_id(message_id) do
     Archive
     |> where([a], a.id == ^message_id)
     |> Repo.delete_all()
+  end
+
+  def search_in_messages(user_id, sender_id, search_for) do
+    search_for = "%#{search_for}%"
+                 |> IO.inspect(label: "search for")
+    Archive
+    |> where([a], a.user_id == ^user_id or a.user_id == ^sender_id)
+    |> where([a], ilike(a.txt, ^search_for))
+    |> Repo.all()
+    |> extract_xml()
+  end
+
+  def convert_to_stanza do
+    stanza = "<message from='moses@localhost' to='kamau@localhost' type='chat' id='28gs'>
+  <body> this title of the forwarded message</body>
+  <forwarded xmlns='urn:xmpp:forward:0'>
+    <delay xmlns='urn:xmpp:delay' stamp='2010-07-10T23:08:25Z'/>
+    <message from='kamau@localhost'
+             id='0202197'
+             to='moses@localhost'
+             type='chat'
+             xmlns='jabber:client'>
+      <body>this is the message being forward</body>
+      <mood xmlns='http://jabber.org/protocol/mood'>
+        <amorous/>
+      </mood>
+    </message>
+  </forwarded>
+           </message>"
+
+    h = :fxml_stream.parse_element(stanza)
+
+    :mod_admin_extra.send_stanza("moses@localhost", "kamau@localhost", stanza)
+    |> IO.inspect(label: "we----")
   end
 end
