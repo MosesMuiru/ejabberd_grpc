@@ -1,6 +1,6 @@
 defmodule EjabberdRcp.MentionsDb do
   use Ecto.Schema
-  import Ecto.Changeset
+  # import Ecto.Changeset
 
   schema "mentions" do
     field(:uuid, Ecto.UUID, autogenerate: true)

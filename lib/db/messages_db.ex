@@ -112,8 +112,10 @@ defmodule EjabberdRcp.MessagesDb do
   end
 
   def search_in_messages(user_id, sender_id, search_for) do
-    search_for = "%#{search_for}%"
-                 |> IO.inspect(label: "search for")
+    search_for =
+      "%#{search_for}%"
+      |> IO.inspect(label: "search for")
+
     Archive
     |> where([a], a.user_id == ^user_id or a.user_id == ^sender_id)
     |> where([a], ilike(a.txt, ^search_for))

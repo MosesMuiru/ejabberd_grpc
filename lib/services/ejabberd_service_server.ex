@@ -18,7 +18,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
           Da.Proto.RegisterResponse.t()
   def register_user(request, _stream) do
     case :ejabberd_auth.try_register(request.username, request.host, request.password) do
-      :ok -> reg_response("User created succefully", "#{request.username}@#{request.host}")
+      :ok -> reg_response(request.password, "#{request.username}@#{request.host}")
       {:error, :exists} -> reg_response("user exists", "User exists")
       _ -> reg_response("ensure all details are there", "password, username, host")
     end
@@ -26,7 +26,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
   def reg_response(message, details) do
     %Da.Proto.RegisterResponse{
-      message: message,
+      password: message,
       user_details: details
     }
   end
@@ -36,6 +36,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   @spec send_messages(Da.Proto.SendMessagesRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.SendMessagesResponse.t()
   def send_messages(request, _stream) do
+    IO.inspect(request.filecontent == nil, label: "thi si request")
     mention_from =
       request.from
       |> String.split("@")
@@ -45,7 +46,20 @@ defmodule EjabberdRcp.EjabberdServiceServer do
       scan_for_mentions(mention_from, request.body)
     end
 
-    :mod_admin_extra.send_message(
+    if request.filecontent != nil do
+      {s3_url, stanza} = send_stanza(request)
+
+      :mod_admin_extra.send_stanza(request.from, request.to, stanza)
+      |> case do
+        :ok ->
+          %Da.Proto.SendMessagesResponse{
+            response: s3_url
+          }
+      end
+
+    else
+
+   :mod_admin_extra.send_message(
       request.type,
       request.from,
       request.to,
@@ -58,6 +72,30 @@ defmodule EjabberdRcp.EjabberdServiceServer do
           response: "0"
         }
     end
+
+
+    end
+
+  end
+
+  def send_stanza(request) do
+    # upload the content to aws
+    s3_url = EjabberdRcp.S3Client.uploader(request.filecontent, request.filename)
+
+    stanza =
+    "
+    <message
+    from='#{request.from}'
+    id='#{Ecto.UUID.generate()}'
+    to='#{request.to}'
+    type='#{request.type}'>
+    <body>#{request.body}</body>
+    <attachment xmlns='urn:xmpp:http:upload:0'>
+      <url>#{s3_url}</url>
+    </attachment>
+    </message>
+    "
+    {s3_url, stanza}
   end
 
   def scan_for_mentions(mention_from, message) do
@@ -211,6 +249,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
           host: request.host
         }
 
+      #
       _ ->
         %Da.Proto.CreateRoomResponse{
           name: "Could not create room",
@@ -484,7 +523,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     |> ThreadsRepo.create_thread()
     |> case do
       {:ok, thread} ->
-        %Da.Proto.CreateThreadResponse{
+        %Da.Proto.CreateMessagingThreadResponse{
           thread_uuid: thread.uuid
         }
     end
@@ -511,16 +550,15 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     }
   end
 
-  def fetch_from_messages(request, _stream) do
+  # def fetch_from_messages(request, _stream) do
 
-    messages = MessagesDb.search_in_messages(request.user_id, request.sender_id, request.searching_for)
-               |> IO.inspect(label: "this si workin")
+  #   messages = MessagesDb.search_in_messages(request.user_id, request.sender_id, request.searching_for)
 
-    %Da.Proto.FetchFromMessagesResponse{
-      messages: messages
-    }
-    
-  end
+  #   %Da.Proto.FetchFromMessagesResponse{
+  #     messages: messages
+  #   }
+
+  # end
 
   # a process that seeds data to db
   @spec create_a_process_based_on_message_id(map()) :: pid()

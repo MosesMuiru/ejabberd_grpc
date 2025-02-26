@@ -1,5 +1,5 @@
 defmodule EjabberdRcp.MentionsRepo do
-  alias EjabberdRcp.MentionsDb
+  # alias EjabberdRcp.MentionsDb
   alias EjabberdRcp.Users
   alias EjabberdRcp.Repo
   import Ecto.Query

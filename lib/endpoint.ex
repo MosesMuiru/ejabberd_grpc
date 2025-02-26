@@ -3,8 +3,8 @@ defmodule EjabberdRcp.Endpoint do
   # run(EjabberdRcp.Server)
   # run(EjabberdRcp.MessageServer)
   # run(EjabberdRcp.PresenceServer)
-  intercept(GRPC.Server.Interceptors.Logger)
   run(EjabberdRcp.EjabberdServiceServer)
   run(EjabberdRcp.MessagingServiceServer)
+  run(EjabberdRcp.Reflection.Server2)
   run(EjabberdRcp.Reflection.Server)
 end
