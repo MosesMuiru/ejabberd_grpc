@@ -17,8 +17,8 @@ defmodule EjabberdRcp.Archive do
     field(:parent_id, :integer)
     has_many(:reactions, EjabberdRcp.UserReactions)
     has_many(:saves, EjabberdRcp.SavesDb)
-
-    belongs_to(:threads, EjabberdRcp.ThreadsDb)
+    belongs_to(:users, EjabberdRcp.Users, foreign_key: :user_id)
+    belongs_to(:threads, EjabberdRcp.ThreadsDb, foreign_key: :thread_id)
   end
 
   def changeset(archive, params) do

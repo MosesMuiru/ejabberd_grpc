@@ -1,6 +1,6 @@
 defmodule EjabberdRcp.ThreadsRepo do
   alias EjabberdRcp.Repo
-  alias EjabberdRcp.ThreadsDb
+  # alias EjabberdRcp.ThreadsDb
 
   # add the thread get message threads
   def create_thread(thread) do

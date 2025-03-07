@@ -43,7 +43,13 @@ defmodule EjabberdRcp.MixProject do
       {:cowboy, "~> 2.12"},
       {:phoenix_pubsub, "~> 2.1"},
       {:jason, "~> 1.4"},
-      {:oban, "~> 2.19"}
+      {:oban, "~> 2.19"},
+      {:protobuf_generate, "~> 0.1.3"},
+      {:exsync, "~> 0.4"},
+      {:aws, "~> 1.0.0"},
+      {:hackney, "~> 1.18"},
+      {:mime, "~> 2.0"}
+
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
   end

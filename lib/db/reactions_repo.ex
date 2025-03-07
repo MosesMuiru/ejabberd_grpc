@@ -2,8 +2,8 @@ defmodule EjabberdRcp.ReactionsRepo do
   alias EjabberdRcp.Repo
   alias EjabberdRcp.Reactions
   alias EjabberdRcp.UserReaction
-  alias EjabberdRcp.Users
-  alias EjabberdRcp.Archive
+  # alias EjabberdRcp.Users
+  # alias EjabberdRcp.Archive
   import Ecto.Query
 
   def insert_reactions(reaction) do
