@@ -238,7 +238,7 @@ modules:
   mod_vcard_xupdate: {}
   mod_version:
     show_os: false
-  mod_muc_log: {}
+  # mod_muc_log: {}
   # ModPresenceDemo: {}
 default_db: sql
 sql_type: pgsql

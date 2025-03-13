@@ -14,22 +14,44 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   alias EjabberdRcp.MentionsRepo
   alias EjabberdRcp.MentionsDb
 
-  @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
-          Da.Proto.RegisterResponse.t()
-  def register_user(request, _stream) do
-    case :ejabberd_auth.try_register(request.username, request.host, request.password) do
-      :ok -> reg_response(request.password, "#{request.username}@#{request.host}")
-      {:error, :exists} -> reg_response("user exists", "User exists")
-      _ -> reg_response("ensure all details are there", "password, username, host")
+  # @spec register_user(Da.Proto.RegisterRequest.t(), GRPC.Server.Stream.t()) ::
+  #         Da.Proto.RegisterResponse.t()
+  # def register_user(request, _stream) do
+  #   case :ejabberd_auth.try_register(request.username, request.host, request.password) do
+  #     :ok -> reg_response(request.password, "#{request.username}@#{request.host}")
+  #     {:error, :exists} -> reg_response("user exists", "User exists")
+  #     _ -> reg_response("Use Correct Credentials", "password, username, host")
+  #   end
+  # end
+
+  # def reg_response(message, details) do
+  #   %Da.Proto.RegisterResponse{
+  #     password: message,
+  #     user_details: details
+  #   }
+  # end
+
+  def register_user_ejabberd(request, _stream) do
+    :ejabberd_auth.try_register(request.username, request.host, request.password)
+    |> case do
+      :ok -> %Da.Proto.RegisterUserToEjabberdResponse{
+        response: "#{request.username}@#{request.host}",
+      }
     end
   end
 
-  def reg_response(message, details) do
-    %Da.Proto.RegisterResponse{
-      password: message,
-      user_details: details
-    }
-  end
+  # def register_user(request, _stream) do
+  #   :ejabberd_auth.try_register(request.username, request.host, request.password)
+  #   |> case do
+
+  #     :ok ->  %Da.Proto.RegisterResponse{
+  #       user_details: "#{request.username}@#{request.host}"
+  #     }
+  #     _  -> %Da.Proto.RegisterResponse{
+  #       user_details: "errori, make sure you enter the correct details"
+  #     }
+  #   end
+  # end
 
   # this will contain serivecs of the message
   # sending, recieving and initiating a session

@@ -7,7 +7,7 @@ defmodule EjabberdRcp.SocketHandler do
 
   def init(_) do
     {:ok, socket} =
-      :gen_tcp.listen(5050, [:binary, packet: :line, active: false, reuseaddr: true])
+      :gen_tcp.listen(5052, [:binary, packet: :line, active: false, reuseaddr: true])
 
     IO.puts("Messaging port at 5050")
 

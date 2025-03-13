@@ -15,5 +15,5 @@ config :ejabberd,
 config :mnesia,
   dir: Path.join(rootpath, "database/")
 
-config :exsync,
-  reload_callback: {:ejabberd_admin, :update, []}
+# config :exsync,
+#   reload_callback: {:ejabberd_admin, :update, []}

@@ -10,9 +10,4 @@ protoc:
 	protoc -I ./proto --elixir_out=generate-descriptors=true,plugins=grpc:./lib/pb/ ./proto/*.proto
 
 proto: 
-	protoc --elixir_out=gen_descriptors=true,plugins=grpc:./lib --proto_path=proto proto/*.proto
-
-
-
-p:
-	mix protobuf.generate --output-path=./lib  --generate-descriptors=true ./protos/*.proto
+	protoc --elixir_out=generate_descriptors=true,plugins=grpc:./lib/pb --proto_path=proto proto/*.proto

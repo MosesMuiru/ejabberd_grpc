@@ -9,14 +9,14 @@ defmodule EjabberdRcp.Application do
     children = [
       # Starts a worker by calling: EjabberdRcp.Worker.start_link(arg)
       # {EjabberdRcp.Worker, arg}
-
+     {GRPC.Server.Supervisor, endpoint: EjabberdRcp.Endpoint, port: 5051, start_server: true},
+      GrpcReflection,
       {Plug.Cowboy, scheme: :http, plug: EjabberdRcp.ReactionRouter, options: [port: 4040]},
       {Phoenix.PubSub, name: EjabberdRcp.PubSub},
       EjabberdRcp.SocketHandler,
       EjabberdRcp.Repo,
-      {Oban, Application.fetch_env!(:ejabberd_rcp, Oban)},
-      {GRPC.Server.Supervisor, endpoint: EjabberdRcp.Endpoint, port: 5051, start_server: true},
-      GrpcReflection
+      {Oban, Application.fetch_env!(:ejabberd_rcp, Oban)}
+
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
