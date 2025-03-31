@@ -58,7 +58,6 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   @spec send_messages(Da.Proto.SendMessagesRequest.t(), GRPC.Server.Stream.t()) ::
           Da.Proto.SendMessagesResponse.t()
   def send_messages(request, _stream) do
-    IO.inspect(request.filecontent == nil, label: "thi si request")
     mention_from =
       request.from
       |> String.split("@")
@@ -102,7 +101,7 @@ defmodule EjabberdRcp.EjabberdServiceServer do
 
   def send_stanza(request) do
     # upload the content to aws
-    s3_url = EjabberdRcp.S3Client.uploader(request.filecontent, request.filename)
+    s3_url = EjabberdRcp.S3Client.uploader(request.audio_and_filecontent, request.audio_and_filename)
 
     stanza =
     "

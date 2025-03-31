@@ -1,7 +1,6 @@
 build:
 	docker build -t ejabberd . 
-proto:
-	protoc --elixir_out=plugins=grpc:./lib/ ./proto/*.proto
+
 start:
 	iex -S mix
 # pgsql: 
@@ -10,4 +9,4 @@ protoc:
 	protoc -I ./proto --elixir_out=generate-descriptors=true,plugins=grpc:./lib/pb/ ./proto/*.proto
 
 proto: 
-	protoc --elixir_out=generate_descriptors=true,plugins=grpc:./lib/pb --proto_path=proto proto/*.proto
+	protoc --elixir_out=gen_descriptors=true,plugins=grpc:./lib/pb --proto_path=proto proto/*.proto

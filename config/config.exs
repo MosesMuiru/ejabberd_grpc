@@ -1,28 +1,28 @@
 import Config
 
-config :ejabberd_rcp, EjabberdRcp.Rooms,
-  database: "ejabberd_rcp_rooms",
-  username: "user",
-  password: "pass",
-  hostname: "localhost"
+# config :ejabberd_rcp, EjabberdRcp.Rooms,
+#   database: "ejabberd_rcp_rooms",
+#   username: "user",
+#   password: "pass",
+#   hostname: "localhost"
 
-config :ejabberd_rcp, EjabberdRcp.Rooms,
-  database: "ejabberd_rcp_rooms",
-  username: "user",
-  password: "pass",
-  hostname: "localhost"
+# config :ejabberd_rcp, EjabberdRcp.Rooms,
+#   database: "ejabberd_rcp_rooms",
+#   username: "user",
+#   password: "pass",
+#   hostname: "localhost"
 
-config :ejabberd_rcp, EjabberdRcp.Rooms,
-  database: "ejabberd_rcp_rooms",
-  username: "user",
-  password: "pass",
-  hostname: "localhost"
+# config :ejabberd_rcp, EjabberdRcp.Rooms,
+#   database: "ejabberd_rcp_rooms",
+#   username: "user",
+#   password: "pass",
+#   hostname: "localhost"
 
-config :ejabberd_rcp, EjabberdRcp.Rooms,
-  database: "ejabberd_rcp_rooms",
-  username: "user",
-  password: "pass",
-  hostname: "localhost"
+# config :ejabberd_rcp, EjabberdRcp.Rooms,
+#   database: "ejabberd_rcp_rooms",
+#   username: "user",
+#   password: "pass",
+#   hostname: "localhost"
 
 # Configures Elixir's Logger
 config :logger, :console, format: "$time $metadata[$level] $message\n"
@@ -42,7 +42,11 @@ config :ejabberd_rcp, EjabberdRcp.Repo,
   database: "ejabberd",
   username: "postgres",
   password: "postgres",
-  hostname: "localhost"
+  hostname: "db",
+  pool_size: 10,
+  timeout: 60_000
+
+config :os_mon, start_memsup: false
 
 config :ejabberd_rcp,
   ecto_repos: [EjabberdRcp.Repo]

@@ -21,13 +21,13 @@ RUN mix deps.compile
 
 COPY cacert.pem certfile.pem server.pem ejabberd.yml ./
 
-COPY pg.sql execute.sh ./
+#COPY pg.sql execute.sh ./
 # change mods in files inside ejabbed_sql
-RUN chmod +x ./execute.sh
+#RUN chmod +x ./execute.sh
 
 RUN ls -la
 
 EXPOSE 5051
 
 # migration should be run before starting the server
-CMD ["sh", "-c", "iex -S mix"]
+CMD ["sh", "-c", "mix run --no-halt"]
