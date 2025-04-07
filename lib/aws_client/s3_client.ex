@@ -1,12 +1,8 @@
 defmodule EjabberdRcp.S3Client do
+  # this will upload both attachements and audio
   def uploader(filecontent, filename) do
     client = EjabberdRcp.AwsClient.aws_client()
 
-    # read the file 
-    # file = File.read!(filename)
-
-    #%{size: size} = File.stat!(file)
-    # hash the ffile
     md5 = :crypto.hash(:md5, filecontent) |> Base.encode64()
     bucketname = "messagingbucketv1"
     keyname = filename <> Ecto.UUID.generate()

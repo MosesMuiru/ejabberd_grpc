@@ -47,7 +47,10 @@ defmodule EjabberdRcp.MixProject do
       {:aws, "~> 1.0.0"},
       {:hackney, "~> 1.18"},
       {:mime, "~> 2.0"},
-      {:protobuf, "~> 0.14.1", override: true}
+      {:protobuf, "~> 0.14.1", override: true},
+      {:yamerl, "~> 0.10.0"},
+      {:yaml_elixir, "~> 2.11"},
+      {:file_system, "~> 1.1"}
 
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]

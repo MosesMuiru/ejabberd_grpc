@@ -34,9 +34,10 @@ defmodule EjabberdRcp.EjabberdServiceServer do
   def register_user_ejabberd(request, _stream) do
     :ejabberd_auth.try_register(request.username, request.host, request.password)
     |> case do
-      :ok -> %Da.Proto.RegisterUserToEjabberdResponse{
-        response: "#{request.username}@#{request.host}",
-      }
+      :ok ->
+        %Da.Proto.RegisterUserToEjabberdResponse{
+          response: "#{request.username}@#{request.host}"
+        }
     end
   end
 
@@ -77,34 +78,29 @@ defmodule EjabberdRcp.EjabberdServiceServer do
             response: s3_url
           }
       end
-
     else
-
-   :mod_admin_extra.send_message(
-      request.type,
-      request.from,
-      request.to,
-      request.subject,
-      request.body
-    )
-    |> case do
-      :ok ->
-        %Da.Proto.SendMessagesResponse{
-          response: "0"
-        }
+      :mod_admin_extra.send_message(
+        request.type,
+        request.from,
+        request.to,
+        request.subject,
+        request.body
+      )
+      |> case do
+        :ok ->
+          %Da.Proto.SendMessagesResponse{
+            response: "0"
+          }
+      end
     end
-
-
-    end
-
   end
 
   def send_stanza(request) do
     # upload the content to aws
-    s3_url = EjabberdRcp.S3Client.uploader(request.audio_and_filecontent, request.audio_and_filename)
+    s3_url =
+      EjabberdRcp.S3Client.uploader(request.audio_and_filecontent, request.audio_and_filename)
 
-    stanza =
-    "
+    stanza = "
     <message
     from='#{request.from}'
     id='#{Ecto.UUID.generate()}'
@@ -254,9 +250,10 @@ defmodule EjabberdRcp.EjabberdServiceServer do
       {"allow_subscription", "true"}
     ]
 
+    IO.inspect(request, label: "this is the data")
     [_, name] = String.split(request.options.affliations, ":")
 
-    :mod_muc_admin.create_room_with_opts(request.name, request.service, request.host, option)
+    :mod_muc_admin.create_room_with_opts(request.name, request.host, request.service, option)
     |> case do
       :ok ->
         %EjabberdRcp.Rooms{
@@ -571,15 +568,14 @@ defmodule EjabberdRcp.EjabberdServiceServer do
     }
   end
 
-  # def fetch_from_messages(request, _stream) do
+  def search_from_messages(request, _stream) do
+    messages =
+      MessagesDb.search_in_messages(request.user_id, request.sender_id, request.searching_for)
 
-  #   messages = MessagesDb.search_in_messages(request.user_id, request.sender_id, request.searching_for)
-
-  #   %Da.Proto.FetchFromMessagesResponse{
-  #     messages: messages
-  #   }
-
-  # end
+    %Da.Proto.SearchFromMessagesResponse{
+      messages: messages
+    }
+  end
 
   # a process that seeds data to db
   @spec create_a_process_based_on_message_id(map()) :: pid()
