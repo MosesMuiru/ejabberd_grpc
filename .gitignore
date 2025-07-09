@@ -29,13 +29,14 @@ ejabberd_rcp-*.tar
 
 /logs
 
-/protos
+#/proto
 
-/proto
+/protos
 
 /lib/services/message_server.ex
 /lib/services/presence_server.ex
 /lib/services/server.ex
+/lib/pb
 
 Makefile
 

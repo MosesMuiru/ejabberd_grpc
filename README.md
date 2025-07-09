@@ -1,6 +1,21 @@
 # EjabberdRcp
 
-**TODO: Add description**
+This exposed ejabberd endpoints using GRPC
+    sending and recieving of messages using ejabberd through grpc
+
+**TODO: Add a clear description**
+
+
+## some cool features here
+    Message reactions
+    Message Forwarding
+    Presence
+    many other 
+    Storage of messages to pgsql
+    Dockerized  application 
+    reflection
+
+
 
 ## Installation
 
@@ -13,7 +28,10 @@ def deps do
     {:ejabberd_rcp, "~> 0.1.0"}
   ]
 end
+
+
 ```
+
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
@@ -81,7 +99,6 @@ localhost:8081/{registeruser}
 
 ** Recieving Messages**
 
-use da-messaging-svc
 
 ```
     git clone
@@ -149,9 +166,5 @@ create thread --> returns a uuid
     user_id
     thread_uuid
 
-then threis sending of messages
     
-
-
-## Implementation
 

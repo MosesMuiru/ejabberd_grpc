@@ -6,6 +6,7 @@ services:
     ports:
       - "5051:5051"
       - "5222:5222"
+
   envoy-proxy:
     image: envoyproxy/envoy:v1.25-latest
     volumes:

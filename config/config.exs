@@ -42,7 +42,7 @@ config :ejabberd_rcp, EjabberdRcp.Repo,
   database: "ejabberd",
   username: "postgres",
   password: "postgres",
-  hostname: "db",
+  hostname: "localhost",
   pool_size: 10,
   timeout: 60_000
 

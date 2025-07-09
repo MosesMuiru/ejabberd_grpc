@@ -1,0 +1,398 @@
+syntax = "proto3";
+
+package da.proto;
+
+option go_package = "./pb";
+
+message SendMessagesRequest{
+  string type = 1;
+  string from = 2;
+  string to = 3;
+  string subject = 4;
+  string body = 5;
+	optional int64 parent_id = 6; // this it the id, when null its not a thread
+	optional bytes audio_and_filecontent = 7;
+	optional string audio_and_filename = 8;
+  
+}
+
+
+message SendMessagesResponse{
+  string response = 1;
+}
+
+message MessageData {
+  string username = 1;
+  string to = 2;
+  string from = 3;
+  string kind = 4;
+  string txt = 5;
+  string createdAt = 6;
+  uint64 id = 7;
+  uint64 timestamp = 8;
+  string nick = 9;
+  string peer = 10;
+  string bare_peer = 11;
+  string xml = 12;
+  string origin_id = 13;
+}
+
+message ForwardMessageRequest{
+  string forward_to = 1;
+  string forward_from = 2;
+  string forward_subject = 3;
+  string forward_type = 4;
+  string forward_body = 5;
+  SendMessagesRequest forward_details = 6;
+}
+
+message ForwardMessageResponse{
+	string response = 1;
+}
+
+// use this when replying to thread message
+message CreateMessagingThreadRequest{
+	int64 user_id = 1;
+}
+
+message CreateMessagingThreadResponse{
+	string thread_uuid = 1;
+}
+
+message SendThreadMessageRequest{
+	int64 parent_id = 1;
+	string to = 2;
+	string from = 3;
+	string body = 4;
+	string type = 5;
+	string thread_uuid = 6;
+}
+
+message SendThreadMessageResponse{
+	string response = 1;
+
+}
+// messages
+
+message GetAllMessagesRequest{}
+
+message GetAllMessagesResponse{
+	repeated MessageData messages = 1;
+}
+
+message GetMessagesByUsernameRequest{
+	string username = 1;
+}
+
+message GetMessagesByUsernameResponse{
+  repeated MessageData messages = 1;
+}
+
+// register user or service
+message RegisterUserToEjabberdRequest{
+  string username = 1;
+  string host = 2;
+  string password = 3;
+}
+
+message RegisterUserToEjabberdResponse{
+  string response = 1;
+}
+message RegisterRequest{
+  string username = 1;
+  string host = 2;
+  string password = 3;
+}
+
+message RegisterResponse{
+  string password = 1;
+  string user_details = 2;
+}
+
+// set presence
+message SetPresenceRequest{
+  string user = 1;
+  string host = 2;
+  string type = 4;
+  string show = 5;
+  string status = 6;
+  int32 priority = 7;
+}
+
+message SetPresenceResponse{
+  string jid = 1;
+  string show = 2;
+}
+
+message GetPresenceRequest{
+  string user = 1;
+  string host = 2;
+}
+
+message GetPresenceResponse{
+  string jid = 2;
+  string show = 3;
+  string status = 5;
+}
+
+// this is used to logout a user
+message EndSessionRequest{
+  string username = 1;
+  string host = 2;
+}
+
+message EndSessionResponse{
+  string response = 1;
+}
+
+message Options{
+  string title = 1;
+  string description = 2;
+  string members_only = 3;
+  string max_users = 4;
+  string allow_user_invites = 5;
+  string public = 6;
+  string affliations = 7; // defines the roles format -- "owner:moses"// pass the username of the creator
+  string subscribers = 8; // pass the name of creator of the group
+}
+
+message CreateRoomRequest{
+  string name = 1;
+  string service = 2; // short url of the room 
+  string host = 3; // the name of the server host
+  Options options = 4;
+}
+
+message CreateRoomResponse{
+  string name = 1;
+  string host = 2;
+}
+
+// invite users
+message InviteUserRequest{
+  string user = 1;
+  string nick = 2;
+  string room = 3;
+}
+
+message InviteUserResponse{
+  string status = 1;
+}
+
+// send invitation
+message SendDirectInvitationRequest{
+  uint64 room_id = 1;
+  string room_name = 2;
+  string password = 3; // use empty
+  string service = 4;
+  string invite_description = 5;
+  repeated string jids = 6;
+}
+
+message AcceptInvitationRequest{
+  string uuid = 1;
+}
+
+message AcceptInvitationResponse{
+  uint32 id = 1;
+  string uuid = 2;
+  string to = 3;
+  string  description  = 4;
+  uint32 rooms_id = 5;
+  bool accepted = 6;
+}
+
+message GetUserRoomsRequest{
+  string user = 1;
+  // string service = 2;
+}
+
+message GetUserRoomsResponse{
+  repeated string rooms = 1;
+}
+
+message GetSubscribersRequest{
+  string room_name = 1;
+  string service = 2;
+}
+
+message GetSubscribersResponse{
+  repeated string user = 1;
+}
+
+message DestroyRoomRequest{
+  string room_name = 1;
+  string service = 2;
+}
+
+message DestroyRoomResponse{
+  int32 status = 1;
+}
+
+message UserDetails{
+  map<string, string> user_details = 1;
+}
+
+message GetRoomOccupantsRequest{
+  string room_name = 1;
+}
+
+message GetRoomOccupantsResponse{
+  repeated UserDetails user_details = 1;
+}
+
+message Reaction{
+  int32 reaction_id =1;
+  string reaction_name = 2;
+  string reaction_code = 3;
+  string created_at = 4;
+}
+
+message GetAllReactionsRequest{}
+
+message GetAllReactionsResponse{
+  repeated Reaction reactions = 1;
+}
+
+
+message GetReactionByIdRequest{
+  int32 reaction_id = 1;
+}
+
+message GetReactionByIdResponse{
+  Reaction reaction = 1;
+}
+
+message ReactToMessageRequest{
+  string message_id = 1;
+  string username = 2;
+  string reaction_id = 3;
+}
+
+// response should be the reation
+message ReactToMessageResponse{
+  string message_id = 1;
+  int64 reaction_id = 2;
+	string username = 3;
+	// string created_at  = 4;
+}
+
+message PinMessageRequest{
+	string message_id = 1;
+	string username = 2;
+	bool pin = 3;
+}
+
+message PinMessageResponse{
+	bool pinned = 1;
+}
+	
+message DeleteMessageRequest{
+	int64 message_id  = 1; // this is the message id
+}
+ 
+message DeleteMessageResponse{
+	int32 response = 1; // 0 - > success
+}
+
+message SaveMessageRequest{
+	int64 message_id = 1;
+	int64 user_id = 2;
+}
+
+message SaveMessageResponse{
+	int64 message_id = 1;
+}
+
+message GetSavedMessagesByUserIdRequest{
+	int64 user_id = 1;
+}
+
+message GetSavedMessagesByUserIdResponse{
+	repeated MessageData messages = 1;
+}
+
+message UnsaveMessageRequest{
+	int64 user_id = 1;
+}
+
+message UnsaveMessageResponse{
+	int64 response = 1;
+}
+
+message AddReminderRequest{
+	int64 message_id = 1;
+	int64 user_id = 2;
+	string execution_time = 3;
+}
+
+message AddReminderResponse{
+	int64 job_id = 1;
+}
+
+message Reminder {
+	int64 reminder_id = 1;
+	bool completed = 2;
+	int64 user_id = 3;
+	MessageData message = 4;
+}
+
+message GetRemindersRequest{
+	int64 user_id = 1;
+}
+
+message GetRemindersResponse{
+	repeated Reminder reminder = 1;
+}
+
+message SearchFromMessagesRequest{
+	string user_id = 1;
+	string searching_for = 2;
+	string sender_id = 3;
+}
+
+message SearchFromMessagesResponse{
+	repeated MessageData messages = 1;
+}
+
+
+service EjabberdService{ 
+  rpc SendMessages(SendMessagesRequest) returns (SendMessagesResponse){}
+  rpc GetAllMessages (GetAllMessagesRequest) returns (GetAllMessagesResponse) {};
+	rpc GetMessagesByUsername (GetMessagesByUsernameRequest) returns (GetMessagesByUsernameResponse){};
+  rpc SetPresence(SetPresenceRequest) returns (SetPresenceResponse){}
+  rpc GetPresence(GetPresenceRequest) returns (GetPresenceResponse){}
+  rpc RegisterUser(RegisterRequest) returns (RegisterResponse){}
+  rpc RegisterUserEjabberd(RegisterUserToEjabberdRequest) returns (RegisterUserToEjabberdResponse){}
+  rpc EndSession(EndSessionRequest) returns (EndSessionResponse){}
+  rpc ForwardMessage(ForwardMessageRequest) returns (ForwardMessageResponse){}
+  rpc SearchFromMessage(SearchFromMessagesRequest) returns(SearchFromMessagesResponse){}
+
+// threads
+  rpc CreateThread(CreateMessagingThreadRequest) returns(CreateMessagingThreadResponse){}
+  rpc SendThreadMessage(SendThreadMessageRequest) returns(SendThreadMessageResponse){}
+
+  // rooms
+  rpc CreateRoom(CreateRoomRequest) returns (CreateRoomResponse){}
+  rpc InviteUser(InviteUserRequest) returns (InviteUserResponse){}
+  rpc SendDirectInvitation(SendDirectInvitationRequest) returns (InviteUserResponse){}
+  rpc AcceptInvitation(AcceptInvitationRequest) returns (AcceptInvitationResponse){}
+  rpc GetUserRooms(GetUserRoomsRequest) returns(GetPresenceResponse){}
+  rpc GetSubscribers(GetSubscribersRequest) returns(GetSubscribersResponse){}
+  rpc GetRoomOccupants(GetRoomOccupantsRequest) returns(GetRoomOccupantsResponse){}
+
+  // reactions
+  rpc GetAllReactions(GetAllReactionsRequest) returns(GetAllReactionsResponse){}
+  rpc ReactToMessage(ReactToMessageRequest) returns(ReactToMessageResponse){}
+  
+	// message actions
+  rpc PinMessage(PinMessageRequest) returns(PinMessageResponse){}
+  rpc DeleteMessage(DeleteMessageRequest) returns(DeleteMessageResponse){}
+  rpc SaveMessage(SaveMessageRequest) returns(SaveMessageResponse){}
+  rpc GetSavedMessagesByUserId(GetSavedMessagesByUserIdRequest) returns(GetSavedMessagesByUserIdResponse){}
+  rpc UnsaveMessage(UnsaveMessageRequest) returns(UnsaveMessageResponse){}
+  rpc AddReminder(AddReminderRequest) returns(AddReminderResponse){}
+  rpc GetReminders(GetRemindersRequest) returns(GetRemindersResponse){}
+
+  rpc DestroyRoom(DestroyRoomRequest) returns(DestroyRoomResponse){}
+}
